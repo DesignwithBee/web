@@ -1,0 +1,2803 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<script>try{document.documentElement.setAttribute('data-theme',window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}</script>
+<meta name="description" content="Bijoya Deb — Product designer in Toronto. Case studies: Chitrok artist marketplace, BrewBase café discovery, University of Toronto Hub Portal and 33 department sites." />
+<link rel="icon" href="data:," />
+<title>Bijoya Deb — Product Design Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#eef3f5;
+    --bg-2:#e3ebef;
+    --surface:#ffffff;
+    --ink:#17202a;
+    --ink-2:#3d4a57;
+    --muted:#63707d;
+    --line:#d7e0e6;
+    --line-strong:#b9c8d1;
+    --accent:#0e6b4f;
+    --accent-tint:rgba(14,107,79,.17);
+    --accent-ink:#0a4f3a;
+    --accent-soft:#dff0e8;
+    --pop:#c2410c;
+    --pop-soft:#fdeadd;
+    --chip:#eef3f5;
+    --nav-bg:rgba(238,243,245,.94);
+    --shadow:0 1px 3px rgba(23,32,42,.06),0 10px 28px -14px rgba(23,32,42,.18);
+    --radius:14px;
+    --pill-blue:#dbeafe; --pill-green:#d9f0dc; --pill-peach:#fde8c8; --pill-lav:#e6def7; --pill-rose:#fde2e2; --pill-teal:#d3ecec; --pill-text:#24313d;
+    --input-bg:#ffffff;
+  }
+  :root[data-theme="dark"]{
+    --bg:#0a0d10;
+    --bg-2:#12171c;
+    --surface:#171d23;
+    --ink:#eef2f5;
+    --ink-2:#cbd6de;
+    --muted:#9aa8b3;
+    --line:#28323a;
+    --line-strong:#3d4c58;
+    --accent:#4cc39a;
+    --accent-tint:rgba(76,195,154,.18);
+    --accent-ink:#7fd8ba;
+    --accent-soft:#143128;
+    --pop:#ff9a66;
+    --pop-soft:#3a2418;
+    --chip:#1f272e;
+    --nav-bg:rgba(10,13,16,.94);
+    --shadow:0 1px 3px rgba(0,0,0,.45),0 12px 28px -14px rgba(0,0,0,.65);
+    --pill-blue:#24344d; --pill-green:#223d2a; --pill-peach:#40351f; --pill-lav:#332a4d; --pill-rose:#44282c; --pill-teal:#1f3a3a; --pill-text:#e6edf2;
+    --input-bg:#12171c;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *{transition:none !important;animation:none !important}
+  }
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:16px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--accent);color:#fff}
+  a{color:var(--accent-ink)}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  @media (max-width:560px){.wrap{padding:0 18px}}
+
+  /* ---------- Nav ---------- */
+  header.site-nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--nav-bg);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;gap:20px;min-height:60px}
+  .nav-name{
+    font-weight:800;font-size:1rem;letter-spacing:-.01em;color:var(--ink);
+    text-decoration:none;white-space:nowrap;padding:10px 0;
+  }
+  .nav-name span{color:var(--accent)}
+  nav.links{margin-left:auto;display:flex;gap:2px;flex-wrap:wrap;justify-content:flex-end}
+  nav.links a{
+    color:var(--ink-2);text-decoration:none;font-size:.92rem;font-weight:600;
+    padding:10px 12px;min-height:44px;display:inline-flex;align-items:center;border-radius:8px;
+  }
+  nav.links a:hover{color:var(--ink);background:var(--chip)}
+  nav.links a.active{color:var(--accent-ink);background:var(--accent-soft)}
+  nav.links a.nav-cta{background:transparent;color:var(--ink-2);margin-left:8px}
+  nav.links a.nav-cta:hover,nav.links a.nav-cta:focus-visible{color:var(--ink);background:var(--chip)}
+  nav.links a.nav-cta.active{color:var(--accent-ink);background:var(--accent-soft)}
+  @media (max-width:760px){
+    .nav-inner{flex-wrap:wrap;padding-top:8px;padding-bottom:8px;gap:4px 12px;min-height:0}
+    nav.links{margin-left:0;width:100%;justify-content:flex-start}
+    nav.links a{padding:8px 10px;min-height:40px;font-size:.88rem}
+    nav.links a.nav-cta{margin-left:0}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{padding:64px 0 8px;position:relative;isolation:isolate}
+  .hero>*:not(.hero-leaf-bg){position:relative;z-index:1}
+  @media (max-width:560px){.hero{padding:40px 0 4px}}
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;
+    font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.82rem;color:var(--muted);
+    margin-bottom:26px;
+  }
+  .hero-meta .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;margin-right:7px;vertical-align:1px}
+  h1{
+    font-family:"Source Serif 4",Georgia,serif;font-weight:600;
+    font-size:clamp(3rem,8.5vw,5.4rem);line-height:.98;letter-spacing:-.015em;margin:0 0 18px;
+  }
+  .hero-title{
+    font-size:clamp(1.15rem,2.6vw,1.5rem);font-weight:700;letter-spacing:-.01em;
+    color:var(--accent-ink);margin:0 0 22px;line-height:1.35;
+  }
+  .hero-lede{font-size:clamp(1.05rem,2vw,1.22rem);color:var(--ink-2);max-width:46rem;margin:0 0 20px;line-height:1.65}
+  .hero-byline{
+    display:inline-flex;align-items:center;gap:9px;max-width:46rem;
+    margin:0 0 32px;padding:10px 16px 10px 13px;border-radius:999px;
+    background:var(--accent-soft);border:1px solid var(--line);
+    color:var(--accent-ink);font-size:.96rem;font-weight:600;line-height:1.45;
+  }
+  .hero-byline .byline-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:14px}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;min-height:48px;padding:12px 20px;
+    border-radius:10px;font-weight:700;font-size:.98rem;text-decoration:none;
+    border:1px solid var(--line-strong);color:var(--ink);background:var(--surface);
+    transition:background .15s ease,border-color .15s ease,color .15s ease;
+    cursor:pointer;font-family:inherit;
+  }
+  .btn svg{width:18px;height:18px;flex:none}
+  .btn:hover{border-color:var(--ink)}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn.primary:hover{background:var(--accent-ink);border-color:var(--accent-ink)}
+  :root[data-theme="dark"] .btn.primary{color:#0b1512}
+  .btn .copied-note{font-weight:600;font-size:.85rem;color:var(--accent-ink)}
+
+  /* ---------- Metrics ---------- */
+  .metrics{
+    margin:38px 0 8px;border:1px solid var(--line);border-radius:var(--radius);
+    background:var(--surface);box-shadow:var(--shadow);
+    display:grid;grid-template-columns:repeat(7,1fr);overflow:hidden;
+  }
+  .metric{padding:20px 16px;border-left:1px solid var(--line)}
+  .metric:first-child{border-left:none}
+  .metric b{
+    display:block;font-family:"Source Serif 4",Georgia,serif;font-weight:700;
+    font-size:1.65rem;line-height:1.05;letter-spacing:-.01em;color:var(--ink);
+  }
+  .metric b em{font-style:normal;color:var(--pop)}
+  .metric span{display:block;margin-top:6px;font-size:.8rem;line-height:1.4;color:var(--muted)}
+  @media (max-width:900px){.metrics{grid-template-columns:repeat(4,1fr)}.metric:nth-child(5){border-left:none}.metric:nth-child(n+5){border-top:1px solid var(--line)}}
+  @media (max-width:560px){
+    .metrics{grid-template-columns:repeat(2,1fr)}
+    .metric{border-left:none;border-top:1px solid var(--line)}
+    .metric:nth-child(-n+2){border-top:none}
+    .metric:nth-child(even){border-left:1px solid var(--line)}
+    .metric:last-child{grid-column:1/-1}
+  }
+
+  /* ---------- Sections ---------- */
+  section{padding:64px 0 8px;scroll-margin-top:84px}
+  @media (max-width:560px){section{padding:48px 0 4px}}
+  /* About, moved up into the intro directly under the hero stats row */
+  section.about-hero{padding-top:36px}
+  @media (max-width:560px){section.about-hero{padding-top:28px}}
+  section.about-hero .about-grid{margin-bottom:26px}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px;flex-wrap:wrap}
+  .sec-head h2{
+    font-family:"Source Serif 4",Georgia,serif;font-weight:600;
+    font-size:clamp(1.9rem,4.5vw,2.6rem);letter-spacing:-.01em;margin:0;line-height:1.1;
+  }
+  .sec-head p{margin:0;color:var(--muted);font-size:1rem}
+  .sec-rule{height:2px;background:var(--ink);margin:14px 0 30px;border-radius:2px;opacity:.9}
+  .btn.small{min-height:44px;padding:10px 16px;font-size:.92rem}
+  .exp-resume{margin-left:auto;align-self:center;flex:none}
+  @media (max-width:760px){.exp-resume{margin-left:0}}
+
+  /* Case-study tabs beside the Featured Case Studies heading (nav style) */
+  .work-tabs{display:flex;flex-wrap:wrap;gap:2px;margin-left:0}
+  .work-tab{
+    font:inherit;font-size:.92rem;font-weight:600;color:var(--ink-2);
+    background:transparent;border:none;cursor:pointer;white-space:nowrap;
+    padding:10px 12px;min-height:44px;border-radius:8px;display:inline-flex;align-items:center;
+  }
+  .work-tab:hover{color:var(--ink);background:var(--chip)}
+  @media (max-width:760px){.work-tabs{margin-left:0}}
+
+  /* ---------- Case studies ---------- */
+  .case{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);margin-bottom:28px;overflow:hidden;
+  }
+  .case-band{
+    display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 40px;
+    padding:28px 32px 24px;background:var(--bg-2);border-bottom:1px solid var(--line);
+  }
+  @media (max-width:560px){.case-band{padding:22px 20px 18px}}
+  .case-index{
+    font-family:"IBM Plex Mono",monospace;font-size:.85rem;font-weight:600;color:var(--pop);
+    letter-spacing:.06em;
+  }
+  .band-stat b{
+    display:block;font-family:"Source Serif 4",Georgia,serif;font-weight:700;
+    font-size:clamp(1.7rem,4vw,2.4rem);line-height:1;letter-spacing:-.01em;
+  }
+  .band-stat span{display:block;margin-top:5px;font-size:.82rem;color:var(--muted);max-width:15rem;line-height:1.4}
+  .case-body{padding:28px 32px 30px}
+  @media (max-width:560px){.case-body{padding:22px 20px 24px}}
+  .case-body h3{
+    font-family:"Source Serif 4",Georgia,serif;font-weight:600;
+    font-size:clamp(1.55rem,3.4vw,2.1rem);line-height:1.15;letter-spacing:-.01em;margin:0 0 4px;
+  }
+  .case-org{color:var(--muted);font-size:1rem;margin:0 0 14px}
+  .case-explainer{font-size:1.05rem;color:var(--ink-2);max-width:52rem;margin:-6px 0 16px;line-height:1.6}
+  .case-explainer strong{color:var(--ink)}
+  .case-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .meta-pill{
+    font-size:.85rem;font-weight:600;padding:7px 12px;border-radius:999px;
+    background:var(--accent-soft);color:var(--accent-ink);
+  }
+  .meta-pill.date{background:var(--chip);color:var(--ink-2)}
+  .case-body ul{margin:0 0 20px;padding:0;list-style:none;max-width:52rem}
+  .case-body li{position:relative;padding-left:22px;margin-bottom:9px;color:var(--ink-2)}
+  .case-body li::before{
+    content:"";position:absolute;left:2px;top:.52em;width:7px;height:7px;border-radius:2px;background:var(--accent);
+  }
+  .case-body li strong{color:var(--ink)}
+  .tools-label{font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin:0 0 9px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{
+    font-size:.85rem;font-weight:500;padding:6px 11px;border-radius:999px;
+    border:1px solid var(--line-strong);color:var(--ink-2);background:var(--surface);
+  }
+
+  /* ---------- Timeline ---------- */
+  .timeline{border-top:1px solid var(--line)}
+  .t-row{
+    display:grid;grid-template-columns:150px 1fr;gap:8px 28px;
+    padding:22px 0;border-bottom:1px solid var(--line);
+  }
+  @media (max-width:640px){.t-row{grid-template-columns:1fr;gap:4px}}
+  .t-date{font-family:"IBM Plex Mono",monospace;font-size:.85rem;color:var(--muted);padding-top:3px;white-space:nowrap}
+  @media (max-width:640px){.t-date{white-space:normal}}
+  .t-main h3{margin:0 0 2px;font-size:1.08rem;font-weight:700;letter-spacing:-.01em}
+  .t-main .t-org{color:var(--accent-ink);font-weight:600;font-size:.95rem;margin:0 0 8px}
+  .t-main p{margin:0 0 8px;color:var(--ink-2);max-width:52rem}
+  .t-main p:last-child{margin-bottom:0}
+  .t-main ul{margin:0;padding-left:18px;color:var(--ink-2);max-width:52rem}
+  .t-main li{margin-bottom:6px}
+  .t-main li strong{color:var(--ink)}
+  /* Per-role tool & skill tags inside the résumé timeline */
+  .role-tags{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 12px}
+  .role-tag{
+    font-size:.78rem;font-weight:600;line-height:1.3;padding:5px 10px;border-radius:999px;
+    background:var(--chip);border:1px solid var(--line);color:var(--ink-2);white-space:nowrap;
+  }
+
+  /* ---------- Photography ---------- */
+  .photo-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px}
+  @media (max-width:820px){.photo-grid{grid-template-columns:1fr}}
+  .brand-list{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 20px}
+  .brand{
+    font-weight:700;font-size:.95rem;padding:9px 14px;border-radius:10px;
+    background:var(--surface);border:1px solid var(--line-strong);color:var(--ink);
+  }
+  .side-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;box-shadow:var(--shadow);margin-bottom:20px;
+  }
+  .side-card h3{margin:0 0 6px;font-size:1.05rem;font-weight:700}
+  .side-card .sc-meta{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--pop);font-weight:600;margin:0 0 10px}
+  .side-card p{margin:0;color:var(--ink-2)}
+  .plain-list{margin:0;padding:0;list-style:none}
+  .plain-list li{position:relative;padding-left:22px;margin-bottom:10px;color:var(--ink-2)}
+  .plain-list li::before{content:"";position:absolute;left:2px;top:.52em;width:7px;height:7px;border-radius:2px;background:var(--pop)}
+  .plain-list li strong{color:var(--ink)}
+  .lead-p{font-size:1.05rem;color:var(--ink-2);max-width:52rem;margin:0 0 6px}
+  .lead-p strong{color:var(--ink)}
+
+  /* Photography preview — paneled collage, clean photos at full clarity; inactive placeholders until the VSCO link arrives */
+  .photo-preview-wrap{margin-top:30px}
+  .photo-preview-head{
+    display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;margin-bottom:14px;
+  }
+  .photo-preview-head h3{margin:0;font-size:1.05rem;font-weight:800;letter-spacing:-.01em}
+  .photo-vsco-note{font-size:.92rem;color:var(--muted)}
+  /* Rebalanced mosaic: the robin holds the large lead panel and the glacier
+     mountain the tall right-hand strip, swapped from their earlier spots; the
+     birdwatching group and the moon keep generous panels of their own */
+  .photo-preview{
+    display:grid;gap:10px;
+    grid-template-columns:repeat(6,1fr);
+    grid-template-rows:repeat(5,92px);
+    grid-template-areas:
+      "robin robin robin moon moon glacier"
+      "robin robin robin moon moon glacier"
+      "robin robin robin moon moon glacier"
+      "bird bird bird fountain fountain forget"
+      "bird bird bird fountain fountain forget";
+  }
+  .pt-glacier{grid-area:glacier}
+  .pt-moon{grid-area:moon}
+  .pt-bird{grid-area:bird}
+  .pt-fountain{grid-area:fountain}
+  .pt-forget{grid-area:forget}
+  .pt-robin{grid-area:robin}
+  /* Robin in the wide lead panel: frame centred on the bird (it sits just above middle height) */
+  .pt-robin img{object-position:center 45%}
+  /* Glacier in the tall strip: crop onto the tall pines and the icefield behind them */
+  .pt-glacier img{object-position:72% center}
+  .pt-bird img{object-position:center 62%}
+  .pt-moon img{object-position:center}
+  .pt-fountain img{object-position:center 42%}
+  @media (max-width:700px){
+    .photo-preview{
+      grid-template-columns:1fr 1fr;
+      grid-template-rows:190px 150px 170px 130px;
+      grid-template-areas:
+        "robin robin"
+        "moon glacier"
+        "bird bird"
+        "fountain forget";
+    }
+    .pt-bird img{object-position:center 58%}
+  }
+  .photo-tile{
+    position:relative;display:block;height:100%;min-height:0;border-radius:12px;overflow:hidden;
+    border:1px solid var(--line-strong);background:var(--bg-2);text-decoration:none;cursor:default;
+  }
+  .photo-tile[href]{cursor:pointer}
+  .photo-tile img{
+    width:100%;height:100%;object-fit:cover;display:block;
+  }
+  .photo-tile[href]:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  /* Single white arrow badge by the "Selected frames" heading — the tiles themselves carry no overlays */
+  .photo-head-arrow{
+    width:30px;height:30px;border-radius:50%;align-self:center;
+    display:inline-flex;align-items:center;justify-content:center;flex:none;
+    background:#ffffff;border:1px solid rgba(23,32,42,.14);color:#17202a;
+    box-shadow:0 2px 8px rgba(23,32,42,.18);
+  }
+  .photo-head-arrow svg{width:14px;height:14px}
+
+  /* ---------- Illustrations tab + résumé / tools look (borrowed from the old Readymag site) ---------- */
+  .illus-intro{max-width:52rem;color:var(--ink-2);font-size:1.05rem;line-height:1.65;margin:0 0 22px}
+  .illus-intro strong{color:var(--ink)}
+  .illus-hero{
+    display:block;border:1px solid var(--line-strong);border-radius:16px;overflow:hidden;
+    background:var(--surface);box-shadow:var(--shadow);text-decoration:none;margin-bottom:14px;
+  }
+  .illus-hero img{width:100%;height:auto;display:block;aspect-ratio:16/7;object-fit:cover;object-position:center}
+  .illus-hero-cap{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;justify-content:space-between;padding:14px 18px;border-top:1px solid var(--line)}
+  .illus-hero-cap b{font-size:.98rem;color:var(--ink)}
+  .illus-hero-cap span{font-size:.88rem;color:var(--muted)}
+  .illus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0 8px}
+  @media (max-width:820px){.illus-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:520px){.illus-grid{grid-template-columns:1fr 1fr;gap:10px}}
+  .illus-item{text-decoration:none;color:var(--ink);display:block;min-width:0}
+  .illus-frame{display:block;border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;background:#faf7f1;aspect-ratio:4/3}
+  .illus-frame img{width:100%;height:100%;object-fit:cover;display:block}
+  .illus-item:hover .illus-frame{border-color:var(--ink)}
+  .illus-item:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:12px}
+  .illus-label{display:block;margin-top:7px;font-size:.88rem;font-weight:700;line-height:1.3}
+  .illus-label::after{content:" \2197";color:var(--accent-ink)}
+  .illus-sub{display:block;font-size:.8rem;color:var(--muted);line-height:1.35;margin-top:2px}
+  .illus-process{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-top:22px;
+  }
+  @media (max-width:760px){.illus-process{grid-template-columns:1fr}}
+  .illus-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+  .illus-card h3{margin:0 0 8px;font-size:1.05rem;font-weight:800;letter-spacing:-.01em}
+  .illus-card p{margin:0 0 12px;color:var(--ink-2)}
+  .illus-card p:last-child{margin-bottom:0}
+  .illus-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+
+  /* Résumé-sheet look for Experience — like a printed résumé page, with a hand-drawn pattern strip */
+  .resume-sheet{
+    background:var(--surface);border:1px solid var(--line-strong);border-radius:16px;overflow:hidden;
+    box-shadow:var(--shadow);margin-bottom:28px;
+  }
+  .resume-strip{height:64px;overflow:hidden;border-bottom:1px solid var(--line)}
+  .resume-strip img{width:100%;height:100%;object-fit:cover;object-position:center 38%;display:block}
+  .resume-sheet-inner{padding:22px 24px 20px;display:flex;flex-wrap:wrap;gap:16px 28px;align-items:flex-start;justify-content:space-between}
+  @media (max-width:560px){.resume-sheet-inner{padding:18px}}
+  .resume-sheet-inner h3{font-family:"Source Serif 4",Georgia,serif;font-size:1.5rem;font-weight:600;margin:0 0 4px;letter-spacing:-.01em}
+  .resume-sheet-inner .rs-role{font-weight:700;color:var(--accent-ink);margin:0 0 6px}
+  .resume-sheet-inner .rs-meta{font-family:"IBM Plex Mono",monospace;font-size:.82rem;color:var(--muted);margin:0;line-height:1.6}
+  .resume-facts{display:flex;flex-wrap:wrap;gap:8px}
+  .resume-fact{font-size:.85rem;font-weight:600;padding:8px 11px;border-radius:999px;border:1px dashed var(--line-strong);color:var(--ink-2);background:var(--bg)}
+  .resume-fact b{color:var(--ink)}
+
+  /* Tools I use — compact left rail in Experience; clicking a tool jumps to the entries tagged with it */
+  .exp-layout{display:grid;grid-template-columns:210px minmax(0,1fr);gap:26px;align-items:start}
+  @media (max-width:940px){.exp-layout{grid-template-columns:1fr}}
+  .exp-main{min-width:0}
+  .tools-rail{
+    position:sticky;top:84px;background:var(--surface);border:1px solid var(--line);
+    border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;
+  }
+  @media (max-width:940px){.tools-rail{position:static}}
+  .tools-rail-note{font-size:.8rem;color:var(--muted);margin:0 0 10px;line-height:1.45}
+  .tool-list{display:flex;flex-direction:column;gap:4px}
+  @media (max-width:940px){.tool-list{flex-direction:row;flex-wrap:wrap}}
+  .tool-chipbtn{
+    display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:8px;
+    border:1px solid transparent;background:transparent;color:var(--ink-2);
+    font:inherit;font-size:.85rem;font-weight:600;cursor:pointer;text-align:left;line-height:1.25;
+  }
+  @media (min-width:941px){.tool-chipbtn{width:100%}}
+  .tool-chipbtn:hover{border-color:var(--line-strong);color:var(--ink);background:var(--chip)}
+  .tool-chipbtn[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+  .tool-mark{
+    width:24px;height:24px;border-radius:6px;flex:none;display:inline-flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:.62rem;letter-spacing:-.02em;color:var(--pill-text);border:1px solid rgba(23,32,42,.08);
+  }
+  .tool-chipbtn .tcount{
+    margin-left:auto;min-width:20px;height:20px;padding:0 5px;border-radius:999px;
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:.72rem;font-weight:700;line-height:1;background:rgba(0,0,0,.08);color:inherit;
+  }
+  :root[data-theme="dark"] .tool-chipbtn .tcount{background:rgba(255,255,255,.14)}
+  .tool-chipbtn[aria-pressed="true"] .tcount{background:rgba(255,255,255,.22)}
+  @media (max-width:940px){.tool-chipbtn .tcount{margin-left:2px}}
+  .tool-status{font-size:.82rem;color:var(--muted);margin:10px 0 0;line-height:1.45}
+  .tool-status:empty{margin:0}
+  .tool-status strong{color:var(--ink)}
+  .tools-rail .clear-btn{margin-top:10px;min-height:36px;padding:7px 11px;font-size:.82rem}
+  /* Highlight for entries matched from the Tools rail */
+  .t-row{scroll-margin-top:84px}
+  /* Matched block: green ring plus a translucent green wash over the whole block.
+     The inset shadow paints above the block's own background but below its content,
+     so text stays at full strength; it comes and goes with the same .tool-hit class. */
+  .t-row.tool-hit,.case.tool-hit{box-shadow:0 0 0 2px var(--accent),inset 0 0 0 999px var(--accent-tint),var(--shadow)}
+  .role-tag.tag-hit{background:var(--accent);border-color:var(--accent);color:#fff}
+  .case-body .chip.tag-hit{background:var(--accent);border-color:var(--accent);color:#fff}
+  .tm-blue{background:var(--pill-blue)} .tm-green{background:var(--pill-green)} .tm-peach{background:var(--pill-peach)}
+  .tm-lav{background:var(--pill-lav)} .tm-rose{background:var(--pill-rose)} .tm-teal{background:var(--pill-teal)}
+
+  /* Separate Illustrations tab view (switched in-page from the main nav) */
+  #view-illustrations[hidden],#view-main[hidden]{display:none !important}
+  .illus-view{padding:52px 0 8px}
+  @media (max-width:560px){.illus-view{padding:36px 0 4px}}
+  .illus-view h2{
+    font-family:"Source Serif 4",Georgia,serif;font-weight:600;
+    font-size:clamp(2.2rem,6vw,3.4rem);letter-spacing:-.015em;line-height:1.05;margin:0 0 10px;
+  }
+  .illus-view h2:focus{outline:none}
+  .illus-kicker{
+    font-family:"IBM Plex Mono",monospace;font-size:.82rem;font-weight:600;letter-spacing:.05em;
+    color:var(--pop);margin:0 0 14px;text-transform:uppercase;
+  }
+  .illus-credit{
+    display:inline-flex;align-items:center;gap:9px;padding:9px 14px;border-radius:999px;
+    background:var(--pop-soft);color:var(--ink);font-size:.9rem;font-weight:600;margin:0 0 22px;
+  }
+  .illus-back{margin-bottom:26px}
+  .illus-set-title{font-size:1.22rem;font-weight:800;letter-spacing:-.01em;margin:4px 0 4px}
+  .illus-set-sub{color:var(--muted);margin:0 0 6px;font-size:.95rem}
+
+  /* Deck presentation — Coven & Crumb inspo, scoped to the Illustrations tab only:
+     oat-cream paper panels, hedge-green serif headlines, gold small-caps kickers,
+     thin palette-swatch strips, and the fall leaves as a small corner accent. */
+  #view-illustrations{
+    --oat:#f7f1e0; --oat-line:#ddd0ae; --hedge:#22391c; --sage:#73816a;
+    --gold:#8a5f0a; --deck-ink:#2a331f; --deck-muted:#5f6a52;
+  }
+  :root[data-theme="dark"] #view-illustrations{--gold:#d9ab4a}
+  #view-illustrations .illus-kicker{color:var(--gold)}
+  .deck-case{
+    position:relative;background:var(--oat);color:var(--deck-ink);
+    border:1px solid var(--oat-line);border-radius:16px;box-shadow:var(--shadow);
+    padding:30px 30px 26px;margin:0 0 26px;overflow:hidden;
+  }
+  @media (max-width:560px){.deck-case{padding:22px 18px 20px}}
+  .deck-leaf{
+    position:absolute;top:16px;right:16px;width:76px;height:24px;object-fit:cover;object-position:center;
+    border-radius:6px;box-shadow:0 2px 8px rgba(34,57,28,.25);pointer-events:none;
+  }
+  @media (max-width:560px){.deck-leaf{width:58px;height:19px;top:12px;right:12px}}
+  .deck-kicker{
+    font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--gold);margin:0 0 10px;padding-right:92px;
+  }
+  .deck-title{
+    font-family:"Source Serif 4",Georgia,serif;font-weight:600;color:var(--hedge);
+    font-size:clamp(1.85rem,4.2vw,2.55rem);line-height:1.08;letter-spacing:-.01em;margin:0 0 10px;
+  }
+  .deck-cap{color:var(--deck-muted);font-size:1rem;line-height:1.6;max-width:46rem;margin:0 0 20px}
+  .deck-case .illus-label{color:var(--deck-ink)}
+  .deck-case .illus-sub{color:var(--deck-muted)}
+  .deck-case .illus-item:hover .illus-frame{border-color:var(--hedge)}
+  .deck-duo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:700px){.deck-duo{grid-template-columns:1fr}}
+  .deck-frame{aspect-ratio:2800/1752;background:#1d300d}
+  .deck-frame-post{aspect-ratio:3894/2549}
+  .deck-frame-sq{aspect-ratio:1/1}
+  .deck-frame-white{background:#fff}
+  .deck-frame-strip{aspect-ratio:5/1;background:#000}
+  .deck-wide{display:block;margin-bottom:16px}
+  .deck-folder{display:block;max-width:330px}
+  .palette-strip{
+    display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px;padding-top:16px;
+    border-top:1px solid var(--oat-line);
+  }
+  .palette-strip .pal{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;color:var(--deck-ink)}
+  .palette-strip .pal i{
+    width:34px;height:16px;border-radius:4px;background:var(--sw);flex:none;
+    border:1px solid rgba(34,57,28,.28);display:block;
+  }
+  .palette-strip .pal b{font-family:"IBM Plex Mono",monospace;font-size:.7rem;font-weight:500;color:var(--deck-muted)}
+
+  /* Toronto Flower Market — the Coven & Crumb deck spread itself, reproduced exactly */
+  .deck-case.tfm{padding:0;background:#8586b4;border-color:#8586b4}
+  .deck-case.tfm a{display:block;border-radius:16px}
+  .tfm-slide{width:100%;height:auto;display:block}
+
+  /* Cool Girl Literature — deck slide presented exactly like the Flower Market slide, on its own black ground */
+  .deck-case.cgl{background:#060606;border-color:#060606}
+
+  /* Pixel-art whimsy — Bijoya's own pixel sprites live OUTSIDE the panels on this page:
+     in the left/right gutters beside panels (wide screens) and in the outer edges of the
+     gaps between panels (narrower screens). Never inside a panel, never on a deck slide. */
+  #view-illustrations{overflow-x:clip}
+  .pep{image-rendering:pixelated;image-rendering:crisp-edges;pointer-events:none;flex:none}
+  .credit-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 22px}
+  .credit-row .illus-credit{margin:0}
+  .illus-stage{position:relative;margin:0 0 26px}
+  .illus-stage .deck-case{margin-bottom:0}
+  .margin-pep{
+    position:absolute;z-index:3;width:58px;height:58px;object-fit:contain;display:none;
+  }
+  .margin-pep.tilt-l{transform:rotate(-4deg)}
+  .margin-pep.tilt-r{transform:rotate(4deg)}
+  @media (min-width:1240px){
+    .margin-pep{display:block}
+    .mp-l{left:-78px}
+    .mp-r{right:-78px}
+  }
+  .pep-gap{display:flex;align-items:center;margin:-8px 0 -6px;min-height:52px}
+  .pep-gap .pep{width:52px;height:52px;object-fit:contain;display:block}
+  .pep-gap.pair{justify-content:space-between}
+  .pep-gap.start{justify-content:flex-start}
+  .pep-gap.end{justify-content:flex-end}
+  .pep-gap .tilt-l{transform:rotate(-4deg)}
+  .pep-gap .tilt-r{transform:rotate(4deg)}
+  @media (max-width:700px){.pep-gap .pep{width:44px;height:44px}.pep-gap{min-height:44px}}
+
+  /* Fall leaves in the intro — a large, soft background wash behind the hero text.
+     Purely decorative: faded, soft-edged and drifting very slowly, never a button or link. */
+  .hero-leaf-bg{
+    position:absolute;z-index:0;top:42px;right:0;width:min(700px,94vw);
+    pointer-events:none;opacity:.38;transform:rotate(-4deg);
+    -webkit-mask-image:radial-gradient(ellipse 66% 84% at 50% 50%,#000 42%,transparent 74%);
+    mask-image:radial-gradient(ellipse 66% 84% at 50% 50%,#000 42%,transparent 74%);
+    animation:leafDrift 11s ease-in-out infinite alternate;
+  }
+  .hero-leaf-bg::before{
+    content:"";position:absolute;inset:-12% -4%;z-index:-1;border-radius:50%;
+    background:radial-gradient(closest-side,rgba(232,163,61,.20),rgba(194,65,12,.07) 58%,transparent 76%);
+  }
+  .hero-leaf-bg img{
+    width:100%;height:auto;display:block;
+    filter:saturate(1.06) drop-shadow(0 16px 24px rgba(154,44,23,.16));
+  }
+  :root[data-theme="dark"] .hero-leaf-bg{opacity:.30}
+  :root[data-theme="dark"] .hero-leaf-bg::before{background:radial-gradient(closest-side,rgba(232,163,61,.14),rgba(194,65,12,.05) 58%,transparent 76%)}
+  @keyframes leafDrift{from{transform:rotate(-4deg) translateY(0)}to{transform:rotate(-2deg) translateY(9px)}}
+  @media (max-width:700px){
+    .hero-leaf-bg{top:58px;width:min(470px,88vw);opacity:.26}
+    :root[data-theme="dark"] .hero-leaf-bg{opacity:.22}
+  }
+  /* Education card placed immediately before the About block */
+  .edu-before-about{margin:24px 0 0}
+  .contact-top{display:flex;gap:28px;align-items:flex-start;justify-content:space-between}
+  .contact-accent{
+    width:128px;height:auto;aspect-ratio:361/379;object-fit:contain;flex:none;background:#fff;border-radius:14px;padding:10px;
+    border:1px solid rgba(255,255,255,.35);box-shadow:0 10px 28px -14px rgba(0,0,0,.4);
+  }
+  @media (max-width:560px){.contact-accent{width:92px;padding:7px}.contact-top{gap:18px}}
+
+  /* Old-site motifs, muted: pill nav buttons + retro window-chrome header */
+  nav.links a{border-radius:999px}
+  nav.links a.active{box-shadow:inset 0 0 0 1px var(--line-strong)}
+  .win-frame{
+    border:1px solid var(--line-strong);border-radius:16px;overflow:hidden;
+    background:var(--surface);box-shadow:var(--shadow);margin-bottom:26px;
+  }
+  .win-bar{
+    display:flex;align-items:center;gap:12px;padding:11px 16px;
+    background:var(--bg-2);border-bottom:1px solid var(--line);
+  }
+  .win-dots{display:inline-flex;gap:7px;flex:none}
+  .win-dots i{width:11px;height:11px;border-radius:50%;display:block}
+  .win-dots i:nth-child(1){background:#d96a5a}
+  .win-dots i:nth-child(2){background:#e3b34c}
+  .win-dots i:nth-child(3){background:#7ba05b}
+  .win-title{
+    font-family:"IBM Plex Mono",monospace;font-size:.86rem;font-weight:600;color:var(--ink-2);
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+  .win-body{padding:26px 28px 24px}
+  @media (max-width:560px){.win-body{padding:20px 18px}}
+  .win-body h2{margin-bottom:8px}
+  /* Chitrok's longer title runs a step smaller than the other case-study titles so it sits comfortably */
+  .case[data-project="chitrok"] .d-name{font-size:1rem}
+  .case[data-project="chitrok"] .case-body h3{font-size:clamp(1.32rem,2.7vw,1.7rem)}
+  @media (max-width:560px){.case[data-project="chitrok"] .d-name{font-size:.95rem}}
+  /* Per-project accent worlds (echoing the old site's per-page palettes) */
+  .case[data-project="chitrok"] .d-thumb{box-shadow:inset 0 0 0 2px var(--pill-teal)}
+  .case[data-project="brewbase"] .d-thumb{box-shadow:inset 0 0 0 2px var(--pill-peach)}
+  .case[data-project="hub-portal"] .d-thumb{box-shadow:inset 0 0 0 2px var(--pill-blue)}
+  .case[data-project="public-health"] .d-thumb{box-shadow:inset 0 0 0 2px var(--pill-lav)}
+
+  /* Résumé look: Experience timeline becomes visual role cards (facts unchanged) */
+  .timeline{border-top:none}
+  .timeline .t-row{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:22px 24px;margin-bottom:14px;border-bottom:1px solid var(--line);
+  }
+  @media (max-width:560px){.timeline .t-row{padding:18px}}
+  .timeline .t-date{
+    background:var(--chip);border:1px solid var(--line);border-radius:999px;
+    padding:6px 11px;text-align:center;align-self:start;justify-self:start;
+  }
+  @media (min-width:641px){.timeline .t-date{justify-self:stretch;text-align:center}}
+
+  /* ---------- Community ---------- */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media (max-width:720px){.two-col{grid-template-columns:1fr}}
+  .comm-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px;box-shadow:var(--shadow);
+  }
+  .comm-card h3{margin:0 0 4px;font-size:1.15rem;font-weight:700;letter-spacing:-.01em}
+  .comm-card .c-meta{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--pop);font-weight:600;margin:0 0 12px}
+  .comm-card p{margin:0;color:var(--ink-2)}
+  .comm-card b.big{
+    display:block;font-family:"Source Serif 4",Georgia,serif;font-size:2rem;font-weight:700;
+    line-height:1;margin-bottom:6px;color:var(--ink);
+  }
+
+  /* ---------- About / skills ---------- */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 40px;margin-bottom:36px}
+  @media (max-width:720px){.about-grid{grid-template-columns:1fr}}
+  .about-grid p{margin:0 0 14px;color:var(--ink-2);font-size:1.02rem}
+  .about-grid p strong{color:var(--ink)}
+  .edu-card{
+    background:var(--accent-soft);border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+  }
+  .edu-card h3{margin:0 0 4px;font-family:"Source Serif 4",Georgia,serif;font-size:1.35rem;font-weight:600}
+  .edu-card p{margin:0;color:var(--ink-2)}
+  .edu-card .e-date{font-family:"IBM Plex Mono",monospace;font-size:.82rem;color:var(--accent-ink);font-weight:600;margin-bottom:10px}
+  .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 32px}
+  @media (max-width:720px){.skills{grid-template-columns:1fr}}
+  .skill-group h3{
+    font-size:.92rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+    margin:0 0 11px;color:var(--ink);display:flex;align-items:center;gap:10px;
+  }
+  .skill-group h3::after{content:"";flex:1;height:1px;background:var(--line-strong)}
+
+  /* ---------- Contact / footer ---------- */
+  footer.contact{
+    margin-top:72px;background:var(--ink);color:var(--bg);
+    padding:56px 0 44px;
+  }
+  :root[data-theme="dark"] footer.contact{background:#050707}
+  footer.contact h2{
+    font-family:"Source Serif 4",Georgia,serif;font-weight:600;
+    font-size:clamp(2rem,5vw,3rem);margin:0 0 10px;letter-spacing:-.01em;line-height:1.1;
+  }
+  footer.contact p{color:inherit;opacity:.82;max-width:38rem;margin:0 0 26px;font-size:1.05rem}
+  .contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px}
+  .cbtn{
+    display:inline-flex;align-items:center;gap:9px;min-height:48px;padding:12px 20px;border-radius:10px;
+    font-weight:700;font-size:.98rem;text-decoration:none;border:1px solid rgba(255,255,255,.35);
+    color:#fff;background:transparent;cursor:pointer;font-family:inherit;
+  }
+  .cbtn svg{width:18px;height:18px;flex:none}
+  .cbtn.solid{background:var(--accent);border-color:var(--accent);color:#fff}
+  .cbtn:hover{border-color:#fff}
+  .cbtn.solid:hover{background:var(--accent-ink)}
+  /* Contact links under the postcard: icon buttons only, labels in aria-label/title */
+  .cbtn.icon-btn{width:48px;height:48px;min-height:48px;padding:0;justify-content:center;border-radius:50%}
+  .cbtn.icon-btn svg{width:20px;height:20px}
+  .foot-row{
+    border-top:1px solid rgba(255,255,255,.22);padding-top:20px;
+    display:flex;flex-wrap:wrap;gap:8px 28px;font-size:.88rem;opacity:.85;
+  }
+  .foot-row a{color:inherit}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+  /* ---------- Contact postcard widget — classic two-part postcard: ruled message
+     side, dashed centre divider, address side (paper card on the dark footer;
+     same paper in both themes) ---------- */
+  .postcard{
+    --paper:#f7f1e0; --paper-ink:#2a331f; --paper-muted:#5f6a52; --paper-line:#c9bb92; --gold:#8a5f0a; --hedge:#22391c;
+    background:var(--paper);color:var(--paper-ink);border-radius:14px;
+    box-shadow:0 24px 50px -20px rgba(0,0,0,.55);
+    margin:0 0 16px;position:relative;
+    display:grid;grid-template-columns:1.25fr 1fr;
+    padding:30px 34px 28px;
+  }
+  @media (max-width:760px){.postcard{grid-template-columns:1fr;padding:24px 22px 22px}}
+  .postcard p{opacity:1;max-width:none}
+  .pc-word{
+    font-family:"IBM Plex Mono",monospace;font-size:.82rem;font-weight:600;letter-spacing:.42em;
+    text-transform:uppercase;color:var(--paper-ink);margin:0 0 26px;
+  }
+  /* Message side — ruled handwriting lines, closed off by the dashed divider */
+  .pc-message-side{padding-right:40px;border-right:2px dashed var(--paper-line);min-width:0}
+  .pc-address-side{padding-left:40px;min-width:0}
+  @media (max-width:760px){
+    .pc-message-side{padding-right:0;padding-bottom:26px;border-right:none;border-bottom:2px dashed var(--paper-line)}
+    .pc-address-side{padding-left:0;padding-top:26px}
+  }
+  .pc-field{min-width:0;margin-bottom:22px}
+  .pc-field:last-child{margin-bottom:0}
+  .pc-label{
+    display:block;font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--gold);margin:0 0 7px;
+  }
+  .pc-input{
+    width:100%;font:inherit;font-size:1rem;color:var(--paper-ink);
+    background:transparent;border:none;border-bottom:1px solid var(--paper-line);border-radius:0;
+    padding:8px 2px 9px;min-height:44px;
+  }
+  .pc-input::placeholder{color:#9a927a}
+  .pc-input:focus{outline:none;border-bottom-color:#0e6b4f;box-shadow:0 1px 0 0 #0e6b4f}
+  .pc-input[aria-invalid]{border-bottom-color:#9a2c17;box-shadow:0 1px 0 0 #9a2c17}
+  textarea.pc-message{
+    resize:vertical;line-height:32px;min-height:160px;padding:0 2px;border-bottom:none;
+    background:repeating-linear-gradient(to bottom,transparent 0,transparent 31px,var(--paper-line) 31px,var(--paper-line) 32px);
+    background-attachment:local;
+  }
+  textarea.pc-message:focus{box-shadow:none}
+  select.pc-select{appearance:auto;cursor:pointer}
+  /* Address side header — Toronto postmark and the leaves stamp sit side by side,
+     kept clearly apart, never overlapping */
+  .pc-stamp-row{
+    display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:24px;
+  }
+  /* Address block — the recipient, written on ruled lines like a real postcard */
+  .pc-to-lines p{
+    margin:0;padding:8px 2px 9px;border-bottom:1px solid var(--paper-line);
+    font-family:"Source Serif 4",Georgia,serif;font-size:1.05rem;line-height:1.4;color:var(--paper-ink);
+  }
+  .pc-caption{
+    text-align:center;font-size:.92rem;color:inherit;opacity:.75;
+    margin:0 auto 20px;max-width:none;line-height:1.5;
+  }
+  /* Vintage postage stamp — fall-leaves art on warm cream paper, perforated edge, hand-placed tilt.
+     The perforation is a radial-gradient mask punching scalloped holes around the cream backing;
+     the drop-shadow lives on the wrapper so it follows the perforated silhouette. */
+  .pc-stampshadow{flex:none;transform:rotate(3deg);filter:drop-shadow(0 5px 10px rgba(34,57,28,.28))}
+  .pc-stamp{
+    --r:6px;
+    display:block;width:100px;background:#fdf6dd;
+    padding:calc(var(--r) + 7px) calc(var(--r) + 7px) calc(var(--r) + 5px);
+    -webkit-mask:radial-gradient(var(--r),transparent 98%,#000) round calc(-1*var(--r)) calc(-1*var(--r))/calc(2*var(--r)) calc(2*var(--r)),linear-gradient(#000 0 0) no-repeat 50%/calc(100% - 2*var(--r)) calc(100% - 2*var(--r));
+    mask:radial-gradient(var(--r),transparent 98%,#000) round calc(-1*var(--r)) calc(-1*var(--r))/calc(2*var(--r)) calc(2*var(--r)),linear-gradient(#000 0 0) no-repeat 50%/calc(100% - 2*var(--r)) calc(100% - 2*var(--r));
+  }
+  .pc-stamp-art{display:block;border:1px solid rgba(138,95,10,.45);background:#f8eed2;padding:3px}
+  .pc-stamp-art img{width:100%;height:auto;display:block}
+  .pc-stamp-cap{
+    display:flex;justify-content:space-between;align-items:baseline;gap:6px;margin-top:6px;
+    font-family:"IBM Plex Mono",monospace;font-size:.55rem;font-weight:600;
+    letter-spacing:.13em;text-transform:uppercase;color:var(--gold);white-space:nowrap;
+  }
+  .pc-stamp-val{font-size:.74rem;letter-spacing:.02em}
+  @media (max-width:560px){.pc-stamp{width:88px}}
+  .pc-postmark{
+    width:88px;height:88px;flex:none;border-radius:50%;
+    border:2px solid rgba(34,57,28,.5);color:rgba(34,57,28,.65);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
+    transform:rotate(-12deg);pointer-events:none;
+    font-family:"IBM Plex Mono",monospace;font-weight:600;text-transform:uppercase;
+  }
+  .pc-postmark span:first-child{font-size:.62rem;letter-spacing:.16em}
+  .pc-postmark span:last-child{font-size:.9rem;letter-spacing:.26em}
+  @media (max-width:560px){.pc-postmark{width:76px;height:76px}}
+  .pc-send{margin-top:22px;width:100%;justify-content:center}
+  .pc-error{font-size:.9rem;font-weight:600;color:#9a2c17;margin:14px 0 0;line-height:1.45}
+  .pc-error a{color:#9a2c17;text-decoration:underline;text-underline-offset:3px}
+  .pc-done{font-size:.9rem;font-weight:600;color:var(--hedge);margin:10px 0 0;line-height:1.45}
+  .pc-backup{font-size:.86rem;color:inherit;opacity:.75;margin:0 0 26px;line-height:1.55;max-width:52rem}
+  .pc-backup a{color:inherit;font-weight:700}
+  .pc-backup span{opacity:.85}
+  /* Sent state — the postmark stamps down in clay red */
+  .postcard.sent .pc-postmark{
+    border-color:rgba(154,44,23,.6);color:rgba(154,44,23,.78);
+    animation:stampIn .5s cubic-bezier(.2,1.5,.4,1) both;
+  }
+  @keyframes stampIn{from{transform:rotate(-12deg) scale(1.7);opacity:0}to{transform:rotate(-12deg) scale(1);opacity:1}}
+  .postcard.sent .pc-stamp{transform:rotate(2deg)}
+  .pc-stamp{transition:transform .3s ease}
+  .pc-send[disabled]{opacity:.65;cursor:wait}
+
+  /* ---------- Theme toggle — a light switch: track with a sliding knob ---------- */
+  .theme-toggle{
+    display:inline-flex;align-items:center;gap:9px;min-height:44px;padding:8px 13px 8px 9px;
+    border-radius:999px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);
+    font:inherit;font-size:.86rem;font-weight:700;cursor:pointer;white-space:nowrap;flex:none;
+  }
+  .theme-toggle:hover{border-color:var(--ink)}
+  .theme-toggle:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  .switch-track{
+    position:relative;display:inline-block;width:52px;height:27px;border-radius:999px;flex:none;
+    background:var(--bg-2);border:1px solid var(--line-strong);
+    transition:background .25s ease,border-color .25s ease;
+  }
+  :root[data-theme="dark"] .switch-track{background:var(--accent);border-color:var(--accent)}
+  .switch-track .track-icon{
+    position:absolute;top:50%;width:13px;height:13px;transform:translateY(-50%);pointer-events:none;
+  }
+  .switch-track .track-icon svg{width:13px;height:13px;display:block}
+  .switch-track .track-sun{left:6px;color:#b45309}
+  .switch-track .track-moon{right:6px;color:var(--muted)}
+  :root[data-theme="dark"] .switch-track .track-sun{color:rgba(11,21,18,.55)}
+  :root[data-theme="dark"] .switch-track .track-moon{color:#0b1512}
+  .switch-knob{
+    position:absolute;top:2px;left:2px;width:21px;height:21px;border-radius:50%;
+    background:#ffffff;border:1px solid rgba(23,32,42,.18);
+    box-shadow:0 1px 4px rgba(23,32,42,.28);
+    display:inline-flex;align-items:center;justify-content:center;color:#b45309;
+    transition:transform .25s ease,background .25s ease,color .25s ease;
+  }
+  .switch-knob svg{width:12px;height:12px;display:block}
+  .switch-knob .icon-moon{display:none}
+  :root[data-theme="dark"] .switch-knob{
+    transform:translateX(25px);background:#0b1512;color:#ffd98a;border-color:rgba(0,0,0,.4);
+  }
+  :root[data-theme="dark"] .switch-knob .icon-moon{display:block}
+  :root[data-theme="dark"] .switch-knob .icon-sun{display:none}
+  .theme-toggle .theme-label-dark{display:none}
+  :root[data-theme="dark"] .theme-toggle .theme-label-dark{display:inline}
+  :root[data-theme="dark"] .theme-toggle .theme-label-light{display:none}
+  @media (max-width:400px){.theme-toggle .theme-label-light,.theme-toggle .theme-label-dark{font-size:.8rem}}
+
+  /* ---------- Kanban lanes + work controls ---------- */
+  .search-input{
+    width:100%;min-height:48px;padding:12px 14px;border-radius:10px;border:1px solid var(--line-strong);
+    background:var(--input-bg);color:var(--ink);font:inherit;font-size:1rem;
+  }
+  .search-input::placeholder{color:var(--muted)}
+  .search-input:focus{outline:3px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+  .filter-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .filter-btn{
+    min-height:40px;padding:8px 13px;border-radius:999px;border:1px solid var(--line-strong);
+    background:var(--chip);color:var(--ink-2);font:inherit;font-size:.88rem;font-weight:600;cursor:pointer;
+  }
+  .filter-btn:hover{border-color:var(--ink);color:var(--ink)}
+  .filter-btn[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+  .work-status{margin:14px 0 0;font-size:.9rem;color:var(--muted)}
+  .work-status strong{color:var(--ink)}
+  .no-results{
+    display:none;background:var(--surface);border:1px dashed var(--line-strong);border-radius:var(--radius);
+    padding:22px;color:var(--ink-2);margin-bottom:26px;
+  }
+  .no-results.show{display:block}
+
+  /* Featured work: Search + Filter toggles sit in the heading tab row with the
+     project jump tabs; each expands a slim panel under the header, above the drawers */
+  .work-tab-sep{width:1px;align-self:stretch;margin:7px 6px;background:var(--line-strong);flex:none}
+  .work-tool-toggle{gap:7px}
+  .work-tool-toggle svg{width:15px;height:15px;flex:none}
+  .work-tool-toggle .wt-chev{transition:transform .25s ease}
+  .work-tool-toggle[aria-expanded="true"]{color:var(--accent-ink);background:var(--accent-soft)}
+  .work-tool-toggle[aria-expanded="true"] .wt-chev{transform:rotate(180deg)}
+  .work-tool-toggle .wt-dot{width:7px;height:7px;border-radius:50%;background:var(--pop);flex:none;display:none}
+  .work-tool-toggle.has-active .wt-dot{display:inline-block}
+  .work-panel{
+    display:grid;grid-template-rows:0fr;visibility:hidden;
+    transition:grid-template-rows .32s ease,visibility 0s linear .32s;
+  }
+  .work-panel.open{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows .32s ease}
+  .work-panel-inner{overflow:hidden;min-height:0}
+  .work-panel-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);padding:14px 16px;margin-bottom:20px;
+  }
+  .work-panel-card.search-card{display:flex;align-items:center;gap:10px 16px;flex-wrap:wrap}
+  .work-panel-card.search-card label{font-size:.85rem;font-weight:700;letter-spacing:.02em;color:var(--ink);flex:none}
+  .work-panel-card.search-card .search-input{flex:1 1 240px;width:auto;min-height:44px;padding:10px 12px;font-size:.95rem}
+  .filter-group-label{display:block;font-size:.82rem;font-weight:700;letter-spacing:.02em;color:var(--ink);margin:0}
+  .work-panel .filter-row{flex-wrap:wrap;align-items:center;gap:7px;margin-top:10px}
+  .work-panel .filter-btn{min-height:36px;padding:7px 10px;font-size:.8rem}
+  .work-panel .clear-btn{min-height:36px;padding:7px 11px;font-size:.82rem}
+  .work-panel .work-status{font-size:.85rem;margin-top:12px}
+
+  /* ---------- Case-study drawers (stacked, accordion-style) ---------- */
+  .drawer-list{display:flex;flex-direction:column;gap:14px}
+  .drawer-list .case{margin-bottom:0;scroll-margin-top:84px}
+  .drawer-toggle{
+    display:flex;align-items:center;gap:16px;width:100%;padding:16px 20px;
+    background:transparent;border:none;cursor:pointer;text-align:left;
+    font:inherit;color:var(--ink);
+  }
+  .drawer-toggle:hover{background:var(--bg)}
+  .drawer-toggle:focus-visible{outline-offset:-3px}
+  .d-thumb{width:116px;height:66px;border-radius:8px;overflow:hidden;flex:none;border:1px solid var(--line);background:var(--gv-bg,#e3ebef)}
+  .d-thumb img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+  .d-thumb.d-tile{display:flex;align-items:center;justify-content:center}
+  .d-thumb.d-tile span{font-family:"Source Serif 4",Georgia,serif;font-weight:700;font-size:1.9rem;color:var(--pill-text);line-height:1}
+  .d-main{flex:1;min-width:0;display:flex;flex-direction:column}
+  .d-index{font-family:"IBM Plex Mono",monospace;font-size:.72rem;font-weight:600;letter-spacing:.07em;color:var(--pop);margin-bottom:3px}
+  .d-name{font-weight:800;font-size:1.12rem;letter-spacing:-.01em;line-height:1.25}
+  .d-role{color:var(--muted);font-size:.9rem;margin-top:2px}
+  .d-specs{display:flex;flex-wrap:wrap;gap:3px 18px;margin-top:9px}
+  .d-spec{font-size:.82rem;color:var(--muted);white-space:nowrap}
+  .d-spec b{font-family:"Source Serif 4",Georgia,serif;font-weight:700;font-size:1rem;color:var(--ink);margin-right:5px}
+  .d-chev{
+    flex:none;width:38px;height:38px;border-radius:50%;border:1px solid var(--accent);
+    display:inline-flex;align-items:center;justify-content:center;color:var(--accent);
+    transition:transform .3s ease,background .2s ease,color .2s ease;background:var(--accent-soft);
+  }
+  .d-chev svg{width:18px;height:18px}
+  .case.open .d-chev{transform:rotate(180deg);background:var(--accent-soft);color:var(--accent);border-color:var(--accent)}
+  .drawer-body{
+    display:grid;grid-template-rows:0fr;visibility:hidden;
+    transition:grid-template-rows .38s ease,visibility 0s linear .38s;
+  }
+  .case.open .drawer-body{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows .38s ease}
+  .drawer-inner{overflow:hidden;min-height:0;border-top:1px solid transparent}
+  .case.open .drawer-inner{border-top-color:var(--line)}
+  .drawer-body .case-band{display:none}
+  @media (max-width:560px){
+    .drawer-toggle{gap:12px;padding:14px 16px}
+    .d-thumb{width:74px;height:50px}
+    .d-thumb.d-tile span{font-size:1.3rem}
+    .d-name{font-size:1.02rem}
+    .d-role{font-size:.85rem}
+    .d-spec{white-space:normal}
+    .d-chev{width:34px;height:34px}
+  }
+  .kanban-lane{margin-bottom:34px}
+  .kanban-lane[hidden]{display:none}
+  .lane-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 16px}
+  .lane-head h3{font-size:1.05rem;font-weight:800;letter-spacing:-.01em;margin:0;color:var(--ink)}
+  .lane-dot{width:10px;height:10px;border-radius:50%;flex:none}
+  .lane-dot.live{background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+  .lane-dot.done{background:var(--pop)}
+  .lane-count{font-family:"IBM Plex Mono",monospace;font-size:.8rem;font-weight:600;color:var(--muted)}
+  .lane-note{font-size:.92rem;color:var(--muted)}
+  .case[hidden]{display:none}
+  .case-tags{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 18px}
+  .tag-pill{
+    font-family:"IBM Plex Mono",monospace;font-size:.8rem;font-weight:500;padding:6px 10px;border-radius:999px;
+    border:1px solid var(--line);background:var(--bg);color:var(--muted);cursor:pointer;font-style:normal;
+  }
+  button.tag-pill:hover{color:var(--ink);border-color:var(--ink)}
+
+  /* ---------- Gallery grid inside Kanban lanes ---------- */
+  .gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+  @media (max-width:880px){.gallery-grid{grid-template-columns:1fr}}
+  .gallery-grid .case{margin-bottom:0;display:flex;flex-direction:column;height:100%}
+  .gallery-grid .case[hidden]{display:none !important}
+  .gallery-grid .case-body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+  @media (max-width:560px){.gallery-grid .case-body{padding:20px 18px 22px}}
+  .gallery-grid .case-body h3{font-size:clamp(1.35rem,2.6vw,1.7rem)}
+  .gallery-grid .case-body ul{font-size:.96rem}
+  .gallery-grid .case-body .chips{margin-top:auto}
+  .gallery-grid .case-band{
+    padding:16px 20px 14px;order:2;min-height:124px;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:8px 16px;align-items:start;
+  }
+  .gallery-grid .case-band .band-stat:first-child{grid-column:1/-1}
+  .gallery-grid .case-body{order:3}
+  .gallery-grid .band-stat b{font-size:1.45rem}
+  .gallery-grid .band-stat span{font-size:.78rem;max-width:none}
+  @media (max-width:560px){
+    .gallery-grid .case-band{gap:8px 10px;min-height:134px}
+    .gallery-grid .band-stat b{font-size:1.08rem}
+  }
+
+  /* Visual header — templated image slot (real PNG drops in later, same 16/10 box) */
+  .gallery-visual{
+    order:1;position:relative;display:flex;flex-direction:column;justify-content:space-between;
+    width:100%;aspect-ratio:16/10;padding:18px 20px;margin:0;text-align:left;cursor:zoom-in;
+    border:none;border-bottom:1px solid var(--line);background:var(--gv-bg,#e3ebef);color:var(--pill-text);
+    font-family:inherit;overflow:hidden;flex:none;
+  }
+  .gallery-visual::after{
+    content:"";position:absolute;inset:11px;border:1.5px dashed currentColor;opacity:.28;
+    border-radius:10px;pointer-events:none;
+  }
+  a.gallery-visual{text-decoration:none}
+  a.gallery-visual.has-photo{cursor:zoom-in}
+  .gallery-visual:hover .gv-monogram{transform:scale(1.03)}
+  .gallery-visual:focus-visible{outline-offset:-3px}
+  .v-chitrok{--gv-bg:var(--pill-teal)}
+  .v-brew{--gv-bg:var(--pill-peach)}
+  .v-hub{--gv-bg:var(--pill-blue)}
+  .v-health{--gv-bg:var(--pill-lav)}
+  .gv-top,.gv-bottom{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .gv-index{font-family:"IBM Plex Mono",monospace;font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+  .gv-status{font-size:.74rem;font-weight:700;padding:5px 9px;border-radius:999px;background:rgba(255,255,255,.55);color:#24313d;white-space:nowrap}
+  :root[data-theme="dark"] .gv-status{background:rgba(0,0,0,.35);color:#eef2f5}
+  .gv-center{position:relative;z-index:1;padding:6px 2px}
+  .gv-monogram{
+    display:block;font-family:"Source Serif 4",Georgia,serif;font-weight:700;
+    font-size:clamp(3.2rem,7vw,4.6rem);line-height:.95;letter-spacing:-.03em;transition:transform .18s ease;
+  }
+  .gv-name{display:block;font-weight:800;font-size:1.05rem;letter-spacing:-.01em;margin-top:6px}
+  .gv-hint{font-size:.8rem;font-weight:600;opacity:.78}
+  .gv-expand{font-size:.8rem;font-weight:700;white-space:nowrap;text-decoration:underline;text-underline-offset:3px}
+
+  /* ---------- Lightbox ---------- */
+  .lightbox[hidden]{display:none !important}
+  .lightbox{position:fixed;inset:0;z-index:100;display:flex;align-items:flex-start;justify-content:center;padding:22px 16px;overflow-y:auto}
+  .lb-backdrop{position:fixed;inset:0;background:rgba(7,11,14,.74);border:none;padding:0;cursor:pointer}
+  .lb-panel{
+    position:relative;width:100%;max-width:1080px;margin:auto;background:var(--surface);color:var(--ink);
+    border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.35);
+  }
+  .lb-close{
+    position:absolute;top:12px;right:12px;z-index:3;width:44px;height:44px;border-radius:50%;
+    border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);cursor:pointer;
+    display:inline-flex;align-items:center;justify-content:center;font:inherit;
+  }
+  .lb-close:hover{border-color:var(--ink)}
+  .lb-close svg{width:20px;height:20px}
+  .lb-visual{aspect-ratio:16/9;max-height:340px}
+  .lb-visual.gallery-visual{cursor:default}
+  .lb-visual.has-photo{aspect-ratio:auto;max-height:none;height:auto;background:#faf7f1}
+  .lb-visual.gallery-visual::after{inset:11px}
+  .lb-stats{display:flex;flex-wrap:wrap;gap:10px 34px;padding:18px 28px;background:var(--bg-2);border-bottom:1px solid var(--line)}
+  @media (max-width:560px){.lb-stats{padding:16px 20px}}
+  .lb-body{padding:26px 28px 30px}
+  @media (max-width:560px){.lb-body{padding:22px 20px 24px}}
+  .lb-body h3{font-family:"Source Serif 4",Georgia,serif;font-weight:600;font-size:clamp(1.6rem,3.6vw,2.15rem);line-height:1.15;letter-spacing:-.01em;margin:0 0 4px}
+  body.lb-open{overflow:hidden}
+
+  /* ---------- BrewBase handoff details (card + lightbox share this markup) ---------- */
+  .brew-details{
+    border:1px solid var(--line);border-radius:12px;background:var(--bg);
+    padding:18px 18px 16px;margin:0 0 20px;
+  }
+  .brew-details h4{margin:0 0 6px;font-size:1rem;font-weight:800;letter-spacing:-.01em;color:var(--ink)}
+  .brew-details p{margin:0 0 12px;color:var(--ink-2);font-size:.95rem}
+  .brew-details p:last-child{margin-bottom:0}
+  .brew-label{
+    font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--muted);margin:16px 0 8px !important;
+  }
+  .brew-label:first-of-type{margin-top:4px !important}
+  .brew-prompts{display:flex;flex-wrap:wrap;gap:7px}
+  .brew-prompt{
+    font-size:.86rem;font-weight:600;padding:7px 11px;border-radius:999px;
+    background:var(--surface);border:1px solid var(--line-strong);color:var(--ink-2);
+  }
+  .brew-flow{
+    display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:0;padding:0;list-style:none;
+  }
+  .brew-flow li{
+    font-size:.86rem;font-weight:700;padding:7px 11px;border-radius:8px;
+    background:var(--accent-soft);color:var(--accent-ink);
+  }
+  .brew-flow li::before{content:none !important}
+  .brew-flow .flow-arrow{color:var(--muted);font-weight:700;font-size:.85rem}
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:10px}
+  .swatch{font-size:.78rem;font-weight:600;color:var(--ink-2);line-height:1.35}
+  .swatch i{
+    display:block;height:34px;border-radius:8px;background:var(--sw);
+    border:1px solid var(--line-strong);margin-bottom:5px;
+  }
+  .swatch b{display:block;font-family:"IBM Plex Mono",monospace;font-size:.72rem;font-weight:500;color:var(--muted)}
+  .brew-type{font-size:.92rem !important}
+  .brew-type strong{color:var(--ink)}
+  .brew-status{
+    border-top:1px solid var(--line);padding-top:12px;font-size:.9rem !important;
+  }
+  .brew-status strong{color:var(--ink)}
+
+  /* ---------- Chitrok real screenshots ---------- */
+  .gallery-visual.has-photo{padding:0;background:#faf7f1}
+  .gallery-visual.has-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+  .gallery-visual.has-photo::after{z-index:2}
+  .gv-photo-bar{
+    position:absolute;left:0;right:0;bottom:0;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+    padding:10px 14px;background:rgba(250,247,241,.94);border-top:1px solid var(--line);color:#24313d;
+  }
+  .lb-visual.gallery-visual{padding:0}
+  .lb-visual.gallery-visual img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+  .lb-visual.has-photo img{position:static;width:100%;height:auto;max-height:76vh;object-fit:contain;object-position:center}
+  a.lb-img-link{display:block;cursor:zoom-in}
+  a.lb-img-link img{pointer-events:none}
+  .lb-visual .gv-photo-bar{position:absolute}
+  .pdf-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 20px}
+  .pdf-btn{
+    display:inline-flex;align-items:center;gap:9px;min-height:46px;padding:11px 16px;border-radius:10px;
+    background:var(--accent);color:#fff;font-weight:700;font-size:.95rem;text-decoration:none;border:1px solid var(--accent);
+  }
+  .pdf-btn:hover{background:var(--accent-ink);border-color:var(--accent-ink)}
+  :root[data-theme="dark"] .pdf-btn{color:#0b1512}
+  .pdf-btn svg{width:18px;height:18px;flex:none}
+  .pdf-note{font-size:.88rem;color:var(--muted)}
+  .chitrok-details,.hub-details{
+    border:1px solid var(--line);border-radius:12px;background:var(--bg);
+    padding:18px 18px 16px;margin:0 0 20px;
+  }
+  .chitrok-details h4,.hub-details h4{margin:0 0 6px;font-size:1rem;font-weight:800;letter-spacing:-.01em;color:var(--ink)}
+  .chitrok-details p,.hub-details p{margin:0 0 12px;color:var(--ink-2);font-size:.95rem}
+  .chitrok-details ul,.hub-details ul{margin:0 0 6px;padding:0;list-style:none}
+  .chitrok-details li,.hub-details li{position:relative;padding-left:20px;margin-bottom:7px;color:var(--ink-2);font-size:.95rem}
+  .chitrok-details li::before,.hub-details li::before{content:"";position:absolute;left:2px;top:.52em;width:7px;height:7px;border-radius:2px;background:var(--pop)}
+  .chitrok-details li strong,.hub-details li strong{color:var(--ink)}
+  .shot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 20px}
+  @media (max-width:560px){.shot-grid{grid-template-columns:repeat(2,1fr)}}
+  .shot{text-decoration:none;color:var(--ink-2);display:block;min-width:0}
+  .shot-frame{display:block;height:148px;overflow:hidden;border:1px solid var(--line-strong);border-radius:10px;background:#faf7f1}
+  .shot-frame img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+  .shot:hover .shot-frame{border-color:var(--ink)}
+  .shot:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:10px}
+  .shot-label{display:block;margin-top:6px;font-size:.82rem;font-weight:700;line-height:1.3;color:var(--ink)}
+  .shot-label::after{content:" \2197";color:var(--accent-ink);font-weight:700}
+  .shot-sub{display:block;font-size:.76rem;color:var(--muted);line-height:1.3}
+
+  /* ---------- Chitrok sprint timeline graph ---------- */
+  .tl-graph{position:relative;display:flex;margin:8px 0 4px}
+  .tl-graph::before{
+    content:"";position:absolute;left:2px;right:2px;top:50%;height:2px;margin-top:-1px;
+    background:var(--line-strong);border-radius:2px;
+  }
+  .tl-col{flex:1 1 0;min-width:0;display:flex;flex-direction:column;padding:0 5px}
+  .tl-zone{flex:1 1 0;display:flex;flex-direction:column}
+  .tl-zone.up{justify-content:flex-end;padding-bottom:16px}
+  .tl-zone.down{justify-content:flex-start;padding-top:16px}
+  .tl-dotrow{height:24px;flex:none;display:flex;align-items:center;justify-content:center}
+  .tl-dot{
+    width:13px;height:13px;border-radius:50%;background:var(--pop);position:relative;z-index:1;
+    border:3px solid var(--bg);box-shadow:0 0 0 2px var(--line-strong);
+  }
+  .tl-card b{display:block;font-size:.82rem;color:var(--ink);margin-bottom:3px}
+  .tl-card p{margin:0;font-size:.78rem;line-height:1.45;color:var(--ink-2)}
+  @media (max-width:700px){
+    .tl-graph{flex-direction:column}
+    .tl-graph::before{left:11px;right:auto;top:6px;bottom:6px;width:2px;height:auto;margin-top:0}
+    .tl-col{display:grid;grid-template-columns:24px 1fr;column-gap:10px;padding:0 0 18px}
+    .tl-col:last-child{padding-bottom:0}
+    .tl-dotrow{grid-column:1;grid-row:1;height:auto;padding-top:3px;align-items:flex-start}
+    .tl-zone{grid-column:2;flex:none}
+    .tl-zone:empty{display:none}
+    .tl-zone.up{justify-content:flex-start;padding-bottom:0}
+    .tl-zone.down{padding-top:0}
+  }
+
+  /* ---------- BrewBase hand-drawn brand art ---------- */
+  .brew-anim{margin:0 0 20px;text-align:center}
+  .brew-anim video{
+    display:block;width:min(190px,55vw);height:auto;margin:0 auto 10px;
+    border:1px solid var(--line-strong);border-radius:12px;background:#fff;
+  }
+  .brew-anim figcaption{font-size:.88rem;color:var(--muted);max-width:26rem;margin:0 auto;line-height:1.45}
+  .brew-anim figcaption strong{color:var(--ink)}
+
+  /* ---------- Dynamic filtering animation + counts ---------- */
+  .filter-btn .count,.tag-pill .count{
+    display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;
+    padding:0 5px;margin-left:6px;border-radius:999px;font-size:.72rem;font-weight:700;line-height:1;
+    background:rgba(0,0,0,.08);color:inherit;vertical-align:1px;
+  }
+  :root[data-theme="dark"] .filter-btn .count,:root[data-theme="dark"] .tag-pill .count{background:rgba(255,255,255,.14)}
+  .filter-btn[aria-pressed="true"] .count{background:rgba(255,255,255,.22)}
+  .tag-pill.is-active{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+  .tag-pill.is-active .count{background:rgba(255,255,255,.22)}
+  .clear-btn{
+    min-height:40px;padding:8px 13px;border-radius:999px;border:1px dashed var(--line-strong);
+    background:transparent;color:var(--pop);font:inherit;font-size:.88rem;font-weight:700;cursor:pointer;
+  }
+  .clear-btn:hover{border-color:var(--pop);background:var(--pop-soft)}
+  .clear-btn[hidden]{display:none !important}
+  .case{transition:opacity .28s ease,transform .28s ease}
+  .case.is-leaving{opacity:0;transform:scale(.97)}
+  .case.is-entering{animation:cardIn .32s ease both}
+  @keyframes cardIn{from{opacity:0;transform:scale(.97) translateY(6px)}to{opacity:1;transform:scale(1) translateY(0)}}
+  .kanban-lane{transition:opacity .25s ease}
+  @media (prefers-reduced-motion: reduce){
+    .case{transition:none !important}
+    .case.is-entering{animation:none !important}
+    .gallery-visual:hover .gv-monogram{transform:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="wrap nav-inner">
+    <a class="nav-name" href="#top">Bijoya Deb<span>.</span></a>
+    <nav class="links" aria-label="Portfolio sections">
+      <a href="#work" data-nav="work">Work</a>
+      <a href="#experience" data-nav="experience">Experience</a>
+      <a href="#photography" data-nav="photography">Photography</a>
+      <a href="#community" data-nav="community">Community</a>
+      <a href="#illustrations" data-nav="illustrations">Illustrations</a>
+      <a href="#about" data-nav="about">About</a>
+      <a href="#contact" class="nav-cta" data-nav="contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" id="themeToggle" role="switch" aria-checked="false" aria-label="Dark mode">
+      <span class="switch-track" aria-hidden="true">
+        <span class="track-icon track-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></span>
+        <span class="track-icon track-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+        <span class="switch-knob">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </span>
+      </span>
+      <span class="theme-label-light">Dark mode</span><span class="theme-label-dark">Light mode</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <div id="view-main">
+  <div class="wrap">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-leaf-bg" aria-hidden="true"><img src="assets/illus-fall-leaves.png" alt="" /></div>
+      <p class="hero-meta"><span><span class="dot" aria-hidden="true"></span>Toronto</span></p>
+      <h1>Bijoya Deb</h1>
+      <p class="hero-title">Product Design · UX Strategy · Marketing · Visual Communications</p>
+      <p class="hero-lede">Product designer who takes digital experiences from user research to developer handoff. Currently leading the redesign of Chitrok&rsquo;s artist marketplace and co-founding BrewBase, a Toronto café discovery app.</p>
+      <p class="hero-byline"><span class="byline-dot" aria-hidden="true"></span>Available for full-time roles</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#work">View case studies
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+        </a>
+        <a class="btn primary" href="assets/bijoya-deb-resume.pdf" download="Bijoya-Deb-Resume.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+          Download résumé
+        </a>
+        <a class="btn" href="https://www.linkedin.com/in/bijoya-d" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+          LinkedIn
+        </a>
+        <button class="btn" type="button" id="copyEmailBtn" aria-live="polite">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          <span id="copyEmailLabel">bijoyadebnath99@gmail.com</span>
+        </button>
+      </div>
+
+      <div class="metrics" role="list" aria-label="Impact highlights">
+        <div class="metric" role="listitem"><b>33</b><span>university sites redesigned and systematized</span></div>
+        <div class="metric" role="listitem"><b>~2,000</b><span>students served by the Hub Portal</span></div>
+        <div class="metric" role="listitem"><b>18+</b><span>student clubs unified on one platform</span></div>
+        <div class="metric" role="listitem"><b>$35K</b><span>department investment secured</span></div>
+        <div class="metric" role="listitem"><b><em>+95%</em></b><span>social engagement growth at DECA UTSC</span></div>
+        <div class="metric" role="listitem"><b>15</b><span>photography brands and clubs shot for</span></div>
+        <div class="metric" role="listitem"><b>50+</b><span>community meetups hosted since 2024</span></div>
+      </div>
+    </div>
+
+    <div class="edu-card edu-before-about">
+      <p class="e-date">EDUCATION · 2017 – 2022</p>
+      <h3>University of Toronto</h3>
+      <p>Honours Bachelor of Science. Double major in Business Economics and Psychology, minor in English.</p>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="about-hero" aria-labelledby="about-h">
+      <div class="sec-head">
+        <h2 id="about-h">About</h2>
+        <p>Background.</p>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="about-grid">
+        <div>
+          <p><strong>Research to handoff.</strong> Bijoya takes digital experiences from user research to developer handoff. At UTSC she co-led design direction, UX strategy, content planning, and user flows for the Business Management Hub Portal, a centralized home for 18+ student clubs and about 2,000 students.</p>
+          <p><strong>Systems at scale.</strong> At the University of Toronto she built visual systems and information architecture for 33 sites used by 380+ faculty and 60 staff, shaped by stakeholder interviews and three-week sprints.</p>
+        </div>
+        <div>
+          <p><strong>Building now.</strong> She leads the redesign of Chitrok&rsquo;s artist marketplace, adding mobile support and accessibility improvements, and co-founded BrewBase, a café discovery app, as CEO of a 4-person team.</p>
+          <p><strong>Marketing and media roots.</strong> As VP of Marketing for DECA UTSC she grew social engagement 95% and doubled event sign-ups. Behind the camera, she shoots outdoor sports and commercial photography for brands including MEC, HOKA, New Balance, Salomon, Patagonia Toronto, KEEN Canada, and Pilot Coffee.</p>
+          <p><strong>Call her Bee.</strong> Bijoya is pronounced Bee-jo-ya, and she goes by &ldquo;Bee.&rdquo;</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- WORK -->
+    <section id="work" aria-labelledby="work-h">
+      <div class="sec-head">
+        <h2 id="work-h">Featured Case Studies</h2>
+        <p>Four case studies, 2021 to present.</p>
+        <nav class="work-tabs" aria-label="Jump to a case study">
+          <button class="work-tab work-tool-toggle" type="button" id="searchToggle" aria-expanded="false" aria-controls="searchPanel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            Search
+            <span class="wt-dot" aria-hidden="true"></span>
+            <svg class="wt-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <button class="work-tab work-tool-toggle" type="button" id="filterToggle" aria-expanded="false" aria-controls="filterPanel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>
+            Filter
+            <span class="wt-dot" aria-hidden="true"></span>
+            <svg class="wt-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <span class="work-tab-sep" aria-hidden="true"></span>
+          <button class="work-tab" type="button" data-goto="chitrok">Chitrok</button>
+          <button class="work-tab" type="button" data-goto="brewbase">BrewBase</button>
+          <button class="work-tab" type="button" data-goto="hub-portal">UTSC Hub Portal</button>
+          <button class="work-tab" type="button" data-goto="public-health">U of T Public Health</button>
+        </nav>
+      </div>
+      <div class="sec-rule"></div>
+
+      <div class="work-panel" id="searchPanel">
+        <div class="work-panel-inner">
+          <div class="work-panel-card search-card">
+            <label for="caseSearch">Search by project, role, or tag</label>
+            <input class="search-input" id="caseSearch" type="search" placeholder="Search by project, role, or keyword" autocomplete="off" />
+          </div>
+        </div>
+      </div>
+      <div class="work-panel" id="filterPanel">
+        <div class="work-panel-inner">
+          <div class="work-panel-card">
+            <span class="filter-group-label" id="filterGroupLabel">Filter by tag</span>
+            <div class="filter-row" role="group" aria-labelledby="filterGroupLabel">
+              <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All<span class="count" data-count-for="all">4</span></button>
+              <button class="filter-btn" type="button" data-filter="uxdesign" aria-pressed="false">#uxdesign<span class="count" data-count-for="uxdesign">4</span></button>
+              <button class="filter-btn" type="button" data-filter="accessibility" aria-pressed="false">#accessibility<span class="count" data-count-for="accessibility">3</span></button>
+              <button class="filter-btn" type="button" data-filter="informationarchitecture" aria-pressed="false">#informationarchitecture<span class="count" data-count-for="informationarchitecture">2</span></button>
+              <button class="filter-btn" type="button" data-filter="designsystems" aria-pressed="false">#designsystems<span class="count" data-count-for="designsystems">2</span></button>
+              <button class="filter-btn" type="button" data-filter="productdesign" aria-pressed="false">#productdesign<span class="count" data-count-for="productdesign">2</span></button>
+              <button class="filter-btn" type="button" data-filter="ecommerce" aria-pressed="false">#ecommerce<span class="count" data-count-for="ecommerce">1</span></button>
+              <button class="filter-btn" type="button" data-filter="appdesign" aria-pressed="false">#appdesign<span class="count" data-count-for="appdesign">1</span></button>
+              <button class="filter-btn" type="button" data-filter="usabilitytesting" aria-pressed="false">#usabilitytesting<span class="count" data-count-for="usabilitytesting">2</span></button>
+              <button class="filter-btn" type="button" data-filter="uxstrategy" aria-pressed="false">#uxstrategy<span class="count" data-count-for="uxstrategy">2</span></button>
+              <button class="clear-btn" type="button" id="clearFilters" hidden>&#10005; Clear filters</button>
+            </div>
+            <p class="work-status" id="workStatus" aria-live="polite">Showing <strong>4</strong> case studies</p>
+          </div>
+        </div>
+      </div>
+      <div class="no-results" id="noResults">No case studies match that search and filter together. <button class="filter-btn" type="button" id="resetFilters" style="margin-left:8px">Show all</button></div>
+
+      <div class="kanban-lane" data-lane>
+        <div class="lane-head">
+          <span class="lane-dot live" aria-hidden="true"></span>
+          <h3>Currently Working On</h3>
+          <span class="lane-count">2 projects · 2025 – present</span>
+        </div>
+        <div class="drawer-list">
+
+      <article class="case open" data-tags="uxdesign accessibility productdesign ecommerce uxstrategy" data-project="chitrok">
+        <button class="drawer-toggle" type="button" id="dt-chitrok" aria-expanded="true" aria-controls="db-chitrok">
+          <span class="d-thumb"><img src="assets/chitrok-home.jpg" alt="" /></span>
+          <span class="d-main">
+            <span class="d-index">CASE STUDY 01</span>
+            <span class="d-name">Rebuilding e-commerce marketplace for South Asian creatives</span>
+            <span class="d-role">Lead AI Engineer and Product Designer · Oct 20 – Nov 18, 2026</span>
+            <span class="d-specs"><span class="d-spec"><b>24</b>desktop pages</span><span class="d-spec"><b>31</b>phone screens</span><span class="d-spec"><b>57</b>real works catalogued</span><span class="d-spec"><b>5 &rarr; 1</b>clicks to track an order</span></span>
+          </span>
+          <span class="d-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+        <div class="drawer-body" id="db-chitrok" aria-labelledby="dt-chitrok">
+          <div class="drawer-inner">
+        <a class="gallery-visual v-chitrok has-photo" href="assets/chitrok-home.jpg" target="_blank" rel="noopener" data-lightbox-trigger aria-haspopup="dialog" aria-label="Enlarge Chitrok project view — homepage screenshot (opens full size in a new tab)">
+          <img src="assets/chitrok-home.jpg" alt="Chitrok homepage — Original art from Bangladesh, with sentence-builder search and featured watercolours from the collection" />
+          <span class="gv-photo-bar"><span class="gv-status">Case study complete</span><span class="gv-expand">View larger &#8599;</span></span>
+        </a>
+        <div class="case-band" aria-hidden="true">
+          <div class="band-stat"><span class="case-index">CASE STUDY 01</span></div>
+          <div class="band-stat"><b>24</b><span>desktop pages</span></div>
+          <div class="band-stat"><b>31</b><span>phone screens</span></div>
+          <div class="band-stat"><b>57</b><span>real works catalogued</span></div>
+          <div class="band-stat"><b>5 &rarr; 1</b><span>clicks to track an order</span></div>
+        </div>
+        <div class="case-body">
+          <h3>Rebuilding e-commerce marketplace for South Asian creatives</h3>
+          <p class="case-org">Bengali art marketplace — a buyer site, an artist Seller Studio and an admin console, rebuilt in four weeks from a template shop with test data in its filters.</p>
+          <div class="case-meta">
+            <span class="meta-pill">Lead AI Engineer and Product Designer</span>
+            <span class="meta-pill date">Oct 20 – Nov 18, 2026</span>
+          </div>
+          <div class="case-tags" aria-label="Tags for Chitrok">
+            <button class="tag-pill" type="button" data-tag="uxdesign">#uxdesign</button>
+            <button class="tag-pill" type="button" data-tag="accessibility">#accessibility</button>
+            <button class="tag-pill" type="button" data-tag="productdesign">#productdesign</button>
+            <button class="tag-pill" type="button" data-tag="ecommerce">#ecommerce</button>
+            <button class="tag-pill" type="button" data-tag="uxstrategy">#uxstrategy</button>
+          </div>
+          <ul>
+            <li>In four weeks Chitrok went from a template shop to a clickable marketplace: <strong>24 desktop pages, 31 phone screens, 57 real works catalogued</strong> and <strong>3 connected products</strong> — buyer site, Seller Studio and admin console.</li>
+            <li><strong>Led product and design and directed Claude</strong> (AI build assistant): MVP scope, information architecture, flows, components, states, motion, accessibility, AI direction and review, UI kit upkeep and developer handoff. Business owner <strong>Sohel Ozzaman</strong> owned catalogue, policies, image permissions and payment/shipping decisions.</li>
+            <li>Fixed the old site&rsquo;s dead ends: a <strong>visible filter rail with real tags only</strong>, a cart drawer that never covers the art, view-in-a-room for scale, audited links, and accounts with guest checkout and order tracking.</li>
+            <li>Cut <strong>order tracking from 5 clicks to 1</strong> in the Nov 16 scripted usability audit, with a phone screen for every page.</li>
+          </ul>
+          <div class="pdf-row">
+            <a class="pdf-btn" href="assets/chitrok-case-study.pdf" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg>
+              Read the full case study (PDF)
+            </a>
+            <span class="pdf-note">6 pages · Bijoya D. · Oct 20 – Nov 18, 2026</span>
+          </div>
+          <div class="chitrok-details">
+            <h4>Inside the case study</h4>
+            <p><strong style="color:var(--ink)">My part was the edits:</strong> which output shipped, what changed and why. Claude drafted fast; I decided what shipped, reviewing each screen and pinning comments to the exact spot.</p>
+            <p class="brew-label">The problem — the old chitrok.com</p>
+            <ul>
+              <li>Stock template with <strong>test data in the filters</strong> (&ldquo;test&rdquo;, &ldquo;dev2025&rdquo;, &ldquo;dev100&rdquo;) and one result for a whole page.</li>
+              <li><strong>Mega menu hid the catalogue</strong>; the cart flyout covered the art; there was no sense of scale.</li>
+              <li><strong>Dead links and error pages</strong>; buyers pushed off-site to social links; no accounts or order tracking.</li>
+            </ul>
+            <p class="brew-label">The fixes</p>
+            <ul>
+              <li><strong>Visible filter rail</strong> with counts, shape tiles and price range — only real tags.</li>
+              <li><strong>Cart drawer slides in from the edge</strong>, so the grid stays visible.</li>
+              <li><strong>Hover any work to see it in a room</strong>; sizes in cm and inches.</li>
+              <li>Every link audited; <strong>empty categories say &ldquo;Coming soon&rdquo;</strong>.</li>
+              <li>No outside social links — <strong>messages and commissions stay on Chitrok</strong>.</li>
+              <li><strong>Accounts, guest checkout, order tracking and stamp receipts.</strong></li>
+            </ul>
+            <p class="brew-label">Signature moments — only Chitrok&rsquo;s</p>
+            <ul>
+              <li><strong>Sentence-builder search:</strong> &ldquo;I&rsquo;m seeking any kind of art in any style that&rsquo;s within my budget.&rdquo;</li>
+              <li><strong>Arched category frames</strong> like gallery niches, on a stamp wall.</li>
+              <li><strong>Confetti on add-to-cart</strong> in clay, gold and sage.</li>
+              <li><strong>My collection:</strong> each purchase becomes a postage stamp that opens its order, certificate and story.</li>
+              <li><strong>Receipts as postage stamps</strong> with a Dhaka postmark.</li>
+            </ul>
+            <p>Familiar first, novel second (Jakob&rsquo;s Law, the von Restorff effect): cart top-right, heart on the card, filters on the left, two-column checkout. Influences were borrowed only where they solved a problem — <strong>eBay</strong> (seller trust signals; step order status Paid &rarr; Packing &rarr; Shipped &rarr; In transit &rarr; Delivered), <strong>Saatchi Art</strong> (view in a room, artist-first pages, certificate of authenticity) and <strong>Etsy</strong> (maker stories, favourites, a forgiving cart).</p>
+            <p class="brew-label">Interaction &amp; motion</p>
+            <p>Every control has hover, pressed, selected, focus, disabled and error states — always <strong>two cues, never colour alone</strong>. Room-view fade .25s · cart press spring .42s · confetti .95s · drawer slide-in .28s. With <strong>prefers-reduced-motion</strong>, every transition stops and confetti never renders. Motion confirms an action; it never carries meaning on its own.</p>
+            <p class="brew-label">Colour, type &amp; accessibility</p>
+            <div class="swatches">
+              <span class="swatch"><i style="--sw:#3e6b48"></i>Action green<b>#3E6B48</b></span>
+              <span class="swatch"><i style="--sw:#faf7f1"></i>Off-white ground<b>#FAF7F1</b></span>
+              <span class="swatch"><i style="--sw:#ffffff"></i>White cards<b>#FFFFFF</b></span>
+              <span class="swatch"><i style="--sw:#2e2118"></i>Brown<b>#2E2118</b></span>
+              <span class="swatch"><i style="--sw:#e8a33d"></i>Amber<b>#E8A33D</b></span>
+              <span class="swatch"><i style="--sw:#9a2c17"></i>Clay red<b>#9A2C17</b></span>
+            </div>
+            <p style="margin-top:12px">One green for every action, so the paintings bring the colour. <strong>Arial-family sans</strong> for headings. Every text pair passes <strong>WCAG AA</strong> — green on white 6.2:1, body text 15.2:1. <strong>44px touch targets</strong> (52px on phone), alt text that describes the art, and honest placeholders: unknown facts show as <strong>[Medium to confirm]</strong>, never invented.</p>
+            <p class="brew-label">Her hand in it — directing the AI output</p>
+            <ul>
+              <li>Kept the <strong>filter and tag system always visible</strong> instead of tucked into menus.</li>
+              <li>Put <strong>medium, size and orientation under the product title</strong>; details and shipping moved into drawers.</li>
+              <li><strong>Removed message buttons and outside social links</strong>; reordered artist pages — cover, name, Commission and Follow, then works.</li>
+              <li><strong>Round cart icons with confetti</strong> instead of text &ldquo;Add to cart&rdquo; buttons on dense grids.</li>
+              <li>Cut <strong>15 thin medium pages down to one</strong> empty-gallery template.</li>
+              <li>Replaced a sign-up wall with <strong>guest checkout</strong>, and a plain email receipt with <strong>stamp receipts</strong>.</li>
+            </ul>
+            <p class="brew-label">Timeline</p>
+            <div class="tl-graph" role="img" aria-label="Timeline graph of the four-week Chitrok sprint, October 20 to November 18, 2026: seven milestones plotted on one line, from the late-October brief to the November 18 UI kit sync and handoff.">
+              <div class="tl-col">
+                <div class="tl-zone up"><div class="tl-card"><b>Late Oct</b><p>Brief set (&ldquo;clear and easy to browse&rdquo;); landing page and catalogue built from real chitrok.com listings.</p></div></div>
+                <div class="tl-dotrow"><span class="tl-dot" aria-hidden="true"></span></div>
+                <div class="tl-zone down"></div>
+              </div>
+              <div class="tl-col">
+                <div class="tl-zone up"></div>
+                <div class="tl-dotrow"><span class="tl-dot" aria-hidden="true"></span></div>
+                <div class="tl-zone down"><div class="tl-card"><b>Nov 3</b><p>Seller Studio for artists: listings, stock, new-listing flow, orders, fulfilment, shipments.</p></div></div>
+              </div>
+              <div class="tl-col">
+                <div class="tl-zone up"><div class="tl-card"><b>Nov 5–6</b><p>Comment rounds on product and artist pages.</p></div></div>
+                <div class="tl-dotrow"><span class="tl-dot" aria-hidden="true"></span></div>
+                <div class="tl-zone down"></div>
+              </div>
+              <div class="tl-col">
+                <div class="tl-zone up"></div>
+                <div class="tl-dotrow"><span class="tl-dot" aria-hidden="true"></span></div>
+                <div class="tl-zone down"><div class="tl-card"><b>Nov 11</b><p>Canvas cleanup; first phone screens.</p></div></div>
+              </div>
+              <div class="tl-col">
+                <div class="tl-zone up"><div class="tl-card"><b>Nov 12</b><p>Accounts, guest checkout, order tracking, stamp receipt, My collection, admin console, handoff package.</p></div></div>
+                <div class="tl-dotrow"><span class="tl-dot" aria-hidden="true"></span></div>
+                <div class="tl-zone down"></div>
+              </div>
+              <div class="tl-col">
+                <div class="tl-zone up"></div>
+                <div class="tl-dotrow"><span class="tl-dot" aria-hidden="true"></span></div>
+                <div class="tl-zone down"><div class="tl-card"><b>Nov 16</b><p>A phone screen for every page; scripted usability audit and fixes; package pushed to GitHub.</p></div></div>
+              </div>
+              <div class="tl-col">
+                <div class="tl-zone up"><div class="tl-card"><b>Nov 18</b><p>UI kit synced with all approved changes; P0 status review. Three connected products and a developer handoff on GitHub.</p></div></div>
+                <div class="tl-dotrow"><span class="tl-dot" aria-hidden="true"></span></div>
+                <div class="tl-zone down"></div>
+              </div>
+            </div>
+          </div>
+          <p class="tools-label">Screenshots — tap a frame to open it full size in a new tab</p>
+          <div class="shot-grid">
+            <a class="shot" href="assets/chitrok-home.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/chitrok-home.jpg" alt="Chitrok homepage full page — Original art from Bangladesh with sentence-builder search" /></span><span class="shot-label">Homepage</span><span class="shot-sub">Sentence-builder search, featured works &amp; artists</span></a>
+            <a class="shot" href="assets/chitrok-browse.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/chitrok-browse.jpg" alt="Chitrok Browse all page with filter rail, counts and artwork grid" /></span><span class="shot-label">Browse all</span><span class="shot-sub">Filter rail with counts, 57 works</span></a>
+            <a class="shot" href="assets/chitrok-product.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/chitrok-product.jpg" alt="Chitrok product page for Twilight Chorus with medium and dimensions under the title" /></span><span class="shot-label">Product page</span><span class="shot-sub">Twilight Chorus — specs under the title, details in drawers</span></a>
+            <a class="shot" href="assets/chitrok-artists.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/chitrok-artists.jpg" alt="Chitrok Artists index page listing artists in the collection" /></span><span class="shot-label">Artists</span><span class="shot-sub">Artist index for the collection</span></a>
+            <a class="shot" href="assets/chitrok-artist-jamal.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/chitrok-artist-jamal.jpg" alt="Artist profile page for Jamal Ahmed on Chitrok" /></span><span class="shot-label">Artist profile — Jamal Ahmed</span><span class="shot-sub">Cover, name, Commission and Follow, then works</span></a>
+            <a class="shot" href="assets/chitrok-artist-kanak.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/chitrok-artist-kanak.jpg" alt="Artist profile page for Kanak Chanpa Chakma on Chitrok" /></span><span class="shot-label">Artist profile — Kanak Chanpa Chakma</span><span class="shot-sub">Cover, name, Commission and Follow, then works</span></a>
+            <a class="shot" href="assets/chitrok-checkout.png" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/chitrok-checkout.png" alt="Chitrok checkout with guest checkout and account options side by side" /></span><span class="shot-label">Checkout</span><span class="shot-sub">Guest checkout — account pitch is a note, not a wall</span></a>
+            <a class="shot" href="assets/chitrok-collection.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/chitrok-collection.jpg" alt="Chitrok My collection page showing purchases as postage stamps" /></span><span class="shot-label">My collection</span><span class="shot-sub">Stamp wall — each stamp opens order, certificate &amp; story</span></a>
+            <a class="shot" href="assets/chitrok-commission.png" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/chitrok-commission.png" alt="Chitrok commission a work page, kept on the platform" /></span><span class="shot-label">Commission a work</span><span class="shot-sub">Commissions routed through Chitrok</span></a>
+            <a class="shot" href="assets/chitrok-sell.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/chitrok-sell.jpg" alt="Sell your art on Chitrok — seller onboarding and application form" /></span><span class="shot-label">Sell your art</span><span class="shot-sub">Seller onboarding — apply, review, set up your page, start selling</span></a>
+            <a class="shot" href="assets/chitrok-signin.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/chitrok-signin.jpg" alt="Chitrok create account page beside the Twilight Chorus artwork" /></span><span class="shot-label">Sign in / Create account</span><span class="shot-sub">Accounts for saved works, tracking &amp; commissions</span></a>
+            <a class="shot" href="assets/chitrok-drawings.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/chitrok-drawings.jpg" alt="Chitrok Drawings category page with subcategory frames and filters" /></span><span class="shot-label">Drawings</span><span class="shot-sub">Category page with arched subcategory frames</span></a>
+            <a class="shot" href="assets/chitrok-paintings.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/chitrok-paintings.jpg" alt="Chitrok Paintings category page showing watercolours with prices and filters" /></span><span class="shot-label">Paintings</span><span class="shot-sub">34 watercolours with a visible filter rail</span></a>
+            <a class="shot" href="assets/chitrok-sculptures.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/chitrok-sculptures.jpg" alt="Chitrok Sculptures category page showing a terracotta relief work" /></span><span class="shot-label">Sculptures</span><span class="shot-sub">Category page — one original work, honestly shown</span></a>
+          </div>
+          <p class="tools-label">Tools</p>
+          <div class="chips">
+            <span class="chip">Figma</span><span class="chip">Adobe XD</span><span class="chip">Claude AI</span><span class="chip">Claude Code</span><span class="chip">GitHub</span><span class="chip">GitHub Issues</span><span class="chip">CSS</span>
+          </div>
+        </div>
+          </div>
+        </div><!-- /drawer-body: Chitrok -->
+      </article>
+
+      <article class="case" data-tags="uxdesign productdesign appdesign usabilitytesting designsystems" data-project="brewbase">
+        <button class="drawer-toggle" type="button" id="dt-brewbase" aria-expanded="false" aria-controls="db-brewbase">
+          <span class="d-thumb"><img src="assets/brewbase-postcard.jpg" alt="" /></span>
+          <span class="d-main">
+            <span class="d-index">CASE STUDY 02</span>
+            <span class="d-name">BrewBase — Café Discovery Platform</span>
+            <span class="d-role">Co-Founder &amp; AI Product Designer (CEO) · 2025 – Present</span>
+            <span class="d-specs"><span class="d-spec"><b>5</b>core features designed</span><span class="d-spec"><b>3</b>user needs shaping the product</span><span class="d-spec"><b>4</b>people on the team she leads</span></span>
+          </span>
+          <span class="d-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+        <div class="drawer-body" id="db-brewbase" aria-labelledby="dt-brewbase">
+          <div class="drawer-inner">
+        <!-- Case study PDF: add the link inside .case-body when a real PDF is provided. No link is shown until then. -->
+        <a class="gallery-visual v-brew has-photo" href="assets/brewbase-postcard.jpg" target="_blank" rel="noopener" data-lightbox-trigger aria-haspopup="dialog" aria-label="Enlarge BrewBase project view — hand-drawn postcard with iced coffee and a croissant (opens full size in a new tab)">
+          <img src="assets/brewbase-postcard.jpg" alt="BrewBase postcard, hand-drawn by Bijoya — kraft postcard with a top-down iced coffee, a croissant, café doodles and the B stamp logo" />
+          <span class="gv-photo-bar"><span class="gv-status">In progress</span><span class="gv-expand">View larger &#8599;</span></span>
+        </a>
+        <div class="case-band" aria-hidden="true">
+          <div class="band-stat"><span class="case-index">CASE STUDY 02</span></div>
+          <div class="band-stat"><b>5</b><span>core features designed</span></div>
+          <div class="band-stat"><b>3</b><span>user needs shaping the product</span></div>
+          <div class="band-stat"><b>4</b><span>people on the team she leads</span></div>
+        </div>
+        <div class="case-body">
+          <h3>BrewBase — Café Discovery Platform</h3>
+          <p class="case-org">Café discovery startup, Toronto — find a café for what you plan to do and how you want the space to feel, not just where you are.</p>
+          <div class="case-meta">
+            <span class="meta-pill">Co-Founder &amp; AI Product Designer (CEO)</span>
+            <span class="meta-pill date">2025 – Present</span>
+          </div>
+          <div class="case-tags" aria-label="Tags for BrewBase">
+            <button class="tag-pill" type="button" data-tag="uxdesign">#uxdesign</button>
+            <button class="tag-pill" type="button" data-tag="productdesign">#productdesign</button>
+            <button class="tag-pill" type="button" data-tag="appdesign">#appdesign</button>
+            <button class="tag-pill" type="button" data-tag="usabilitytesting">#usabilitytesting</button>
+            <button class="tag-pill" type="button" data-tag="designsystems">#designsystems</button>
+          </div>
+          <ul>
+            <li>Co-founded a café discovery startup and leads its <strong>4-person team</strong>: 1 product designer and 2 full-stack developers.</li>
+            <li><strong>Discovery starts from intent, not just location:</strong> BrewBase helps someone find a café that suits what they plan to do and how they want the space to feel. Home opens with &ldquo;What are you looking for?&rdquo; and six plan-based prompts, each opening Discover with a prefilled query.</li>
+            <li>Designed the <strong>full journey end to end</strong> — synced card, list, and map discovery; editorial café profiles with practical attributes, honest unknown states, and provenance; saving into collections; and exporting a saved list via &ldquo;Take these out&rdquo; (CSV, copy or print) — a list export, not food ordering.</li>
+            <li>Built an <strong>evidence model for café facts</strong>: every attribute carries an explicit status — verified, venue-reported, estimated, or unknown — so missing data is never presented as a venue attribute.</li>
+            <li>Authored the <strong>complete handoff package (October 2026)</strong> — product blueprint, design handoff, frontend handoff, and data &amp; asset documentation — alongside a working static prototype.</li>
+            <li>Conducting <strong>user interviews and usability tests</strong> to refine and prioritize, managing roadmap and design handoff, and preparing for a planned <strong>Toronto Tech Week 2027</strong> debut.</li>
+            <li><strong>Hand-drew the entire brand illustration system herself</strong> — every BrewBase illustration and vector, from the café icon patterns and postcard to the mugs, latte art and loading animation in the gallery below, is her own drawing.</li>
+          </ul>
+          <div class="pdf-row">
+            <a class="pdf-btn" href="https://designwithbee.github.io/BrewBase-MVP/prototype/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+              Try the live prototype
+            </a>
+            <a class="btn" href="https://canva.link/nhyew0v3if3tx30" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+              Full BrewBase illustration set (Canva)
+            </a>
+            <span class="pdf-note">Live prototype: 6 illustrative cafés — discovery, café profiles, saved collections and Gatherings. All BrewBase illustrations and vectors were hand-drawn by Bijoya herself.</span>
+          </div>
+          <div class="brew-details">
+            <h4>Inside the prototype — from the October 2026 handoff</h4>
+            <p class="brew-label">Start from a plan — the six home prompts</p>
+            <div class="brew-prompts">
+              <span class="brew-prompt">Find a corner to read</span>
+              <span class="brew-prompt">Study group</span>
+              <span class="brew-prompt">Table for two</span>
+              <span class="brew-prompt">Work from a coffee shop</span>
+              <span class="brew-prompt">Plan a café crawl</span>
+              <span class="brew-prompt">A third place for my friends</span>
+            </div>
+            <p class="brew-label">Flow</p>
+            <ol class="brew-flow">
+              <li>Home</li><span class="flow-arrow" aria-hidden="true">&rarr;</span>
+              <li>Discover</li><span class="flow-arrow" aria-hidden="true">&rarr;</span>
+              <li>Café profile</li><span class="flow-arrow" aria-hidden="true">&rarr;</span>
+              <li>Save &amp; collections</li><span class="flow-arrow" aria-hidden="true">&rarr;</span>
+              <li>Take these out — export list</li>
+            </ol>
+            <p style="margin-top:10px">Discover combines search, 8 quick filters, neighbourhood and sort across Cards, List and Map views that stay in sync, over 6 illustrative cafés. Café profiles show the practical details that decide a visit — Wi-Fi, outlets, seating, noise, laptop policy, accessibility, transit/parking, hours and a signature order — with anything unknown shown honestly as &ldquo;Unknown&rdquo;. Saved &ldquo;field notes&rdquo; collections can be renamed, and &ldquo;Take these out&rdquo; exports a saved list (Download CSV, Copy list or Print) — it is not food ordering. <strong>Gatherings</strong> adds café events such as a silent reading hour, sketch club and vinyl listening night, linked to their cafés, and a profile / preferences surface rounds out the product.</p>
+            <p class="brew-label">Design principles</p>
+            <p>Start with the visitor&rsquo;s intent. Make café information scannable and comparable. Distinguish verified facts from unknown or illustrative information — never imply a venue attribute from missing data.</p>
+            <p class="brew-label">Visual system</p>
+            <div class="swatches">
+              <span class="swatch"><i style="--sw:#F5EFE3"></i>Paper<b>#F5EFE3</b></span>
+              <span class="swatch"><i style="--sw:#FCF9F2"></i>Paper Light<b>#FCF9F2</b></span>
+              <span class="swatch"><i style="--sw:#38251D"></i>Espresso<b>#38251D</b></span>
+              <span class="swatch"><i style="--sw:#2D251F"></i>Ink<b>#2D251F</b></span>
+              <span class="swatch"><i style="--sw:#293B9B"></i>Cobalt<b>#293B9B</b></span>
+              <span class="swatch"><i style="--sw:#73816A"></i>Sage<b>#73816A</b></span>
+              <span class="swatch"><i style="--sw:#B45E3F"></i>Terracotta<b>#B45E3F</b></span>
+            </div>
+            <p class="brew-type" style="margin-top:12px"><strong>DM Serif Display</strong> for editorial headlines and café names · <strong>DM Sans</strong> for product UI · <strong>Kalam</strong> for handwritten accents.</p>
+            <p class="brew-status"><strong>Build status:</strong> working static prototype in vanilla HTML, CSS, and JavaScript — no backend yet. The prototype covers discovery, café profiles, saved collections and Gatherings; it has no ratings, stars or reviews, and no ordering — ratings and reviews are planned for a later phase. The café content in the prototype is fictional, illustrative demo data (6 cafés), and is labelled as such in the product.</p>
+          </div>
+          <p class="tools-label">Brand illustrations — hand-drawn by Bijoya · tap a frame to open it full size in a new tab</p>
+          <div class="shot-grid">
+            <a class="shot" href="assets/brewbase-collage.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/brewbase-collage.jpg" alt="BrewBase brand collage — postcard with iced coffee and croissant, B stamp logo, the full hand-drawn icon set and coloured mugs and lattes" /></span><span class="shot-label">Brand collage</span><span class="shot-sub">Postcard, B stamp logo, full icon set &amp; coloured mugs</span></a>
+            <a class="shot" href="assets/brewbase-brand-use.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/brewbase-brand-use.jpg" alt="BrewBase branding in use — the icon pattern on cobalt blue, over a café photo, and on tote bag mockups, with the postcard" /></span><span class="shot-label">Brand in use</span><span class="shot-sub">Pattern on cobalt, café window &amp; tote bag mockups</span></a>
+            <a class="shot" href="assets/brewbase-pattern.png" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/brewbase-pattern.png" alt="BrewBase icon pattern in full colour — cinnamon roll, takeaway cup, moka pot, matcha whisk, latte art, bagels, croissant, muffin and sandwich, with the brand's five-colour palette dots" /></span><span class="shot-label">Icon pattern — colour version</span><span class="shot-sub">Full-colour café icons &amp; palette dots</span></a>
+            <a class="shot" href="assets/brewbase-pattern-2.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/brewbase-pattern-2.jpg" alt="BrewBase icon pattern in dark brown line on textured paper, including a vinyl record with coffee bean, a stack of books and iced coffee" /></span><span class="shot-label">Icon pattern — line version</span><span class="shot-sub">Dark brown line on textured paper</span></a>
+            <a class="shot" href="assets/brewbase-postcard.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/brewbase-postcard.jpg" alt="BrewBase postcard design — kraft postcard with an iced coffee, a croissant and the B stamp logo" /></span><span class="shot-label">Postcard</span><span class="shot-sub">Kraft postcard with iced coffee, croissant &amp; B stamp</span></a>
+            <a class="shot" href="assets/brewbase-sketch.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/brewbase-sketch.jpg" alt="BrewBase pencil sketch branding sheet — receipt, iced coffee, latte, takeaway cup, laptop, café stall, teapot pouring and croissant" /></span><span class="shot-label">Sketch branding sheet</span><span class="shot-sub">Pencil sketches the pattern was built from</span></a>
+            <a class="shot" href="assets/brewbase-mugs.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/brewbase-mugs.jpg" alt="Five hand-drawn BrewBase mugs — cloud-pattern latte mug, ribbed mug, pour-over dripper, dark tumbler and tea-bag tile mug" /></span><span class="shot-label">Mugs</span><span class="shot-sub">Five illustrated mugs &amp; cups</span></a>
+            <a class="shot" href="assets/brewbase-iced.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/brewbase-iced.jpg" alt="Hand-drawn top-down iced coffee in rich brown with ice cubes" /></span><span class="shot-label">Iced coffee</span><span class="shot-sub">Top-down, rich brown with ice cubes</span></a>
+            <a class="shot" href="assets/brewbase-latte-color.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/brewbase-latte-color.jpg" alt="Hand-drawn latte art cup, filled colour version" /></span><span class="shot-label">Latte art — colour</span><span class="shot-sub">Filled colour version</span></a>
+            <a class="shot" href="assets/brewbase-latte-line.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/brewbase-latte-line.jpg" alt="Hand-drawn latte art cup, brown line version" /></span><span class="shot-label">Latte art — line</span><span class="shot-sub">Brown line version</span></a>
+            <a class="shot" href="assets/brewbase-latte-top.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/brewbase-latte-top.jpg" alt="Hand-drawn top-down latte art cup in line" /></span><span class="shot-label">Latte art — top-down</span><span class="shot-sub">Top-down line drawing</span></a>
+            <a class="shot" href="assets/brewbase-books.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/brewbase-books.jpg" alt="Hand-drawn stack of brown books" /></span><span class="shot-label">Books</span><span class="shot-sub">Stack of brown books</span></a>
+            <a class="shot" href="assets/brewbase-vinyl.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/brewbase-vinyl.jpg" alt="Hand-drawn vinyl record with a coffee bean centre label" /></span><span class="shot-label">Vinyl &amp; coffee bean</span><span class="shot-sub">Vinyl record with a coffee bean label</span></a>
+          </div>
+          <p class="tools-label">Loading animation</p>
+          <figure class="brew-anim">
+            <video src="assets/brewbase-loading.mp4" autoplay muted loop playsinline data-brew-anim aria-label="BrewBase loading animation — a hand-drawn mug whose pattern fills in above a progress bar"></video>
+            <figcaption><strong>Loading animation, drawn and animated by Bijoya</strong> — a line-drawn mug whose pattern fills in, its stripes morphing to clouds, above a progress bar.</figcaption>
+          </figure>
+          <p class="tools-label">Tools</p>
+          <div class="chips">
+            <span class="chip">Figma</span><span class="chip">Claude Code</span><span class="chip">Replit</span><span class="chip">Base44</span><span class="chip">Codex</span><span class="chip">Adobe XD</span><span class="chip">GitHub</span><span class="chip">Notion</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span>
+          </div>
+        </div>
+          </div>
+        </div><!-- /drawer-body: BrewBase -->
+      </article>
+        </div><!-- /drawer-list -->
+      </div><!-- /kanban-lane: Currently Working On -->
+
+      <div class="kanban-lane" data-lane>
+        <div class="lane-head">
+          <span class="lane-dot done" aria-hidden="true"></span>
+          <h3>Featured / Complete</h3>
+          <span class="lane-count">2 projects · 2021 – 2023</span>
+          <span class="lane-note">Shipped case studies.</span>
+        </div>
+        <div class="drawer-list">
+
+      <article class="case" data-tags="uxdesign accessibility informationarchitecture designsystems usabilitytesting uxstrategy" data-project="hub-portal">
+        <button class="drawer-toggle" type="button" id="dt-hub" aria-expanded="false" aria-controls="db-hub">
+          <span class="d-thumb"><img src="assets/hub-hero-crop.jpg" alt="" /></span>
+          <span class="d-main">
+            <span class="d-index">CASE STUDY 03</span>
+            <span class="d-name">MyManagement Portal – BBA Students Central Hub for Resources, Career and Program Pathways</span>
+            <span class="d-role">Design Lead · UX/UI Designer · 2021 – 2022</span>
+            <span class="d-specs"><span class="d-spec"><b>$35,000</b>investment secured for the build</span><span class="d-spec"><b>18+</b>student clubs unified</span><span class="d-spec"><b>~2,000</b>Management students served</span></span>
+          </span>
+          <span class="d-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+        <div class="drawer-body" id="db-hub" aria-labelledby="dt-hub">
+          <div class="drawer-inner">
+        <a class="gallery-visual v-hub has-photo" href="assets/hub-board.jpg" target="_blank" rel="noopener" data-lightbox-trigger aria-haspopup="dialog" aria-label="Enlarge MyManagement project view — MyManagement, a centralized hub for Management students, portal home on a laptop (opens the full case study board in a new tab)">
+          <img src="assets/hub-hero-crop.jpg" alt="MyManagement — a centralized hub for Management students, with the portal home, Your hub for everything Management, shown on a laptop" />
+          <span class="gv-photo-bar"><span class="gv-status">Complete</span><span class="gv-expand">View larger &#8599;</span></span>
+        </a>
+        <div class="case-band" aria-hidden="true">
+          <div class="band-stat"><span class="case-index">CASE STUDY 03</span></div>
+          <div class="band-stat"><b>$35,000</b><span>investment secured for the build</span></div>
+          <div class="band-stat"><b>18+</b><span>student clubs unified</span></div>
+          <div class="band-stat"><b>~2,000</b><span>Management students served</span></div>
+        </div>
+        <div class="case-body">
+          <h3>MyManagement Portal – BBA Students Central Hub for Resources, Career and Program Pathways</h3>
+          <p class="case-org">University of Toronto Scarborough · Department of Management</p>
+          <p class="case-explainer">MyManagement is a U of T student portal for BBA students — a place to navigate their way through nine different streams, find jobs, and build their careers.</p>
+          <div class="case-meta">
+            <span class="meta-pill">Design Lead · UX/UI Designer</span>
+            <span class="meta-pill date">2021 – 2022 · 4 months · Team of 2 designers</span>
+          </div>
+          <div class="case-tags" aria-label="Tags for MyManagement Portal">
+            <button class="tag-pill" type="button" data-tag="uxdesign">#uxdesign</button>
+            <button class="tag-pill" type="button" data-tag="accessibility">#accessibility</button>
+            <button class="tag-pill" type="button" data-tag="informationarchitecture">#informationarchitecture</button>
+            <button class="tag-pill" type="button" data-tag="designsystems">#designsystems</button>
+            <button class="tag-pill" type="button" data-tag="usabilitytesting">#usabilitytesting</button>
+            <button class="tag-pill" type="button" data-tag="uxstrategy">#uxstrategy</button>
+          </div>
+          <ul>
+            <li>Secured <strong>$35,000 in department investment</strong> for web developers and 2 new UX/UI roles, after 4 months of solo user research and a full working WordPress prototype.</li>
+            <li>As <strong>Design Lead in a 2-designer team</strong>, co-led the product design from concept to implementation — user experience, visual system, illustrations and design documentation.</li>
+            <li>Co-led design direction, UX strategy, content planning, and user flows for a centralized platform unifying events, activity management, and experiential learning for <strong>18+ student clubs and ~2,000 Management students</strong>.</li>
+            <li>Developed a <strong>centralized UI design system</strong>, information architecture, wireframes, navigation concepts, and responsive page structures.</li>
+            <li>Ran research and user testing with stakeholders, and produced design guidance and wayfinding assets.</li>
+          </ul>
+          <div class="pdf-row">
+            <a class="btn" href="assets/hub-web-ui.pdf" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg>
+              Web UI screens (PDF)
+            </a>
+            <a class="btn" href="assets/hub-style-guide.pdf" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg>
+              MyManagement style guide (PDF)
+            </a>
+            <a class="btn" href="https://utscmanagementnetwork.wordpress.com/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+              Early WordPress prototype
+            </a>
+            <span class="pdf-note">Web UI: 2 pages · Style guide: 12 pages — logo, Open Sans typography, colour palettes, graphic style and widget styles.</span>
+          </div>
+          <div class="hub-details">
+            <h4>Inside the case study</h4>
+            <p><strong style="color:var(--ink)">The opportunity:</strong> students were navigating multiple platforms to reach important resources — fragmented information, an inconsistent experience and limited engagement, leading to confusion and missed opportunities. MyManagement brings it together in one place.</p>
+            <p class="brew-label">Process — five steps</p>
+            <ol class="brew-flow">
+              <li>Discover — research student needs &amp; pain points</li><span class="flow-arrow" aria-hidden="true">&rarr;</span>
+              <li>Define — identify key opportunities</li><span class="flow-arrow" aria-hidden="true">&rarr;</span>
+              <li>Structure — build IA &amp; user flows</li><span class="flow-arrow" aria-hidden="true">&rarr;</span>
+              <li>Design — wireframes, visual design &amp; illustrations</li><span class="flow-arrow" aria-hidden="true">&rarr;</span>
+              <li>Deliver — document the system for implementation</li>
+            </ol>
+            <p class="brew-label">Information architecture — six sections</p>
+            <p>Content is organized around the core needs of the Management student journey: <strong>Management School</strong> (programs, advising, news) · <strong>Management Clubs</strong> (clubs, events, updates) · <strong>Student Services</strong> (appointments, support, resources) · <strong>Academic Pathways</strong> (career, co-op, internships) · <strong>Academic Resources</strong> (guides, templates, policies) · <strong>Alumni</strong> (network, benefits, events). A modular dashboard gives students quick access to what matters most — Dashboard, Academic Resources, and Case Competitions &amp; Conferences are the key screens.</p>
+            <p class="brew-label">Visual system &amp; illustration</p>
+            <p>A clean, trustworthy and approachable identity in the Management brand: <strong>Open Sans</strong> (Bold / Regular) typography, a navy-and-teal palette with warm accent colours, and <strong>custom flat illustrations</strong> that bring warmth and clarity to complex information — documented in full in the style guide above.</p>
+            <p class="brew-label">Accessibility &amp; standards</p>
+            <ul>
+              <li>Designed with <strong>AODA compliance</strong> in mind.</li>
+              <li><strong>Accessible colour contrast</strong> and consistent, readable typography.</li>
+              <li><strong>Alt text</strong> for all artwork and logos.</li>
+              <li><strong>Keyboard-navigable</strong> components.</li>
+            </ul>
+            <p class="brew-label">From prototype to portal</p>
+            <p>The work began as a <strong>very early WordPress prototype</strong> (linked above) built during solo research, then grew through user-flow and wireframe iterations for pages like Case Competitions &amp; Conferences — mapping objectives, actions and visuals, structuring events by Management stream, and flagging issues found along the way, such as event labels that made filtering hard — into the final MyManagement screens in the gallery below.</p>
+          </div>
+          <p class="tools-label">Screens &amp; process — tap a frame to open it full size in a new tab</p>
+          <div class="shot-grid">
+            <a class="shot" href="assets/hub-board.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/hub-board.jpg" alt="MyManagement case study board — portal home on a laptop, design process, information architecture, key screens, visual system and accessibility standards" /></span><span class="shot-label">Case study board</span><span class="shot-sub">MyManagement at a glance — process, IA, key screens &amp; system</span></a>
+            <a class="shot" href="assets/hub-final-screens.jpg" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/hub-final-screens.jpg" alt="Final MyManagement screens side by side — portal home, Your hub for everything Management, and the Academic Resources page" /></span><span class="shot-label">Final screens</span><span class="shot-sub">Portal home &amp; Academic Resources</span></a>
+            <a class="shot" href="assets/hub-case-comp-page.png" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/hub-case-comp-page.png" alt="Live Case Competitions and Conferences page — cards for competitions, conferences and funding criteria, with a Resources and Help section" /></span><span class="shot-label">Case Competitions &amp; Conferences — live page</span><span class="shot-sub">General information cards &amp; Resources and Help</span></a>
+            <a class="shot" href="assets/hub-flow-journey.png" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/hub-flow-journey.png" alt="User-flow diagram for finding case competitions and conferences — objective, action and visual steps from the home-page widget to the Case Competition and Conferences page" /></span><span class="shot-label">Process — user flow</span><span class="shot-sub">Objective / action / visual flow to the competitions page</span></a>
+            <a class="shot" href="assets/hub-flow-wireframe.png" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/hub-flow-wireframe.png" alt="Annotated wireframe of the Case Competitions and Conferences page — home feature, general information widgets and links to the events tab and funding criteria" /></span><span class="shot-label">Process — page wireframe</span><span class="shot-sub">Annotated structure for the competitions page</span></a>
+            <a class="shot" href="assets/hub-flow-streams.png" target="_blank" rel="noopener"><span class="shot-frame"><img loading="lazy" src="assets/hub-flow-streams.png" alt="Events by Management stream structure — General, Accounting, Finance, Business Tech, Entrepreneurship, Human Resources, Strategy and Marketing — with a flagged issue that event labels were not working, making filtering hard" /></span><span class="shot-label">Process — events by stream</span><span class="shot-sub">Eight streams, with a flagged filtering issue</span></a>
+          </div>
+          <p class="tools-label">Tools</p>
+          <div class="chips">
+            <span class="chip">Figma</span><span class="chip">Adobe XD</span><span class="chip">Illustrator</span><span class="chip">Photoshop</span><span class="chip">WordPress</span><span class="chip">CodePen</span><span class="chip">Miro</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span>
+          </div>
+        </div>
+          </div>
+        </div><!-- /drawer-body: Hub Portal -->
+      </article>
+
+      <article class="case" data-tags="uxdesign accessibility informationarchitecture designsystems" data-project="public-health">
+        <button class="drawer-toggle" type="button" id="dt-health" aria-expanded="false" aria-controls="db-health">
+          <span class="d-thumb d-tile v-health"><span>33</span></span>
+          <span class="d-main">
+            <span class="d-index">CASE STUDY 04</span>
+            <span class="d-name">33 Department Sites — Public Health</span>
+            <span class="d-role">UX/UI Designer · 2022 – 2023</span>
+            <span class="d-specs"><span class="d-spec"><b>33</b>department sites on one system</span><span class="d-spec"><b>380+</b>faculty using the platform</span><span class="d-spec"><b>3 weeks</b>Agile sprint cycle</span></span>
+          </span>
+          <span class="d-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+        </button>
+        <div class="drawer-body" id="db-health" aria-labelledby="dt-health">
+          <div class="drawer-inner">
+        <!-- Image slot: replace the placeholder content below with <img src="assets/public-health.png" alt="33 Department Sites — Public Health — …"> when Bijoya provides the PNG. Keep this 16/10 box — layout will not change. -->
+        <!-- Case study PDF: add the link inside .case-body when a real PDF is provided. No link is shown until then. -->
+        <button class="gallery-visual v-health" type="button" data-lightbox-trigger aria-haspopup="dialog" aria-label="Enlarge 33 Department Sites project view">
+          <span class="gv-top"><span class="gv-index">Case Study 04 · Image slot 16:10</span><span class="gv-status">Complete</span></span>
+          <span class="gv-center"><span class="gv-monogram">33</span><span class="gv-name">33 Sites — Public Health</span></span>
+          <span class="gv-bottom"><span class="gv-hint">Project PNG drops in here</span><span class="gv-expand">View larger &#8599;</span></span>
+        </button>
+        <div class="case-band" aria-hidden="true">
+          <div class="band-stat"><span class="case-index">CASE STUDY 04</span></div>
+          <div class="band-stat"><b>33</b><span>department sites on one system</span></div>
+          <div class="band-stat"><b>380+</b><span>faculty using the platform</span></div>
+          <div class="band-stat"><b>3 weeks</b><span>Agile sprint cycle</span></div>
+        </div>
+        <div class="case-body">
+          <h3>33 Department Sites — Public Health</h3>
+          <p class="case-org">University of Toronto St. George — Department of Public Health.</p>
+          <div class="case-meta">
+            <span class="meta-pill">UX/UI Designer</span>
+            <span class="meta-pill date">2022 – 2023</span>
+          </div>
+          <div class="case-tags" aria-label="Tags for 33 Department Sites — Public Health">
+            <button class="tag-pill" type="button" data-tag="uxdesign">#uxdesign</button>
+            <button class="tag-pill" type="button" data-tag="accessibility">#accessibility</button>
+            <button class="tag-pill" type="button" data-tag="informationarchitecture">#informationarchitecture</button>
+            <button class="tag-pill" type="button" data-tag="designsystems">#designsystems</button>
+          </div>
+          <ul>
+            <li>Built a <strong>scalable visual design system</strong>, SharePoint templates, and visual assets aligned with University branding, improving navigation, usability, and consistency.</li>
+            <li>Designed information architecture, workflows, and data organization for quick platform conversion and adoption.</li>
+            <li>Customized navigation across <strong>33 university departments</strong> used by 380+ faculty and 60 staff.</li>
+            <li>Ran user interviews with faculty and staff, built demonstration sites, and delivered in <strong>3-week Agile sprints</strong>.</li>
+            <li>Onboarded and trained faculty and staff with instructional guides and videos.</li>
+          </ul>
+          <p class="tools-label">Tools</p>
+          <div class="chips">
+            <span class="chip">Figma</span><span class="chip">Adobe XD</span><span class="chip">Miro</span><span class="chip">Adobe Creative Suite</span><span class="chip">SharePoint</span>
+          </div>
+        </div>
+          </div>
+        </div><!-- /drawer-body: Public Health -->
+      </article>
+        </div><!-- /drawer-list -->
+      </div><!-- /kanban-lane: Featured / Complete -->
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" aria-labelledby="exp-h">
+      <div class="sec-head">
+        <h2 id="exp-h">Experience</h2>
+        <p>Beyond the featured case studies.</p>
+        <a class="btn small exp-resume" href="assets/bijoya-deb-resume.pdf" download="Bijoya-Deb-Resume.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+          Download résumé
+        </a>
+      </div>
+      <div class="sec-rule"></div>
+
+      <div class="exp-layout">
+      <!-- Tools I use — compact left rail; each tool jumps to the entries tagged with it -->
+      <aside class="tools-rail" aria-labelledby="toolsLabel">
+        <p class="tools-label" id="toolsLabel">Tools I use</p>
+        <p class="tools-rail-note">Tap a tool to jump to the roles where she used it.</p>
+        <div class="tool-list">
+          <button class="tool-chipbtn" type="button" data-tool-jump="figma" data-tool-name="Figma" aria-pressed="false"><span class="tool-mark tm-lav" aria-hidden="true">Fi</span>Figma<span class="tcount" data-tool-count>4</span></button>
+          <button class="tool-chipbtn" type="button" data-tool-jump="illustrator" data-tool-name="Illustrator" aria-pressed="false"><span class="tool-mark tm-peach" aria-hidden="true">Ai</span>Illustrator<span class="tcount" data-tool-count>4</span></button>
+          <button class="tool-chipbtn" type="button" data-tool-jump="photoshop" data-tool-name="Photoshop" aria-pressed="false"><span class="tool-mark tm-blue" aria-hidden="true">Ps</span>Photoshop<span class="tcount" data-tool-count>4</span></button>
+          <button class="tool-chipbtn" type="button" data-tool-jump="adobe xd" data-tool-name="Adobe XD" aria-pressed="false"><span class="tool-mark tm-rose" aria-hidden="true">Xd</span>Adobe XD<span class="tcount" data-tool-count>4</span></button>
+          <button class="tool-chipbtn" type="button" data-tool-jump="procreate" data-tool-name="Procreate" aria-pressed="false"><span class="tool-mark tm-teal" aria-hidden="true">Pr</span>Procreate<span class="tcount" data-tool-count>1</span></button>
+          <button class="tool-chipbtn" type="button" data-tool-jump="miro" data-tool-name="Miro" aria-pressed="false"><span class="tool-mark tm-green" aria-hidden="true">Mi</span>Miro<span class="tcount" data-tool-count>2</span></button>
+          <button class="tool-chipbtn" type="button" data-tool-jump="indesign" data-tool-name="InDesign" aria-pressed="false"><span class="tool-mark tm-peach" aria-hidden="true">Id</span>InDesign<span class="tcount" data-tool-count>1</span></button>
+          <button class="tool-chipbtn" type="button" data-tool-jump="after effects" data-tool-name="After Effects" aria-pressed="false"><span class="tool-mark tm-lav" aria-hidden="true">Ae</span>After Effects<span class="tcount" data-tool-count>1</span></button>
+          <button class="tool-chipbtn" type="button" data-tool-jump="premiere pro" data-tool-name="Premiere Pro" aria-pressed="false"><span class="tool-mark tm-rose" aria-hidden="true">Pr</span>Premiere Pro</button>
+          <button class="tool-chipbtn" type="button" data-tool-jump="canva" data-tool-name="Canva" aria-pressed="false"><span class="tool-mark tm-blue" aria-hidden="true">Ca</span>Canva<span class="tcount" data-tool-count>3</span></button>
+          <button class="tool-chipbtn" type="button" data-tool-jump="html,css,javascript" data-tool-name="HTML · CSS · JS" aria-pressed="false"><span class="tool-mark tm-green" aria-hidden="true">&lt;/&gt;</span>HTML · CSS · JS<span class="tcount" data-tool-count>3</span></button>
+          <button class="tool-chipbtn" type="button" data-tool-jump="claude code" data-tool-name="Claude Code" aria-pressed="false"><span class="tool-mark tm-teal" aria-hidden="true">Cl</span>Claude Code<span class="tcount" data-tool-count>2</span></button>
+        </div>
+        <p class="tool-status" id="toolStatus" aria-live="polite"></p>
+        <button class="clear-btn" type="button" id="toolClear" hidden>&#10005; Clear highlight</button>
+      </aside>
+      <div class="exp-main">
+      <!-- Résumé sheet — the old site's résumé-page look: strong name / role / date hierarchy on one clean sheet -->
+      <div class="resume-sheet">
+        <div class="resume-strip" aria-hidden="true"><img src="assets/brewbase-pattern-2.jpg" alt="" loading="lazy" /></div>
+        <div class="resume-sheet-inner">
+          <div>
+            <h3>Bijoya Deb</h3>
+            <p class="rs-role">Product Design · UX Strategy · Marketing · Visual Communications</p>
+            <p class="rs-meta">Toronto, ON · Available for full-time roles<br />University of Toronto — HBSc, Business Economics &amp; Psychology, English minor · 2017 – 2022</p>
+          </div>
+          <div class="resume-facts" aria-label="Résumé highlights">
+            <span class="resume-fact"><b>Now:</b> Chitrok · BrewBase</span>
+            <span class="resume-fact"><b>33</b> sites systematized</span>
+            <span class="resume-fact"><b>~2,000</b> students served</span>
+            <span class="resume-fact"><b>$35K</b> investment secured</span>
+            <span class="resume-fact"><b>+95%</b> social engagement</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline">
+
+        <div class="t-row">
+          <div class="t-date">2024 – 2026</div>
+          <div class="t-main">
+            <h3>Product &amp; Graphic Designer — Freelance</h3>
+            <p class="t-org">Upwork · Clients in Canada, USA, and Australia</p>
+            <div class="role-tags" aria-label="Tools and skills for this role"><span class="role-tag">HTML</span><span class="role-tag">CSS</span><span class="role-tag">JavaScript</span><span class="role-tag">Data Visualization</span><span class="role-tag">Illustrator</span><span class="role-tag">InDesign</span><span class="role-tag">Book Layout</span><span class="role-tag">Photoshop</span><span class="role-tag">Canva</span><span class="role-tag">Brand Identity</span><span class="role-tag">After Effects</span><span class="role-tag">Procreate</span><span class="role-tag">Pixel Art Animation</span></div>
+            <ul>
+              <li><strong>N. Sacco &amp; Co. (2025)</strong> — Front-end developer and UI designer for a finance application interface showing ROI and optimal stock-holding durations. Responsive UI and front-end CSS for developer handoff.</li>
+              <li><strong>GGA Partners (2025)</strong> — Data visualization designer. Executive presentation visuals and branded data visualizations for strategic reports: 24 unique infographics across 12 articles.</li>
+              <li><strong>Mindset4Growth, Australia (2024)</strong> — Book layout designer. 10 eBooks plus transcripts and content kits, layout and branding guidelines, files formatted for Amazon (EPUB, MOBI, AZW, KPF).</li>
+              <li><strong>WeAreGoldenHour, Australia (2024, 2025)</strong> — Merchandise graphic designer. Retro-inspired graphics: 5 designs expanding into a permanent merchandise line across 6 product categories.</li>
+              <li><strong>YouTube creator (2024)</strong> — Pixel art animator.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="t-row">
+          <div class="t-date">2022 – 2023</div>
+          <div class="t-main">
+            <h3>Microsoft Administrator &amp; IT Consultant</h3>
+            <p class="t-org">University of Toronto St. George — Department of Public Health</p>
+            <div class="role-tags" aria-label="Tools and skills for this role"><span class="role-tag">SharePoint</span><span class="role-tag">Microsoft 365 Administration</span><span class="role-tag">Training</span><span class="role-tag">Documentation</span></div>
+            <p>Managed SharePoint security clearances for research collaborations, including SickKids and St. Michael&rsquo;s Hospital. Partnered with SharePoint administrators across 3 campuses. Led the department-wide SharePoint rollout for 380 faculty and 60 staff, plus Microsoft 365 administration, training, and documentation.</p>
+          </div>
+        </div>
+
+        <div class="t-row">
+          <div class="t-date">2020</div>
+          <div class="t-main">
+            <h3>Communications &amp; Engagement Lead</h3>
+            <p class="t-org">UTSC — Department of Management</p>
+            <div class="role-tags" aria-label="Tools and skills for this role"><span class="role-tag">Stakeholder Management</span><span class="role-tag">Cross-Functional Collaboration</span></div>
+            <p>Connected student leaders across 18 Management clubs. Built a database of university resources supporting remote learning during the pandemic. Acted as student–department liaison.</p>
+          </div>
+        </div>
+
+        <div class="t-row">
+          <div class="t-date">2019 – 2020</div>
+          <div class="t-main">
+            <h3>Marketing Coordinator &amp; Graphic Designer</h3>
+            <p class="t-org">UTSC — Department of Management</p>
+            <div class="role-tags" aria-label="Tools and skills for this role"><span class="role-tag">Illustrator</span><span class="role-tag">Photoshop</span><span class="role-tag">Canva</span><span class="role-tag">Event Photography</span></div>
+            <p>Built full marketing packages for flagship events with Big 4 accounting firms, TELUS, Rogers, and Big 5 banks. Photographed 10 departmental events. Pitched and launched a student Resource Hub.</p>
+          </div>
+        </div>
+
+        <div class="t-row">
+          <div class="t-date">2018 – 2020</div>
+          <div class="t-main">
+            <h3>Marketing Director &rarr; VP of Marketing</h3>
+            <p class="t-org">DECA UTSC</p>
+            <div class="role-tags" aria-label="Tools and skills for this role"><span class="role-tag">Social Media Strategy</span><span class="role-tag">Brand Identity</span><span class="role-tag">Illustrator</span><span class="role-tag">Photoshop</span><span class="role-tag">Canva</span></div>
+            <p>Led a marketing team of 5 and directed 30+ marketing projects. Managed communities of 2,200+ Facebook and 1,500+ Instagram followers. Increased social media engagement by 95% and doubled event sign-ups. Drove 50+ delegate sign-ups for regional case competitions and designed 2 sponsorship packages.</p>
+          </div>
+        </div>
+
+        <div class="t-row">
+          <div class="t-date">2018 – 2019</div>
+          <div class="t-main">
+            <h3>Social Media Director</h3>
+            <p class="t-org">ArtSideOut Festival</p>
+            <div class="role-tags" aria-label="Tools and skills for this role"><span class="role-tag">Social Media Strategy</span><span class="role-tag">Content Planning</span><span class="role-tag">KPI Tracking</span></div>
+            <p>Grew the festival following 62.5%, from 800 to 1,300. Ran the Feature Friday series and content across 4 platforms, with monthly KPI tracking.</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="skills" style="margin-top:26px">
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <div class="chips">
+            <span class="chip">English</span><span class="chip">French</span><span class="chip">Bengali</span><span class="chip">Urdu</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Operations</h3>
+          <div class="chips">
+            <span class="chip">Agile/Scrum Sprints</span><span class="chip">Stakeholder Management</span><span class="chip">Cross-Functional Collaboration</span><span class="chip">Microsoft 365 Administration</span><span class="chip">SharePoint</span><span class="chip">Notion</span><span class="chip">ServiceNow</span><span class="chip">Product Roadmapping</span><span class="chip">Prioritization</span><span class="chip">Backlog Management</span>
+          </div>
+        </div>
+      </div>
+      </div><!-- /exp-main -->
+      </div><!-- /exp-layout -->
+    </section>
+
+    <!-- PHOTOGRAPHY -->
+    <section id="photography" aria-labelledby="photo-h">
+      <div class="sec-head">
+        <h2 id="photo-h">Photography</h2>
+        <p>Outdoor sports and commercial work, 2026 – present.</p>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="photo-grid">
+        <div>
+          <p class="lead-p"><strong>Outdoor Sports &amp; Commercial Photographer (Freelance).</strong> Photographs for 15 sports brands and clubs, including:</p>
+          <div class="brand-list" aria-label="Brands and clubs photographed">
+            <span class="brand">MEC</span>
+            <span class="brand">HOKA</span>
+            <span class="brand">New Balance</span>
+            <span class="brand">Salomon</span>
+            <span class="brand">Patagonia Toronto</span>
+            <span class="brand">KEEN Canada</span>
+            <span class="brand">Pilot Coffee</span>
+            <span class="brand">The Trail Collective</span>
+            <span class="brand">Unda Movement</span>
+            <span class="brand">Toronto Trail Runners</span>
+            <span class="brand">Culture Athletics</span>
+            <span class="brand">UofT Run Club</span>
+          </div>
+          <ul class="plain-list">
+            <li>Covered <strong>10+ demo days and outdoor events</strong>.</li>
+            <li>Shoots on the move while <strong>running, hiking, and kayaking</strong>.</li>
+            <li>Scouts routes and plans shots ahead of each event.</li>
+            <li>Directs <strong>non-professional talent</strong> in real time.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="side-card">
+            <h3>Community Events Crew &amp; Photographer</h3>
+            <p class="sc-meta">NOTION TORONTO COMMUNITY · 2026 – PRESENT</p>
+            <p>Photographs events of about 500 attendees. The community was recognized with the Most Thriving Community Award 2026.</p>
+          </div>
+          <div class="side-card">
+            <h3>Event Photographer</h3>
+            <p class="sc-meta">TORONTO TECH WEEK · 2026</p>
+            <p>Photographed 2 events during Toronto Tech Week 2026.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photography preview: clean collage panels at full clarity, currently inactive placeholders (no href). Their href is set from the single VSCO_URL constant in the script at the end of the body — replace that one placeholder value with the real VSCO link when it arrives and the panels become new-tab VSCO links. -->
+      <div class="photo-preview-wrap">
+        <div class="photo-preview-head">
+          <h3>Selected frames</h3>
+          <span class="photo-head-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></span>
+          <span class="photo-vsco-note">Full gallery on VSCO (coming soon)</span>
+        </div>
+        <div class="photo-preview">
+          <a class="photo-tile pt-moon" data-vsco-tile aria-label="Photography preview — close-up photograph of the moon — full VSCO gallery coming soon">
+            <img src="assets/photo-moon.jpg" alt="Close-up photograph of the moon" loading="lazy" />
+          </a>
+          <a class="photo-tile pt-glacier" data-vsco-tile aria-label="Photography preview — mountain glacier landscape framed by evergreen trees — full VSCO gallery coming soon">
+            <img src="assets/photo-glacier.jpg" alt="Mountain glacier landscape framed by evergreen trees" loading="lazy" />
+          </a>
+          <a class="photo-tile pt-bird" data-vsco-tile aria-label="Photography preview — group birdwatching with binoculars in a forest clearing — full VSCO gallery coming soon">
+            <img src="assets/photo-birdwatching.jpg" alt="Group birdwatching with binoculars in a forest clearing" loading="lazy" />
+          </a>
+          <a class="photo-tile pt-fountain" data-vsco-tile aria-label="Photography preview — stone memorial fountain in a leafy park — full VSCO gallery coming soon">
+            <img src="assets/photo-fountain.jpg" alt="Stone memorial fountain in a leafy park" loading="lazy" />
+          </a>
+          <a class="photo-tile pt-forget" data-vsco-tile aria-label="Photography preview — close-up of blue forget-me-not flowers — full VSCO gallery coming soon">
+            <img src="assets/photo-forget-me-not.jpg" alt="Close-up of blue forget-me-not flowers" loading="lazy" />
+          </a>
+          <a class="photo-tile pt-robin" data-vsco-tile aria-label="Photography preview — American robin perched on a pine branch — full VSCO gallery coming soon">
+            <img src="assets/photo-robin.jpg" alt="American robin perched on a pine branch" loading="lazy" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section id="community" aria-labelledby="comm-h">
+      <div class="sec-head">
+        <h2 id="comm-h">Community</h2>
+        <p>Organizing and volunteering in the GTA.</p>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="two-col">
+        <div class="comm-card">
+          <b class="big">50+ meetups</b>
+          <h3>Founder &amp; Community Organizer — Two Independent Art Clubs</h3>
+          <p class="c-meta">GTA · 2024 – PRESENT</p>
+          <p>50+ meetups hosted since 2024. Coordinated 10 cafés, studios, and public spaces, plus museum and gallery visits and photowalks.</p>
+        </div>
+        <div class="comm-card">
+          <b class="big">50–60 cats</b>
+          <h3>Feline Behaviour Specialist — Toronto Humane Society</h3>
+          <p class="c-meta">TORONTO · 2025 – PRESENT</p>
+          <p>A recent role: rose from Level 1 to top-level volunteer. Has worked with close to 50–60 cats, setting up behaviour modification plans for them, and follows medication and prescription protocols as well as infection-control rules.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  </div><!-- /view-main -->
+
+  <!-- ILLUSTRATIONS — separate tab view, opened from the main nav -->
+  <div id="view-illustrations" hidden>
+  <div class="wrap">
+    <div class="illus-view">
+      <a class="btn illus-back" href="#work" data-show-main="work">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        Back to case studies
+      </a>
+
+      <!-- Window-chrome header, a quiet nod to the old site's "Illustrations.png" page -->
+      <div class="win-frame">
+        <div class="win-bar" aria-hidden="true">
+          <span class="win-dots"><i></i><i></i><i></i></span>
+          <span class="win-title">Illustrations.png</span>
+        </div>
+        <div class="win-body">
+          <p class="illus-kicker">Illustration · Part of my design practice</p>
+          <h2 id="illus-h" tabindex="-1">Illustrations</h2>
+          <p class="illus-intro" style="margin-bottom:0">Illustration isn&rsquo;t a side hobby tucked away from the product work — <strong>it&rsquo;s part of how Bijoya designs.</strong> She draws the brand systems she ships: the BrewBase café illustrations below began as pencil sketches and became the product&rsquo;s icon pattern, postcard, packaging moments and loading animation. Alongside brand work she makes pixel art, portraits and watercolour-style pieces.</p>
+        </div>
+      </div>
+
+      <div class="credit-row">
+        <p class="illus-credit">All illustrations on this page hand-drawn by Bijoya Deb</p>
+      </div>
+
+      <div class="pep-gap pair" aria-hidden="true">
+        <img class="pep tilt-l" src="assets/pixel-tarot.png" alt="" loading="lazy" />
+        <img class="pep tilt-r" src="assets/pixel-spellbook.png" alt="" loading="lazy" />
+      </div>
+
+      <div class="illus-stage">
+        <img class="pep margin-pep mp-l tilt-l" style="top:34%" src="assets/pixel-cauldron.png" alt="" aria-hidden="true" loading="lazy" />
+        <img class="pep margin-pep mp-r tilt-r" style="top:64%" src="assets/pixel-mushroom-jars.png" alt="" aria-hidden="true" loading="lazy" />
+      <section class="deck-case">
+        <img class="deck-leaf" src="assets/illus-fall-leaves.png" alt="" aria-hidden="true" loading="lazy" />
+        <p class="deck-kicker">Case study 01 · Illustration set</p>
+        <h3 class="deck-title">Potions &amp; Provisions</h3>
+        <p class="deck-cap">One hand-drawn apothecary set — frogs, mushrooms, potion bottles, botanicals and crystals in white chalk line — shown big in its two colourways. The pair belongs together: hedgerow green first, midnight plum second.</p>
+        <div class="deck-duo">
+          <a class="illus-item" href="assets/illus-chalk-green.png" target="_blank" rel="noopener"><span class="illus-frame deck-frame"><img loading="lazy" src="assets/illus-chalk-green.png" alt="Potions and Provisions, hedgerow green colourway — white chalk-style line art on deep green: frogs, mushrooms, crystal balls, a potion bottle, a teapot and crystals" /></span><span class="illus-label">Hedgerow green</span><span class="illus-sub">White chalk line art on deep green · 1 of a matching pair</span></a>
+          <a class="illus-item" href="assets/illus-chalk-plum.png" target="_blank" rel="noopener"><span class="illus-frame deck-frame"><img loading="lazy" src="assets/illus-chalk-plum.png" alt="Potions and Provisions, midnight plum colourway — white chalk-style line art on dark plum: potion bottles and jars with flowers, mushrooms, moon phases and crystals" /></span><span class="illus-label">Midnight plum</span><span class="illus-sub">White chalk line art on dark plum · 2 of a matching pair</span></a>
+        </div>
+        <div class="palette-strip" role="img" aria-label="Palette for Potions and Provisions: hedgerow green, midnight plum, chalk white, sage and honey gold">
+          <span class="pal"><i style="--sw:#1d300d"></i>Hedgerow<b>#1D300D</b></span>
+          <span class="pal"><i style="--sw:#251320"></i>Midnight plum<b>#251320</b></span>
+          <span class="pal"><i style="--sw:#f4f1e6"></i>Chalk<b>#F4F1E6</b></span>
+          <span class="pal"><i style="--sw:#8fa07e"></i>Sage<b>#8FA07E</b></span>
+          <span class="pal"><i style="--sw:#c9962e"></i>Honey gold<b>#C9962E</b></span>
+        </div>
+      </section>
+      </div><!-- /illus-stage 01 -->
+
+      <div class="illus-stage">
+        <img class="pep margin-pep mp-r tilt-r" style="top:26%" src="assets/pixel-crystal.png" alt="" aria-hidden="true" loading="lazy" />
+        <img class="pep margin-pep mp-l tilt-l" style="top:52%" src="assets/pixel-heart-potion.png" alt="" aria-hidden="true" loading="lazy" />
+      <section class="deck-case">
+        <img class="deck-leaf" src="assets/illus-fall-leaves.png" alt="" aria-hidden="true" loading="lazy" />
+        <p class="deck-kicker">Case study 02 · Café branding</p>
+        <h3 class="deck-title">BrewBase — a brand drawn by hand</h3>
+        <p class="deck-cap">The complete hand-drawn brand set from the BrewBase case study. Every illustration began as Bijoya&rsquo;s own pencil sketch before becoming the product&rsquo;s icon pattern, postcard and packaging moments.</p>
+      <a class="illus-hero" href="assets/brewbase-collage.jpg" target="_blank" rel="noopener" aria-label="Open the BrewBase brand collage full size in a new tab">
+        <img src="assets/brewbase-collage.jpg" alt="BrewBase brand collage — postcard with iced coffee and croissant, B stamp logo, the full hand-drawn icon set and coloured mugs and lattes" />
+        <span class="illus-hero-cap"><b>BrewBase brand collage</b><span>Postcard, B stamp logo, full icon set &amp; coloured mugs — click to open full size</span></span>
+      </a>
+
+      <div class="illus-grid">
+        <a class="illus-item" href="assets/brewbase-pattern.png" target="_blank" rel="noopener"><span class="illus-frame"><img loading="lazy" src="assets/brewbase-pattern.png" alt="BrewBase café icon pattern in full colour — cinnamon roll, takeaway cup, moka pot, matcha whisk, latte art, bagels, croissant, muffin and sandwich" /></span><span class="illus-label">Café icon pattern — colour</span><span class="illus-sub">The full icon set, with the brand&rsquo;s five-colour palette</span></a>
+        <a class="illus-item" href="assets/brewbase-pattern-2.jpg" target="_blank" rel="noopener"><span class="illus-frame"><img loading="lazy" src="assets/brewbase-pattern-2.jpg" alt="BrewBase café icon pattern in dark brown line on textured paper, including a vinyl record, a stack of books and iced coffee" /></span><span class="illus-label">Café icon pattern — line</span><span class="illus-sub">Dark brown line on textured paper</span></a>
+        <a class="illus-item" href="assets/brewbase-postcard.jpg" target="_blank" rel="noopener"><span class="illus-frame"><img loading="lazy" src="assets/brewbase-postcard.jpg" alt="BrewBase postcard — kraft postcard with a top-down iced coffee, a croissant, café doodles and the B stamp logo" /></span><span class="illus-label">Postcard with the &ldquo;B&rdquo; stamp</span><span class="illus-sub">Kraft postcard — iced coffee, croissant &amp; stamp logo</span></a>
+        <a class="illus-item" href="assets/brewbase-sketch.jpg" target="_blank" rel="noopener"><span class="illus-frame"><img loading="lazy" src="assets/brewbase-sketch.jpg" alt="BrewBase pencil sketch branding sheet — receipt, iced coffee, latte, takeaway cup, laptop, café stall, teapot and croissant" /></span><span class="illus-label">Sketch branding sheet</span><span class="illus-sub">The pencil sketches the pattern was built from</span></a>
+        <a class="illus-item" href="assets/brewbase-brand-use.jpg" target="_blank" rel="noopener"><span class="illus-frame"><img loading="lazy" src="assets/brewbase-brand-use.jpg" alt="BrewBase branding in use — the icon pattern on cobalt blue, over a café photo, and on tote bag mockups, with the postcard" /></span><span class="illus-label">Café branding mock</span><span class="illus-sub">Pattern on cobalt, café window &amp; tote bags</span></a>
+        <a class="illus-item" href="assets/brewbase-mugs.jpg" target="_blank" rel="noopener"><span class="illus-frame"><img loading="lazy" src="assets/brewbase-mugs.jpg" alt="Five hand-drawn BrewBase mugs — cloud-pattern latte mug, ribbed mug, pour-over dripper, dark tumbler and tea-bag tile mug" /></span><span class="illus-label">Mugs</span><span class="illus-sub">Five illustrated mugs &amp; cups</span></a>
+        <a class="illus-item" href="assets/brewbase-latte-color.jpg" target="_blank" rel="noopener"><span class="illus-frame"><img loading="lazy" src="assets/brewbase-latte-color.jpg" alt="Hand-drawn latte art cup, filled colour version" /></span><span class="illus-label">Latte art — colour</span><span class="illus-sub">Filled colour version</span></a>
+        <a class="illus-item" href="assets/brewbase-latte-line.jpg" target="_blank" rel="noopener"><span class="illus-frame"><img loading="lazy" src="assets/brewbase-latte-line.jpg" alt="Hand-drawn latte art cup, brown line version" /></span><span class="illus-label">Latte art — line</span><span class="illus-sub">Brown line version</span></a>
+        <a class="illus-item" href="assets/brewbase-latte-top.jpg" target="_blank" rel="noopener"><span class="illus-frame"><img loading="lazy" src="assets/brewbase-latte-top.jpg" alt="Hand-drawn top-down latte art cup in line" /></span><span class="illus-label">Latte art — top-down</span><span class="illus-sub">Top-down line drawing</span></a>
+        <a class="illus-item" href="assets/brewbase-iced.jpg" target="_blank" rel="noopener"><span class="illus-frame"><img loading="lazy" src="assets/brewbase-iced.jpg" alt="Hand-drawn top-down iced coffee in rich brown with ice cubes" /></span><span class="illus-label">Iced coffee</span><span class="illus-sub">Top-down, rich brown with ice cubes</span></a>
+        <a class="illus-item" href="assets/brewbase-books.jpg" target="_blank" rel="noopener"><span class="illus-frame"><img loading="lazy" src="assets/brewbase-books.jpg" alt="Hand-drawn stack of brown books" /></span><span class="illus-label">Books</span><span class="illus-sub">Stack of brown books</span></a>
+        <a class="illus-item" href="assets/brewbase-vinyl.jpg" target="_blank" rel="noopener"><span class="illus-frame"><img loading="lazy" src="assets/brewbase-vinyl.jpg" alt="Hand-drawn vinyl record with a coffee bean centre label" /></span><span class="illus-label">Vinyl &amp; coffee bean</span><span class="illus-sub">Vinyl record with a coffee bean label</span></a>
+      </div>
+
+        <div class="palette-strip" role="img" aria-label="Palette for BrewBase: paper, espresso, cobalt, sage and terracotta">
+          <span class="pal"><i style="--sw:#f5efe3"></i>Paper<b>#F5EFE3</b></span>
+          <span class="pal"><i style="--sw:#38251d"></i>Espresso<b>#38251D</b></span>
+          <span class="pal"><i style="--sw:#293b9b"></i>Cobalt<b>#293B9B</b></span>
+          <span class="pal"><i style="--sw:#73816a"></i>Sage<b>#73816A</b></span>
+          <span class="pal"><i style="--sw:#b45e3f"></i>Terracotta<b>#B45E3F</b></span>
+        </div>
+      </section>
+      </div><!-- /illus-stage 02 -->
+
+      <div class="pep-gap start" aria-hidden="true">
+        <img class="pep tilt-l" src="assets/pixel-moon.png" alt="" loading="lazy" />
+      </div>
+
+      <section class="deck-case tfm" aria-labelledby="tfm-h">
+        <h3 class="sr-only" id="tfm-h">Toronto Flower Market — Case study 03 · Toronto Flower Mkt</h3>
+        <a href="assets/toronto-flower-market-deck.jpg" target="_blank" rel="noopener" aria-label="Open the Toronto Flower Market deck spread full size in a new tab"><img class="tfm-slide" src="assets/toronto-flower-market-deck.jpg" alt="Toronto Flower Market deck spread — Case study 03 · Toronto Flower Mkt: Postcards · Florals, a Spring postcard with tulips and a pink stamp; Skeumorphic social assets, tulips in a lavender folder with an orange lily, on a lavender ground" loading="lazy" /></a>
+      </section>
+
+      <div class="pep-gap end" aria-hidden="true">
+        <img class="pep tilt-r" src="assets/pixel-pumpkin.png" alt="" loading="lazy" />
+      </div>
+
+      <section class="deck-case tfm cgl" aria-labelledby="cgl-h">
+        <h3 class="sr-only" id="cgl-h">Cool Girl Literature — Case study 04 · Literary blog</h3>
+        <a href="assets/cool-girl-literature-deck.jpg" target="_blank" rel="noopener" aria-label="Open the Cool Girl Literature deck slide full size in a new tab"><img class="tfm-slide" src="assets/cool-girl-literature-deck.jpg" alt="Cool Girl Literature deck slide — a literary blog's logo pairing blackletter type with a painted stack of books, a dagger and climbing vines for a gothic, overgrown look, with spot illustrations of a book stack and a latte and a palette strip, on black with a crescent moon" loading="lazy" /></a>
+      </section>
+
+      <div class="illus-process">
+        <div class="illus-card">
+          <h3>From sketchbook to brand system</h3>
+          <p>Every BrewBase illustration started on paper. The sketch sheet became a two-weight pattern — full colour and a single-colour line version — then a postcard, tote-bag branding, and the mug that fills in as the app&rsquo;s loading animation.</p>
+          <figure class="brew-anim" style="margin-bottom:0">
+            <video src="assets/brewbase-loading.mp4" autoplay muted loop playsinline data-brew-anim aria-label="BrewBase loading animation — a hand-drawn mug whose pattern fills in above a progress bar"></video>
+            <figcaption><strong>Loading animation, drawn and animated by Bijoya</strong> — a line-drawn mug whose pattern fills in above a progress bar.</figcaption>
+          </figure>
+        </div>
+        <div class="illus-card">
+          <h3>Drawings, pixel art &amp; portraits</h3>
+          <p>Beyond brand work, Bee posts her illustration work — pixel art, portraits, and watercolour-style pieces — on Instagram as she makes them. The full, most current body of work lives there.</p>
+          <div class="illus-actions">
+            <a class="btn primary" href="https://www.instagram.com/designwith.bee/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+              More illustration work — @designwith.bee
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+            </a>
+            <a class="btn" href="https://canva.link/nhyew0v3if3tx30" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+              Full BrewBase illustration set (Canva)
+            </a>
+            <a class="btn" href="#work" data-show-main="work" data-open-case="brewbase">See it in the BrewBase case study</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div><!-- /view-illustrations -->
+
+  <!-- CONTACT -->
+  <footer class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-top">
+        <div>
+          <h2>Get in touch</h2>
+          <p>Bijoya is in Toronto and works across product design, UX strategy, and visual communications. Send her a postcard — it lands in her email inbox.</p>
+        </div>
+      </div>
+      <form class="postcard" id="postcardForm" novalidate>
+        <div class="pc-message-side">
+          <p class="pc-word" aria-hidden="true">Postcard</p>
+          <div class="pc-field">
+            <label class="pc-label" for="pcMessage">Your message</label>
+            <textarea class="pc-input pc-message" id="pcMessage" name="message" rows="5" required placeholder="Write your message here&hellip;"></textarea>
+          </div>
+          <div class="pc-field">
+            <label class="pc-label" for="pcName">From — your name</label>
+            <input class="pc-input" id="pcName" name="name" type="text" autocomplete="name" required placeholder="Your name" />
+          </div>
+          <div class="pc-field">
+            <label class="pc-label" for="pcEmail">Your email</label>
+            <input class="pc-input" id="pcEmail" name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+          </div>
+        </div>
+        <div class="pc-address-side">
+          <div class="pc-stamp-row">
+            <span class="pc-postmark" aria-hidden="true"><span>Toronto</span><span>2026</span></span>
+            <span class="pc-stampshadow"><span class="pc-stamp"><span class="pc-stamp-art"><img src="assets/postcard-stamp-leaves.png" width="1200" height="675" alt="Postage stamp illustration by Bijoya Deb — autumn oak leaves in orange and gold" loading="lazy" /></span><span class="pc-stamp-cap"><span>Toronto &middot; Canada</span><span class="pc-stamp-val">25&cent;</span></span></span></span>
+          </div>
+          <div class="pc-field">
+            <label class="pc-label" for="pcCategory">What is this about?</label>
+            <select class="pc-input pc-select" id="pcCategory" name="category" required>
+              <option value="">Choose one&hellip;</option>
+              <option>Recruitment opportunity</option>
+              <option>Design opportunity</option>
+              <option>Just saying hello</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="pc-field">
+            <span class="pc-label" aria-hidden="true">To</span>
+            <div class="pc-to-lines" aria-hidden="true">
+              <p>Bijoya Deb</p>
+              <p>Toronto, ON</p>
+              <p>bijoyadebnath99@gmail.com</p>
+            </div>
+          </div>
+          <button class="btn primary pc-send" type="submit">
+            Send postcard
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+          </button>
+          <p class="pc-error" id="pcError" role="alert" hidden></p>
+          <p class="pc-done" id="pcDone" aria-live="polite" hidden>Postcard sent — thank you! It&rsquo;s on its way to Bijoya&rsquo;s inbox, and she&rsquo;ll reply to the email you gave.</p>
+        </div>
+      </form>
+      <p class="pc-caption">Sent from this page, straight to Bijoya&rsquo;s inbox.</p>
+      <p class="pc-backup">Prefer your own email app? <a href="mailto:bijoyadebnath99@gmail.com">Email Bijoya directly</a>.</p>
+      <div class="contact-actions">
+        <a class="cbtn icon-btn solid" href="mailto:bijoyadebnath99@gmail.com" aria-label="Email Bijoya at bijoyadebnath99@gmail.com" title="Email — bijoyadebnath99@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        </a>
+        <a class="cbtn icon-btn" href="https://www.linkedin.com/in/bijoya-d" target="_blank" rel="noopener" aria-label="Bijoya Deb on LinkedIn" title="LinkedIn — linkedin.com/in/bijoya-d">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+        </a>
+        <a class="cbtn icon-btn" href="https://www.instagram.com/bijoya.draws" target="_blank" rel="noopener" aria-label="Bijoya's illustration account on Instagram, @bijoya.draws" title="Instagram — @bijoya.draws">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+        </a>
+      </div>
+      <div class="foot-row">
+        <span>Bijoya Deb — Product Design · UX Strategy · Marketing · Visual Communications</span>
+        <span>Toronto, ON, Canada</span>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<!-- Project lightbox — filled dynamically from the clicked gallery card -->
+<div class="lightbox" id="projectLightbox" hidden role="dialog" aria-modal="true" aria-labelledby="lbTitle">
+  <button class="lb-backdrop" type="button" data-lb-close aria-label="Close project view"></button>
+  <div class="lb-panel">
+    <button class="lb-close" type="button" data-lb-close aria-label="Close project view">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="lb-visual gallery-visual" id="lbVisual"></div>
+    <div class="lb-stats" id="lbStats"></div>
+    <div class="lb-body" id="lbBody"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  // VSCO gallery link — PLACEHOLDER: Bijoya has not sent her VSCO URL yet, so
+  // VSCO_URL is empty and the six photography preview panels stay inactive:
+  // no href, no target, no navigation, no new tab. To go live, replace the
+  // value on the next line with her real VSCO URL (starting with https://) —
+  // that one change turns all six panels into new-tab VSCO links.
+  var VSCO_URL = '';
+  Array.prototype.forEach.call(document.querySelectorAll('[data-vsco-tile]'), function(tile){
+    if (VSCO_URL && /^https?:\/\//.test(VSCO_URL)) {
+      tile.setAttribute('href', VSCO_URL);
+      tile.setAttribute('target', '_blank');
+      tile.setAttribute('rel', 'noopener');
+    } else {
+      tile.removeAttribute('href');
+      tile.removeAttribute('target');
+      tile.removeAttribute('rel');
+    }
+  });
+
+  // Copy email button (hero)
+  var btn = document.getElementById('copyEmailBtn');
+  var label = document.getElementById('copyEmailLabel');
+  var email = 'bijoyadebnath99@gmail.com';
+  var original = label.textContent;
+  btn.addEventListener('click', function(){
+    function done(){
+      label.textContent = 'Copied — ' + email;
+      setTimeout(function(){ label.textContent = original; }, 2200);
+    }
+    function fallbackCopy(){
+      var ta = document.createElement('textarea');
+      ta.value = email; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { if (document.execCommand('copy')) done(); } catch(e){ /* email stays visible on the button */ }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(done, fallbackCopy);
+    } else {
+      fallbackCopy();
+    }
+  });
+
+  // Dark-mode switch (in-memory only; starts from system preference set in <head>)
+  var themeToggle = document.getElementById('themeToggle');
+  function syncThemeToggle(){
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (themeToggle) themeToggle.setAttribute('aria-checked', isDark ? 'true' : 'false');
+    var meta = document.querySelector('meta[name="color-scheme"]');
+    if (meta) meta.setAttribute('content', isDark ? 'dark' : 'light');
+  }
+  syncThemeToggle();
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function(){
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      syncThemeToggle();
+    });
+  }
+
+  // Case-study search + exact hashtag filtering — dynamic, animated, combined
+  var searchInput = document.getElementById('caseSearch');
+  var cases = Array.prototype.slice.call(document.querySelectorAll('.case[data-tags]'));
+  var lanes = Array.prototype.slice.call(document.querySelectorAll('[data-lane]'));
+  var filterBtns = Array.prototype.slice.call(document.querySelectorAll('.filter-btn[data-filter]'));
+  var tagPills = Array.prototype.slice.call(document.querySelectorAll('.tag-pill[data-tag]'));
+  var statusEl = document.getElementById('workStatus');
+  var noResults = document.getElementById('noResults');
+  var clearBtn = document.getElementById('clearFilters');
+  var searchPanel = document.getElementById('searchPanel');
+  var filterPanel = document.getElementById('filterPanel');
+  var searchToggle = document.getElementById('searchToggle');
+  var filterToggle = document.getElementById('filterToggle');
+  var activeFilter = 'all';
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Counts: computed from the cards themselves so pills never lie.
+  var tagCounts = { all: cases.length };
+  cases.forEach(function(card){
+    (card.getAttribute('data-tags') || '').split(/\s+/).filter(Boolean).forEach(function(t){ tagCounts[t] = (tagCounts[t] || 0) + 1; });
+  });
+  document.querySelectorAll('[data-count-for]').forEach(function(el){
+    var k = el.getAttribute('data-count-for');
+    el.textContent = (k in tagCounts) ? tagCounts[k] : 0;
+  });
+  tagPills.forEach(function(p){
+    if (!p.querySelector('.count')) {
+      var s = document.createElement('span'); s.className = 'count';
+      s.textContent = tagCounts[p.getAttribute('data-tag')] || 0;
+      p.appendChild(s);
+    }
+  });
+  function syncFilterUI(){
+    filterBtns.forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-filter') === activeFilter ? 'true' : 'false'); });
+    tagPills.forEach(function(p){ p.classList.toggle('is-active', p.getAttribute('data-tag') === activeFilter); });
+    var q = searchInput ? searchInput.value.trim() : '';
+    if (clearBtn) clearBtn.hidden = !(activeFilter !== 'all' || q);
+    if (searchToggle) searchToggle.classList.toggle('has-active', !!q);
+    if (filterToggle) filterToggle.classList.toggle('has-active', activeFilter !== 'all');
+  }
+  function setFilter(tag){ activeFilter = tag || 'all'; applyFilters(true); }
+  function setPanel(panel, toggle, open){
+    if (!panel || !toggle) return;
+    panel.classList.toggle('open', !!open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  function applyFilters(animate){
+    var q = searchInput ? searchInput.value.trim().toLowerCase() : '';
+    syncFilterUI();
+    var visible = 0;
+    var toShow = [], toHide = [];
+    cases.forEach(function(card){
+      var tags = (card.getAttribute('data-tags') || '').split(/\s+/).filter(Boolean);
+      // Exact tag match only — a tag matches only if the card itself carries it.
+      var tagOk = activeFilter === 'all' || tags.indexOf(activeFilter) !== -1;
+      var textOk = !q || card.textContent.toLowerCase().indexOf(q) !== -1;
+      var show = tagOk && textOk;
+      if (show) { visible++; if (card.hidden) toShow.push(card); }
+      else if (!card.hidden) toHide.push(card);
+    });
+    function commit(){
+      toHide.forEach(function(c){ c.classList.remove('is-leaving'); c.hidden = true; });
+      toShow.forEach(function(c){
+        c.hidden = false;
+        if (animate && !reduceMotion) { c.classList.remove('is-entering'); void c.offsetWidth; c.classList.add('is-entering'); }
+      });
+      lanes.forEach(function(lane){
+        var any = Array.prototype.some.call(lane.querySelectorAll('.case[data-tags]'), function(c){ return !c.hidden; });
+        lane.hidden = !any;
+      });
+      if (statusEl) statusEl.innerHTML = 'Showing <strong>' + visible + '</strong> of 4 case studies' + (activeFilter !== 'all' ? ' tagged <strong>#' + activeFilter + '</strong>' : '') + (q ? ' matching &ldquo;' + q.replace(/</g,'&lt;') + '&rdquo;' : '');
+      if (noResults) noResults.classList.toggle('show', visible === 0);
+      syncFilterUI();
+    }
+    if (animate && !reduceMotion && toHide.length) {
+      toHide.forEach(function(c){ c.classList.add('is-leaving'); });
+      setTimeout(commit, 160);
+    } else { commit(); }
+  }
+  filterBtns.forEach(function(b){ b.addEventListener('click', function(){ setFilter(b.getAttribute('data-filter')); }); });
+  function bindTagPills(scope){
+    (scope || document).querySelectorAll('.tag-pill[data-tag]').forEach(function(p){
+      if (p.__bound) return; p.__bound = true;
+      p.addEventListener('click', function(){
+        setFilter(p.getAttribute('data-tag'));
+        setPanel(filterPanel, filterToggle, true);
+        if (filterPanel) filterPanel.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+      });
+    });
+  }
+  bindTagPills(document);
+  if (searchInput) searchInput.addEventListener('input', function(){ applyFilters(false); });
+  function clearAll(){ if (searchInput) searchInput.value = ''; setFilter('all'); if (searchInput && searchPanel && searchPanel.classList.contains('open')) searchInput.focus(); }
+  var resetBtn = document.getElementById('resetFilters');
+  if (resetBtn) resetBtn.addEventListener('click', clearAll);
+  if (clearBtn) clearBtn.addEventListener('click', clearAll);
+  // Header toggles: expand / collapse the search and filter panels under the heading
+  if (searchToggle) searchToggle.addEventListener('click', function(){
+    var open = !(searchPanel && searchPanel.classList.contains('open'));
+    setPanel(searchPanel, searchToggle, open);
+    if (open && searchInput) searchInput.focus({ preventScroll: true });
+  });
+  if (filterToggle) filterToggle.addEventListener('click', function(){
+    setPanel(filterPanel, filterToggle, !(filterPanel && filterPanel.classList.contains('open')));
+  });
+  applyFilters(false);
+
+  // BrewBase loading animation: honour reduced-motion instead of autoplaying.
+  if (reduceMotion) {
+    document.querySelectorAll('video[data-brew-anim]').forEach(function(v){
+      v.removeAttribute('autoplay'); v.pause(); v.setAttribute('controls', '');
+    });
+  }
+
+  // Lightbox — larger view built from the clicked gallery card (no fake images, no fake PDF links)
+  var lightbox = document.getElementById('projectLightbox');
+  var lbVisual = document.getElementById('lbVisual');
+  var lbStats = document.getElementById('lbStats');
+  var lbBody = document.getElementById('lbBody');
+  var lastTrigger = null;
+  function openLightbox(card, trigger){
+    if (!lightbox || !card) return;
+    lastTrigger = trigger || null;
+    var visual = card.querySelector('.gallery-visual');
+    var fullSrc = '';
+    if (visual) {
+      fullSrc = visual.getAttribute('href') || '';
+      var vimg = visual.querySelector('img');
+      if (!fullSrc && vimg) fullSrc = vimg.getAttribute('src') || '';
+    }
+    if (visual && lbVisual) {
+      lbVisual.className = 'lb-visual gallery-visual ' + Array.prototype.filter.call(visual.classList, function(c){ return (c.charAt(0) === 'v' && c.charAt(1) === '-') || c === 'has-photo'; }).join(' ');
+      lbVisual.innerHTML = visual.innerHTML;
+      // The enlarged board itself links out to the full-resolution file.
+      var limg = lbVisual.querySelector('img');
+      if (limg && fullSrc) {
+        var wrap = document.createElement('a');
+        wrap.className = 'lb-img-link'; wrap.href = fullSrc; wrap.target = '_blank'; wrap.rel = 'noopener';
+        wrap.setAttribute('aria-label', 'Open this image full size in a new tab');
+        limg.parentNode.insertBefore(wrap, limg); wrap.appendChild(limg);
+        var bar = lbVisual.querySelector('.gv-photo-bar'); if (bar) bar.remove();
+      }
+    }
+    var band = card.querySelector('.case-band');
+    if (lbStats) lbStats.innerHTML = band ? band.innerHTML : '';
+    var body = card.querySelector('.case-body');
+    if (lbBody && body) {
+      lbBody.innerHTML = body.innerHTML;
+      var h = lbBody.querySelector('h3'); if (h) h.id = 'lbTitle';
+      bindTagPills(lbBody);
+      if (reduceMotion) lbBody.querySelectorAll('video[data-brew-anim]').forEach(function(v){ v.removeAttribute('autoplay'); v.pause(); v.setAttribute('controls', ''); });
+      // Tag pills inside the lightbox filter the gallery behind it, then close.
+      lbBody.querySelectorAll('.tag-pill[data-tag]').forEach(function(p){
+        p.addEventListener('click', function(){ closeLightbox(); });
+      });
+    }
+    lightbox.hidden = false;
+    document.body.classList.add('lb-open');
+    var closeBtn = lightbox.querySelector('.lb-close');
+    if (closeBtn) closeBtn.focus();
+  }
+  function closeLightbox(){
+    if (!lightbox || lightbox.hidden) return;
+    lightbox.hidden = true;
+    document.body.classList.remove('lb-open');
+    if (lastTrigger && lastTrigger.focus) lastTrigger.focus();
+  }
+  document.querySelectorAll('[data-lightbox-trigger]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      // Photo heroes are real links: Cmd/Ctrl/middle-click opens the full
+      // image in a new tab natively; a plain click opens the enlarged view.
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button === 1) return;
+      e.preventDefault();
+      var card = btn.closest('.case');
+      openLightbox(card, btn);
+    });
+  });
+
+  // Case-study drawers: independent open/close toggles (Chitrok starts open).
+  function setDrawer(card, open){
+    if (!card) return;
+    card.classList.toggle('open', open);
+    var btn = card.querySelector('.drawer-toggle');
+    if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  document.querySelectorAll('.drawer-toggle').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var card = btn.closest('.case');
+      setDrawer(card, !card.classList.contains('open'));
+    });
+  });
+
+  // Case-study tabs beside the section heading: scroll to a project and open its drawer.
+  document.querySelectorAll('.work-tab[data-goto]').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      var card = document.querySelector('.case[data-project="' + tab.getAttribute('data-goto') + '"]');
+      if (!card) return;
+      function go(){
+        setDrawer(card, true);
+        card.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      }
+      if (card.hidden || activeFilter !== 'all' || (searchInput && searchInput.value.trim())) {
+        clearAll();
+        setTimeout(go, 240);
+      } else { go(); }
+    });
+  });
+  if (lightbox) {
+    lightbox.querySelectorAll('[data-lb-close]').forEach(function(el){ el.addEventListener('click', closeLightbox); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeLightbox(); });
+  }
+
+  // Tools I use rail — click a tool to jump to and highlight the entries tagged with it
+  // (Experience timeline roles via their per-role tags, plus the featured case studies via their Tools chips).
+  var toolBtns = Array.prototype.slice.call(document.querySelectorAll('[data-tool-jump]'));
+  var toolStatus = document.getElementById('toolStatus');
+  var toolClear = document.getElementById('toolClear');
+  function normTool(s){ return (s || '').toLowerCase().replace(/\s+/g, ' ').trim(); }
+  var toolEntries = [];
+  document.querySelectorAll('#experience .t-row').forEach(function(row){
+    var tagEls = Array.prototype.slice.call(row.querySelectorAll('.role-tag'));
+    toolEntries.push({ el: row, tagEls: tagEls, tags: tagEls.map(function(t){ return normTool(t.textContent); }), isCase: false });
+  });
+  cases.forEach(function(card){
+    var tagEls = Array.prototype.slice.call(card.querySelectorAll('.case-body .chips .chip'));
+    toolEntries.push({ el: card, tagEls: tagEls, tags: tagEls.map(function(t){ return normTool(t.textContent); }), isCase: true });
+  });
+  function clearToolHits(){
+    toolEntries.forEach(function(en){
+      en.el.classList.remove('tool-hit');
+      en.tagEls.forEach(function(t){ t.classList.remove('tag-hit'); });
+    });
+    toolBtns.forEach(function(b){ b.setAttribute('aria-pressed', 'false'); });
+    if (toolStatus) toolStatus.textContent = '';
+    if (toolClear) toolClear.hidden = true;
+  }
+  if (toolClear) toolClear.addEventListener('click', clearToolHits);
+  toolBtns.forEach(function(btn){
+    var keys = btn.getAttribute('data-tool-jump').split(',').map(normTool);
+    var name = btn.getAttribute('data-tool-name') || 'Tool';
+    var matches = toolEntries.filter(function(en){
+      return en.tags.some(function(t){ return keys.indexOf(t) !== -1; });
+    });
+    var countEl = btn.querySelector('[data-tool-count]');
+    if (countEl) countEl.textContent = matches.length;
+    btn.addEventListener('click', function(){
+      var wasActive = btn.getAttribute('aria-pressed') === 'true';
+      clearToolHits();
+      if (wasActive) return;
+      btn.setAttribute('aria-pressed', 'true');
+      if (toolClear) toolClear.hidden = false;
+      if (!matches.length) {
+        if (toolStatus) toolStatus.innerHTML = '<strong>' + name + '</strong> is part of the general design &amp; media toolkit — no single entry is tagged with it.';
+        return;
+      }
+      function applyHits(){
+        cases.forEach(function(card){ setDrawer(card, false); });
+        matches.forEach(function(en){
+          en.el.classList.add('tool-hit');
+          en.tagEls.forEach(function(t){ if (keys.indexOf(normTool(t.textContent)) !== -1) t.classList.add('tag-hit'); });
+          if (en.isCase) setDrawer(en.el, false);
+        });
+        matches[0].el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        if (toolStatus) toolStatus.innerHTML = '<strong>' + name + '</strong> — ' + (matches.length === 1 ? '1 entry' : matches.length + ' entries') + ' highlighted.';
+      }
+      var needsClear = activeFilter !== 'all' || (searchInput && searchInput.value.trim()) || matches.some(function(en){ return en.isCase && en.el.hidden; });
+      if (needsClear) { clearAll(); setTimeout(applyHits, 300); } else { applyHits(); }
+    });
+  });
+
+  // Contact postcard — validates, then sends via FormSubmit AJAX to Bijoya's inbox; mailto is the failure fallback.
+  var pcForm = document.getElementById('postcardForm');
+  if (pcForm) {
+    var pcError = document.getElementById('pcError');
+    var pcDone = document.getElementById('pcDone');
+    var pcFields = [
+      { el: document.getElementById('pcName'), label: 'your name' },
+      { el: document.getElementById('pcEmail'), label: 'your email', email: true },
+      { el: document.getElementById('pcCategory'), label: 'what this is about' },
+      { el: document.getElementById('pcMessage'), label: 'a message' }
+    ];
+    pcFields.forEach(function(f){
+      if (f.el) f.el.addEventListener('input', function(){ f.el.removeAttribute('aria-invalid'); });
+      if (f.el) f.el.addEventListener('change', function(){ f.el.removeAttribute('aria-invalid'); });
+    });
+    pcForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var missing = [];
+      var firstBad = null;
+      pcFields.forEach(function(f){
+        if (!f.el) return;
+        var v = (f.el.value || '').trim();
+        var bad = !v || (f.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+        f.el.toggleAttribute('aria-invalid', bad);
+        if (bad) { missing.push(f.label); if (!firstBad) firstBad = f.el; }
+      });
+      if (missing.length) {
+        if (pcDone) pcDone.hidden = true;
+        if (pcError) {
+          pcError.hidden = false;
+          pcError.textContent = 'Please add ' + missing.join(', ') + ' before sending.';
+        }
+        if (firstBad) firstBad.focus();
+        return;
+      }
+      if (pcError) { pcError.hidden = true; pcError.textContent = ''; }
+      if (pcDone) pcDone.hidden = true;
+      var name = document.getElementById('pcName').value.trim();
+      var email = document.getElementById('pcEmail').value.trim();
+      var category = document.getElementById('pcCategory').value.trim();
+      var message = document.getElementById('pcMessage').value.trim();
+      var subject = '[' + category + '] Message from ' + name;
+      var sendBtn = pcForm.querySelector('.pc-send');
+      var sendBtnHtml = sendBtn ? sendBtn.innerHTML : '';
+      function restoreBtn(){ if (sendBtn) { sendBtn.disabled = false; sendBtn.innerHTML = sendBtnHtml; } }
+      function sendFailed(){
+        restoreBtn();
+        var fallback = 'mailto:bijoyadebnath99@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(message + '\n\n— ' + name + '\n' + email);
+        if (pcError) {
+          pcError.hidden = false;
+          pcError.innerHTML = 'Something went wrong sending that postcard. <a href="' + fallback + '">Email Bijoya directly instead</a> — your message is filled in for you.';
+        }
+      }
+      if (sendBtn) { sendBtn.disabled = true; sendBtn.textContent = 'Sending…'; }
+      fetch('https://formsubmit.co/ajax/bijoyadebnath99@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          _replyto: email,
+          _subject: subject,
+          message: message,
+          _template: 'table',
+          _captcha: 'true'
+        })
+      }).then(function(res){
+        return res.json().catch(function(){ return {}; }).then(function(data){
+          var ok = res.ok && !(data && (data.success === false || data.success === 'false'));
+          if (!ok) throw new Error('send failed');
+          restoreBtn();
+          pcForm.classList.add('sent');
+          pcForm.reset();
+          if (pcDone) pcDone.hidden = false;
+        });
+      }).catch(function(){ sendFailed(); });
+    });
+  }
+
+  // Active nav highlighting
+  var links = {};
+  document.querySelectorAll('nav.links a[data-nav]').forEach(function(a){ links[a.getAttribute('data-nav')] = a; });
+  var targets = ['work','experience','photography','community','about','contact'];
+  function setActive(id){
+    Object.keys(links).forEach(function(k){ links[k].classList.toggle('active', k === id); });
+  }
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting) setActive(en.target.id); });
+    }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+    targets.forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) obs.observe(el);
+    });
+  }
+
+  // Illustrations tab — a separate view opened from the main nav, not a scroll section.
+  var viewMain = document.getElementById('view-main');
+  var viewIllus = document.getElementById('view-illustrations');
+  var inIllus = false;
+  function showIllustrations(push){
+    if (!viewMain || !viewIllus || inIllus) return;
+    inIllus = true;
+    viewMain.hidden = true;
+    viewIllus.hidden = false;
+    setActive('illustrations');
+    if (links['illustrations']) links['illustrations'].setAttribute('aria-current', 'page');
+    window.scrollTo(0, 0);
+    if (push) { try { history.pushState(null, '', '#illustrations'); } catch(e){} }
+    var h = document.getElementById('illus-h');
+    if (h) h.focus({ preventScroll: true });
+  }
+  function showMain(targetId, openCase){
+    if (!viewMain || !viewIllus) return;
+    inIllus = false;
+    viewIllus.hidden = true;
+    viewMain.hidden = false;
+    if (links['illustrations']) links['illustrations'].removeAttribute('aria-current');
+    if (openCase) {
+      var card = document.querySelector('.case[data-project="' + openCase + '"]');
+      if (card) {
+        setDrawer(card, true);
+        card.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        setActive('work');
+        return;
+      }
+    }
+    if (targetId) {
+      var el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        setActive(targetId);
+        return;
+      }
+    }
+    window.scrollTo(0, 0);
+  }
+  document.querySelectorAll('nav.links a[data-nav]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('data-nav');
+      if (id === 'illustrations') {
+        e.preventDefault();
+        if (!inIllus) showIllustrations(true); else window.scrollTo(0, 0);
+        return;
+      }
+      if (inIllus) {
+        e.preventDefault();
+        try { history.pushState(null, '', '#' + id); } catch(err){}
+        showMain(id);
+      }
+    });
+  });
+  var navName = document.querySelector('.nav-name');
+  if (navName) navName.addEventListener('click', function(e){
+    if (inIllus) {
+      e.preventDefault();
+      try { history.pushState(null, '', '#top'); } catch(err){}
+      showMain(null);
+    }
+  });
+  document.querySelectorAll('[data-goto-illustrations]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      if (!inIllus) showIllustrations(true);
+    });
+  });
+  document.querySelectorAll('[data-show-main]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var t = a.getAttribute('data-show-main');
+      try { history.pushState(null, '', '#' + t); } catch(err){}
+      showMain(t, a.getAttribute('data-open-case'));
+    });
+  });
+  function syncFromHash(){
+    if (window.location.hash === '#illustrations') { showIllustrations(false); }
+    else if (inIllus) { showMain(window.location.hash ? window.location.hash.slice(1) : null); }
+  }
+  window.addEventListener('hashchange', syncFromHash);
+  window.addEventListener('popstate', syncFromHash);
+  if (window.location.hash === '#illustrations') showIllustrations(false);
+})();
+</script>
+</body>
+</html>

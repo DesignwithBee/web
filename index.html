@@ -2432,6 +2432,7 @@
         </div>
       </div>
       <form class="postcard" id="postcardForm" novalidate>
+        <input type="checkbox" name="botcheck" id="pcBot" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
         <div class="pc-message-side">
           <p class="pc-word" aria-hidden="true">Postcard</p>
           <div class="pc-field">
@@ -2484,7 +2485,6 @@
           <p class="pc-done" id="pcDone" aria-live="polite" hidden>Postcard sent — thank you! It&rsquo;s on its way to Bijoya&rsquo;s inbox, and she&rsquo;ll reply to the email you gave.</p>
         </div>
       </form>
-      <p class="pc-caption">Sent from this page, straight to Bijoya&rsquo;s inbox.</p>
       <p class="pc-backup">Prefer your own email app? <a href="mailto:bijoyadebnath99@gmail.com">Email Bijoya directly</a>.</p>
       <div class="contact-actions">
         <a class="cbtn icon-btn solid" href="mailto:bijoyadebnath99@gmail.com" aria-label="Email Bijoya at bijoyadebnath99@gmail.com" title="Email — bijoyadebnath99@gmail.com">
@@ -2849,7 +2849,11 @@
     });
   });
 
-  // Contact postcard — validates, then sends via FormSubmit AJAX to Bijoya's inbox; mailto is the failure fallback.
+  // Contact postcard — validates, then sends to Bijoya's inbox through Web3Forms
+  // (free: 250 messages a month). Paste the access key from web3forms.com below.
+  // Until a key is set, it falls back to FormSubmit; mailto is the last resort.
+  var WEB3FORMS_KEY = 'a8b23dbd-9692-433d-99e6-375cf7816ea8';
+  var COOLDOWN_MS = 60 * 1000; // one postcard per visitor per minute
   var pcForm = document.getElementById('postcardForm');
   if (pcForm) {
     var pcError = document.getElementById('pcError');
@@ -2886,6 +2890,14 @@
       }
       if (pcError) { pcError.hidden = true; pcError.textContent = ''; }
       if (pcDone) pcDone.hidden = true;
+      // Spam trap: real people never tick the hidden box.
+      var bot = document.getElementById('pcBot');
+      if (bot && bot.checked) { pcForm.reset(); if (pcDone) pcDone.hidden = false; return; }
+      var last = 0; try { last = +localStorage.getItem('bd-pc-last') || 0; } catch(err){}
+      if (Date.now() - last < COOLDOWN_MS) {
+        if (pcError) { pcError.hidden = false; pcError.textContent = 'Your postcard is on its way. Please wait a minute before sending another.'; }
+        return;
+      }
       var name = document.getElementById('pcName').value.trim();
       var email = document.getElementById('pcEmail').value.trim();
       var category = document.getElementById('pcCategory').value.trim();
@@ -2903,22 +2915,30 @@
         }
       }
       if (sendBtn) { sendBtn.disabled = true; sendBtn.textContent = 'Sending…'; }
-      fetch('https://formsubmit.co/ajax/bijoyadebnath99@gmail.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
+      var useWeb3 = !!WEB3FORMS_KEY;
+      var payload = useWeb3 ? {
+          access_key: WEB3FORMS_KEY,
+          subject: subject,
+          from_name: 'Portfolio postcard',
           name: name,
           email: email,
-          _replyto: email,
-          _subject: subject,
+          replyto: email,
+          topic: category,
           message: message,
-          _template: 'table',
-          _captcha: 'true'
-        })
+          botcheck: false
+        } : {
+          name: name, email: email, _replyto: email, _subject: subject,
+          message: message, _template: 'table', _captcha: 'true'
+        };
+      fetch(useWeb3 ? 'https://api.web3forms.com/submit' : 'https://formsubmit.co/ajax/bijoyadebnath99@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
       }).then(function(res){
         return res.json().catch(function(){ return {}; }).then(function(data){
           var ok = res.ok && !(data && (data.success === false || data.success === 'false'));
           if (!ok) throw new Error('send failed');
+          try { localStorage.setItem('bd-pc-last', String(Date.now())); } catch(err){}
           restoreBtn();
           pcForm.classList.add('sent');
           pcForm.reset();

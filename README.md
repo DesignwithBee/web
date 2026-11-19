@@ -29,7 +29,7 @@ Live site: add your GitHub Pages link here once deployed (e.g. `https://designwi
 - **In-page image viewer** — screenshots and illustrations open in a lightbox with ← → keys, swipe on mobile, and an "Open full size" link.
 - Scroll progress bar, reveal-on-scroll, count-up impact stats, a typed role line in the hero, cursor spotlight on cards and a back-to-top button — all switched off for visitors who prefer reduced motion.
 - Theme choice is remembered between visits; Open Graph tags give LinkedIn/Slack link previews.
-- Contact form is wired to [FormSubmit](https://formsubmit.co), which works on static hosting. Note: FormSubmit sends a one-time activation email on the first submission — click it once and messages deliver normally after that.
+- Contact form sends through [Web3Forms](https://web3forms.com) (free plan: 250 messages a month, no account needed). Paste your access key into `WEB3FORMS_KEY` in `index.html`. Until a key is set, it falls back to [FormSubmit](https://formsubmit.co). A hidden spam trap and a one-minute cooldown per visitor protect the monthly allowance.
 - All illustrations and photography on the site are Bijoya's own work; the BrewBase illustration set was hand-drawn by her.
 
 ## Contact

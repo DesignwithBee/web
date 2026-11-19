@@ -1,6 +1,6 @@
 # Bijoya Deb — Product Design Portfolio
 
-Portfolio site for **Bijoya Deb** (Bee-jo-ya, "Bee"), a product designer based in Toronto, ON.
+Portfolio site for **Bijoya Deb** (Bee-joy-ah, "Bee"), a product designer based in Toronto, ON.
 Product Design · UX Strategy · Marketing · Visual Communications.
 
 **Available for full-time roles.**
@@ -24,6 +24,11 @@ Live site: add your GitHub Pages link here once deployed (e.g. `https://designwi
 
 - Plain static **HTML, CSS, and JavaScript** — no build step, no framework, nothing to install.
 - Dark/light mode toggle, collapsible case-study drawers, live search + hashtag filters, and a tool-based jump navigation in Experience.
+- **Recruiter summary** — a floating "Hiring? 30-sec summary" button (or press `R`) opens a slide-over with role targets, impact numbers, toolkit, case-study links, résumé download and email copy.
+- **Quick jump** — `⌘K` / `Ctrl K` (or `/`) opens a command palette to jump to any case study or section, download the résumé, copy the email, or switch theme.
+- **In-page image viewer** — screenshots and illustrations open in a lightbox with ← → keys, swipe on mobile, and an "Open full size" link.
+- Scroll progress bar, reveal-on-scroll, count-up impact stats, a typed role line in the hero, cursor spotlight on cards and a back-to-top button — all switched off for visitors who prefer reduced motion.
+- Theme choice is remembered between visits; Open Graph tags give LinkedIn/Slack link previews.
 - Contact form is wired to [FormSubmit](https://formsubmit.co), which works on static hosting. Note: FormSubmit sends a one-time activation email on the first submission — click it once and messages deliver normally after that.
 - All illustrations and photography on the site are Bijoya's own work; the BrewBase illustration set was hand-drawn by her.
 

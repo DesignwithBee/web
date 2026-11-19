@@ -11,7 +11,7 @@ Live site: add your GitHub Pages link here once deployed (e.g. `https://designwi
 
 - **Featured Case Studies** — four projects presented as expandable case studies with search and tag filtering:
 - **Chitrok** — Rebuilding e-commerce marketplace for South Asian creatives (Lead AI Engineer and Product Designer)
-- **BrewBase** — a Toronto café discovery app, designed around the kind of day you're planning (Co-Founder, CEO & Product Designer)
+- **BrewBase** — a Toronto café discovery app, designed around the kind of day you're planning (Co-Founder & Product Designer)
 - **MyManagement Portal** — BBA Students Central Hub for Resources, Career and Program Pathways (UTSC, Department of Management)
 - **U of T Public Health** — design system and information architecture across 33 department sites (Dalla Lana School of Public Health)
 - **Experience** — résumé timeline with the tools and skills tagged under each role, plus a "Tools I use" rail: click a tool to jump to the work that used it. A downloadable résumé (PDF) is linked from the header and the Experience section.

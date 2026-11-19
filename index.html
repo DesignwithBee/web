@@ -4,56 +4,67 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
-<script>try{document.documentElement.setAttribute('data-theme',window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}</script>
+<script>try{var t=null;try{t=localStorage.getItem('bd-theme')}catch(e){}document.documentElement.setAttribute('data-theme',(t==='dark'||t==='light')?t:(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));}catch(e){document.documentElement.setAttribute('data-theme','light');}</script>
 <meta name="description" content="Bijoya Deb — Product designer in Toronto. Case studies: Chitrok artist marketplace, BrewBase café discovery, University of Toronto Hub Portal and 33 department sites." />
-<link rel="icon" href="data:," />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%23b7c75e%27/%3E%3Ctext x=%2750%25%27 y=%2754%25%27 dominant-baseline=%27middle%27 text-anchor=%27middle%27 font-family=%27Georgia,serif%27 font-size=%2738%27 font-weight=%27700%27 fill=%27%231f2610%27%3EB%3C/text%3E%3C/svg%3E" />
+<meta name="author" content="Bijoya Deb" />
+<meta name="theme-color" content="#b7c75e" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Bijoya Deb — Product Designer, Toronto" />
+<meta property="og:description" content="Product design, UX strategy and visual communications. Case studies: Chitrok, BrewBase, U of T Hub Portal and 33 Public Health sites. Open to full-time roles." />
+<meta property="og:image" content="assets/chitrok-home.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
 <title>Bijoya Deb — Product Design Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --bg:#eef3f5;
-    --bg-2:#e3ebef;
+    --bg:#ffffff;
+    --bg-2:#f7f6f1;
     --surface:#ffffff;
     --ink:#17202a;
     --ink-2:#3d4a57;
     --muted:#63707d;
-    --line:#d7e0e6;
-    --line-strong:#b9c8d1;
-    --accent:#0e6b4f;
-    --accent-tint:rgba(14,107,79,.17);
-    --accent-ink:#0a4f3a;
-    --accent-soft:#dff0e8;
-    --pop:#c2410c;
-    --pop-soft:#fdeadd;
-    --chip:#eef3f5;
-    --nav-bg:rgba(238,243,245,.94);
-    --shadow:0 1px 3px rgba(23,32,42,.06),0 10px 28px -14px rgba(23,32,42,.18);
+    --line:#e9e6dd;
+    --line-strong:#d4cfc0;
+    --accent:#b7c75e;
+    --on-accent:#1f2610;
+    --accent-tint:rgba(183,199,94,.30);
+    --accent-ink:#56651b;
+    --accent-soft:#f2f6de;
+    --pop:#7a4a2a;
+    --pop-soft:#f4ebe1;
+    --pop-line:#e4d3c1;
+    --chip:#f6f4ee;
+    --nav-bg:rgba(255,255,255,.94);
+    --shadow:0 1px 3px rgba(40,34,20,.06),0 10px 28px -14px rgba(40,34,20,.16);
     --radius:14px;
     --pill-blue:#dbeafe; --pill-green:#d9f0dc; --pill-peach:#fde8c8; --pill-lav:#e6def7; --pill-rose:#fde2e2; --pill-teal:#d3ecec; --pill-text:#24313d;
     --input-bg:#ffffff;
   }
   :root[data-theme="dark"]{
-    --bg:#0a0d10;
-    --bg-2:#12171c;
-    --surface:#171d23;
-    --ink:#eef2f5;
-    --ink-2:#cbd6de;
-    --muted:#9aa8b3;
-    --line:#28323a;
-    --line-strong:#3d4c58;
-    --accent:#4cc39a;
-    --accent-tint:rgba(76,195,154,.18);
-    --accent-ink:#7fd8ba;
-    --accent-soft:#143128;
-    --pop:#ff9a66;
-    --pop-soft:#3a2418;
-    --chip:#1f272e;
-    --nav-bg:rgba(10,13,16,.94);
+    --bg:#1c1511;
+    --bg-2:#241b16;
+    --surface:#2a201a;
+    --ink:#f6efe7;
+    --ink-2:#ddd0c3;
+    --muted:#b3a393;
+    --line:#3d3029;
+    --line-strong:#56453a;
+    --accent:#b7c75e;
+    --on-accent:#1f2610;
+    --accent-tint:rgba(183,199,94,.20);
+    --accent-ink:#d0dc8a;
+    --accent-soft:#2f3018;
+    --pop:#d2a47c;
+    --pop-soft:#3b2b20;
+    --pop-line:#4d3a2a;
+    --chip:#33271f;
+    --nav-bg:rgba(28,21,17,.94);
     --shadow:0 1px 3px rgba(0,0,0,.45),0 12px 28px -14px rgba(0,0,0,.65);
     --pill-blue:#24344d; --pill-green:#223d2a; --pill-peach:#40351f; --pill-lav:#332a4d; --pill-rose:#44282c; --pill-teal:#1f3a3a; --pill-text:#e6edf2;
-    --input-bg:#12171c;
+    --input-bg:#241b16;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -67,9 +78,9 @@
     font-size:16px;line-height:1.55;
     -webkit-font-smoothing:antialiased;
   }
-  ::selection{background:var(--accent);color:#fff}
+  ::selection{background:var(--accent);color:var(--on-accent)}
   a{color:var(--accent-ink)}
-  :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+  :focus-visible{outline:3px solid var(--accent-ink);outline-offset:2px;border-radius:4px}
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
   @media (max-width:560px){.wrap{padding:0 18px}}
 
@@ -139,9 +150,9 @@
   }
   .btn svg{width:18px;height:18px;flex:none}
   .btn:hover{border-color:var(--ink)}
-  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
   .btn.primary:hover{background:var(--accent-ink);border-color:var(--accent-ink)}
-  :root[data-theme="dark"] .btn.primary{color:#0b1512}
+  :root[data-theme="dark"] .btn.primary{color:var(--on-accent)}
   .btn .copied-note{font-weight:600;font-size:.85rem;color:var(--accent-ink)}
 
   /* ---------- Metrics ---------- */
@@ -228,7 +239,8 @@
     font-size:.85rem;font-weight:600;padding:7px 12px;border-radius:999px;
     background:var(--accent-soft);color:var(--accent-ink);
   }
-  .meta-pill.date{background:var(--chip);color:var(--ink-2)}
+  .meta-pill.title-note{background:transparent;border:0;padding-left:2px;font-weight:500;color:var(--muted);font-size:.82rem}
+  .meta-pill.date{background:var(--pop-soft);color:var(--pop);border:1px solid var(--pop-line)}
   .case-body ul{margin:0 0 20px;padding:0;list-style:none;max-width:52rem}
   .case-body li{position:relative;padding-left:22px;margin-bottom:9px;color:var(--ink-2)}
   .case-body li::before{
@@ -341,7 +353,7 @@
   .photo-tile img{
     width:100%;height:100%;object-fit:cover;display:block;
   }
-  .photo-tile[href]:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  .photo-tile[href]:focus-visible{outline:3px solid var(--accent-ink);outline-offset:2px}
   /* Single white arrow badge by the "Selected frames" heading — the tiles themselves carry no overlays */
   .photo-head-arrow{
     width:30px;height:30px;border-radius:50%;align-self:center;
@@ -369,7 +381,7 @@
   .illus-frame{display:block;border:1px solid var(--line-strong);border-radius:12px;overflow:hidden;background:#faf7f1;aspect-ratio:4/3}
   .illus-frame img{width:100%;height:100%;object-fit:cover;display:block}
   .illus-item:hover .illus-frame{border-color:var(--ink)}
-  .illus-item:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:12px}
+  .illus-item:focus-visible{outline:3px solid var(--accent-ink);outline-offset:2px;border-radius:12px}
   .illus-label{display:block;margin-top:7px;font-size:.88rem;font-weight:700;line-height:1.3}
   .illus-label::after{content:" \2197";color:var(--accent-ink)}
   .illus-sub{display:block;font-size:.8rem;color:var(--muted);line-height:1.35;margin-top:2px}
@@ -388,8 +400,8 @@
     background:var(--surface);border:1px solid var(--line-strong);border-radius:16px;overflow:hidden;
     box-shadow:var(--shadow);margin-bottom:28px;
   }
-  .resume-strip{height:64px;overflow:hidden;border-bottom:1px solid var(--line)}
-  .resume-strip img{width:100%;height:100%;object-fit:cover;object-position:center 38%;display:block}
+  .resume-strip{height:72px;overflow:hidden;border-bottom:1px solid var(--line);background:#1b2a10}
+  .resume-strip img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
   .resume-sheet-inner{padding:22px 24px 20px;display:flex;flex-wrap:wrap;gap:16px 28px;align-items:flex-start;justify-content:space-between}
   @media (max-width:560px){.resume-sheet-inner{padding:18px}}
   .resume-sheet-inner h3{font-family:"Source Serif 4",Georgia,serif;font-size:1.5rem;font-weight:600;margin:0 0 4px;letter-spacing:-.01em}
@@ -441,8 +453,8 @@
      The inset shadow paints above the block's own background but below its content,
      so text stays at full strength; it comes and goes with the same .tool-hit class. */
   .t-row.tool-hit,.case.tool-hit{box-shadow:0 0 0 2px var(--accent),inset 0 0 0 999px var(--accent-tint),var(--shadow)}
-  .role-tag.tag-hit{background:var(--accent);border-color:var(--accent);color:#fff}
-  .case-body .chip.tag-hit{background:var(--accent);border-color:var(--accent);color:#fff}
+  .role-tag.tag-hit{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+  .case-body .chip.tag-hit{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
   .tm-blue{background:var(--pill-blue)} .tm-green{background:var(--pill-green)} .tm-peach{background:var(--pill-peach)}
   .tm-lav{background:var(--pill-lav)} .tm-rose{background:var(--pill-rose)} .tm-teal{background:var(--pill-teal)}
 
@@ -611,6 +623,7 @@
   .win-body{padding:26px 28px 24px}
   @media (max-width:560px){.win-body{padding:20px 18px}}
   .win-body h2{margin-bottom:8px}
+  #illus-h{font-family:"Source Serif 4",Georgia,serif;font-weight:600;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.05;letter-spacing:-.015em;margin:0 0 8px}
   /* Chitrok's longer title runs a step smaller than the other case-study titles so it sits comfortably */
   .case[data-project="chitrok"] .d-name{font-size:1rem}
   .case[data-project="chitrok"] .case-body h3{font-size:clamp(1.32rem,2.7vw,1.7rem)}
@@ -629,7 +642,7 @@
   }
   @media (max-width:560px){.timeline .t-row{padding:18px}}
   .timeline .t-date{
-    background:var(--chip);border:1px solid var(--line);border-radius:999px;
+    background:var(--pop-soft);border:1px solid var(--pop-line);color:var(--pop);font-weight:600;border-radius:999px;
     padding:6px 11px;text-align:center;align-self:start;justify-self:start;
   }
   @media (min-width:641px){.timeline .t-date{justify-self:stretch;text-align:center}}
@@ -657,7 +670,7 @@
   .edu-card{
     background:var(--accent-soft);border:1px solid var(--line);border-radius:var(--radius);padding:26px;
   }
-  .edu-card h3{margin:0 0 4px;font-family:"Source Serif 4",Georgia,serif;font-size:1.35rem;font-weight:600}
+  .edu-card h3,.edu-card .edu-h{margin:0 0 4px;font-family:"Source Serif 4",Georgia,serif;font-size:1.35rem;font-weight:600}
   .edu-card p{margin:0;color:var(--ink-2)}
   .edu-card .e-date{font-family:"IBM Plex Mono",monospace;font-size:.82rem;color:var(--accent-ink);font-weight:600;margin-bottom:10px}
   .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:22px 32px}
@@ -670,10 +683,10 @@
 
   /* ---------- Contact / footer ---------- */
   footer.contact{
-    margin-top:72px;background:var(--ink);color:var(--bg);
+    margin-top:72px;background:#2e2219;color:#fbf8f3;
     padding:56px 0 44px;
   }
-  :root[data-theme="dark"] footer.contact{background:#050707}
+  :root[data-theme="dark"] footer.contact{background:#140e0b}
   footer.contact h2{
     font-family:"Source Serif 4",Georgia,serif;font-weight:600;
     font-size:clamp(2rem,5vw,3rem);margin:0 0 10px;letter-spacing:-.01em;line-height:1.1;
@@ -686,7 +699,7 @@
     color:#fff;background:transparent;cursor:pointer;font-family:inherit;
   }
   .cbtn svg{width:18px;height:18px;flex:none}
-  .cbtn.solid{background:var(--accent);border-color:var(--accent);color:#fff}
+  .cbtn.solid{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
   .cbtn:hover{border-color:#fff}
   .cbtn.solid:hover{background:var(--accent-ink)}
   /* Contact links under the postcard: icon buttons only, labels in aria-label/title */
@@ -735,7 +748,7 @@
     padding:8px 2px 9px;min-height:44px;
   }
   .pc-input::placeholder{color:#9a927a}
-  .pc-input:focus{outline:none;border-bottom-color:#0e6b4f;box-shadow:0 1px 0 0 #0e6b4f}
+  .pc-input:focus{outline:none;border-bottom-color:var(--accent-ink);box-shadow:0 1px 0 0 var(--accent-ink)}
   .pc-input[aria-invalid]{border-bottom-color:#9a2c17;box-shadow:0 1px 0 0 #9a2c17}
   textarea.pc-message{
     resize:vertical;line-height:32px;min-height:160px;padding:0 2px;border-bottom:none;
@@ -780,7 +793,7 @@
   @media (max-width:560px){.pc-stamp{width:88px}}
   .pc-postmark{
     width:88px;height:88px;flex:none;border-radius:50%;
-    border:2px solid rgba(34,57,28,.5);color:rgba(34,57,28,.65);
+    border:2px solid rgba(34,57,28,.5);color:#3d4a31;
     display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
     transform:rotate(-12deg);pointer-events:none;
     font-family:"IBM Plex Mono",monospace;font-weight:600;text-transform:uppercase;
@@ -812,7 +825,7 @@
     font:inherit;font-size:.86rem;font-weight:700;cursor:pointer;white-space:nowrap;flex:none;
   }
   .theme-toggle:hover{border-color:var(--ink)}
-  .theme-toggle:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  .theme-toggle:focus-visible{outline:3px solid var(--accent-ink);outline-offset:2px}
   .switch-track{
     position:relative;display:inline-block;width:52px;height:27px;border-radius:999px;flex:none;
     background:var(--bg-2);border:1px solid var(--line-strong);
@@ -852,7 +865,7 @@
     background:var(--input-bg);color:var(--ink);font:inherit;font-size:1rem;
   }
   .search-input::placeholder{color:var(--muted)}
-  .search-input:focus{outline:3px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+  .search-input:focus{outline:3px solid var(--accent-ink);outline-offset:1px;border-color:var(--accent)}
   .filter-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
   .filter-btn{
     min-height:40px;padding:8px 13px;border-radius:999px;border:1px solid var(--line-strong);
@@ -920,11 +933,11 @@
   .d-spec b{font-family:"Source Serif 4",Georgia,serif;font-weight:700;font-size:1rem;color:var(--ink);margin-right:5px}
   .d-chev{
     flex:none;width:38px;height:38px;border-radius:50%;border:1px solid var(--accent);
-    display:inline-flex;align-items:center;justify-content:center;color:var(--accent);
+    display:inline-flex;align-items:center;justify-content:center;color:var(--accent-ink);
     transition:transform .3s ease,background .2s ease,color .2s ease;background:var(--accent-soft);
   }
   .d-chev svg{width:18px;height:18px}
-  .case.open .d-chev{transform:rotate(180deg);background:var(--accent-soft);color:var(--accent);border-color:var(--accent)}
+  .case.open .d-chev{transform:rotate(180deg);background:var(--accent-soft);color:var(--accent-ink);border-color:var(--accent)}
   .drawer-body{
     display:grid;grid-template-rows:0fr;visibility:hidden;
     transition:grid-template-rows .38s ease,visibility 0s linear .38s;
@@ -1098,7 +1111,7 @@
   .pdf-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 20px}
   .pdf-btn{
     display:inline-flex;align-items:center;gap:9px;min-height:46px;padding:11px 16px;border-radius:10px;
-    background:var(--accent);color:#fff;font-weight:700;font-size:.95rem;text-decoration:none;border:1px solid var(--accent);
+    background:var(--accent);color:var(--on-accent);font-weight:700;font-size:.95rem;text-decoration:none;border:1px solid var(--accent);
   }
   .pdf-btn:hover{background:var(--accent-ink);border-color:var(--accent-ink)}
   :root[data-theme="dark"] .pdf-btn{color:#0b1512}
@@ -1120,7 +1133,7 @@
   .shot-frame{display:block;height:148px;overflow:hidden;border:1px solid var(--line-strong);border-radius:10px;background:#faf7f1}
   .shot-frame img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
   .shot:hover .shot-frame{border-color:var(--ink)}
-  .shot:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:10px}
+  .shot:focus-visible{outline:3px solid var(--accent-ink);outline-offset:2px;border-radius:10px}
   .shot-label{display:block;margin-top:6px;font-size:.82rem;font-weight:700;line-height:1.3;color:var(--ink)}
   .shot-label::after{content:" \2197";color:var(--accent-ink);font-weight:700}
   .shot-sub{display:block;font-size:.76rem;color:var(--muted);line-height:1.3}
@@ -1190,9 +1203,193 @@
     .gallery-visual:hover .gv-monogram{transform:none}
   }
 </style>
+<style id="enhancements">
+  /* ---------- Scroll progress ---------- */
+  .enh-progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:200;pointer-events:none;
+    background:linear-gradient(90deg,var(--accent),var(--pop));transform-origin:0 50%;transform:scaleX(0)}
+
+  /* ---------- Reveal on scroll (only when JS is running) ---------- */
+  .enh-js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+  .enh-js .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){ .enh-js .reveal{opacity:1;transform:none;transition:none} }
+
+  /* ---------- Hero touches ---------- */
+  .enh-role{display:inline-block;color:var(--pop);font-weight:700;min-width:1ch}
+  .enh-role::after{content:"";display:inline-block;width:2px;height:1em;margin-left:3px;vertical-align:-2px;background:currentColor;animation:enhBlink 1s steps(1) infinite}
+  @keyframes enhBlink{50%{opacity:0}}
+  @media (prefers-reduced-motion: reduce){ .enh-role::after{display:none} }
+  .metric{transition:transform .25s ease, box-shadow .25s ease, background .25s ease}
+  .metric:hover{transform:translateY(-3px);background:var(--accent-soft)}
+
+  /* ---------- Cursor spotlight on cards ---------- */
+  .enh-spot{position:relative;isolation:isolate}
+  .enh-spot::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:-1;opacity:0;transition:opacity .3s;
+    background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),var(--accent-tint),transparent 60%)}
+  .enh-spot:hover::before{opacity:1}
+
+  /* ---------- Floating action buttons ---------- */
+  .enh-fabs{position:fixed;right:20px;bottom:20px;z-index:150;pointer-events:none;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+  .enh-fab{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);
+    font:600 14px/1 'Public Sans',system-ui,sans-serif;padding:12px 16px;border-radius:999px;box-shadow:var(--shadow);cursor:pointer;
+    transition:transform .2s ease, opacity .25s ease, background .2s}
+  .enh-fab:hover{transform:translateY(-2px)}
+  .enh-fab:focus-visible{outline:2px solid var(--accent-ink);outline-offset:2px}
+  .enh-fab.primary{pointer-events:auto;background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+  :root[data-theme="dark"] .enh-fab.primary{color:var(--on-accent)}
+  .enh-fab .dot{width:8px;height:8px;border-radius:50%;background:#4a5a12;box-shadow:0 0 0 0 rgba(74,90,18,.6);animation:enhPulse 2s infinite}
+  @keyframes enhPulse{70%{box-shadow:0 0 0 8px rgba(74,90,18,0)}100%{box-shadow:0 0 0 0 rgba(74,90,18,0)}}
+  .enh-fab.top{width:44px;height:44px;padding:0;justify-content:center;opacity:0;pointer-events:none;transform:translateY(8px)}
+  .enh-fab.top.show{opacity:1;pointer-events:auto;transform:none}
+  .enh-kbd{font:500 11px/1 'IBM Plex Mono',monospace;border:1px solid var(--line-strong);border-radius:5px;padding:3px 5px;color:var(--muted)}
+  .enh-fab.primary .enh-kbd{border-color:rgba(31,38,16,.35);color:inherit;opacity:.85}
+  @media (max-width:640px){ .enh-fab .enh-kbd{display:none} .enh-fabs{right:14px;bottom:14px} }
+  body.lb-open .enh-fabs, body.enh-modal .enh-fabs{display:none}
+
+  /* ---------- Nav search hint ---------- */
+  .enh-navk{display:inline-flex;align-items:center;gap:6px;margin-left:10px;border:1px solid var(--line);background:transparent;color:var(--muted);
+    border-radius:999px;padding:7px 10px;font:500 13px/1 'Public Sans',system-ui,sans-serif;cursor:pointer}
+  .enh-navk:hover{color:var(--ink);border-color:var(--line-strong)}
+  @media (max-width:900px){ .enh-navk{display:none} }
+
+  /* ---------- Shared overlay ---------- */
+  .enh-overlay{position:fixed;inset:0;z-index:300;background:rgba(10,14,18,.55);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+    opacity:0;transition:opacity .2s ease}
+  .enh-overlay.open{opacity:1}
+  .enh-overlay[hidden]{display:none}
+  body.enh-modal{overflow:hidden}
+
+  /* ---------- Recruiter summary drawer ---------- */
+  .enh-drawer{position:absolute;top:0;right:0;height:100%;width:min(460px,100%);background:var(--surface);color:var(--ink);
+    box-shadow:-20px 0 60px -20px rgba(0,0,0,.35);overflow-y:auto;transform:translateX(100%);transition:transform .32s cubic-bezier(.2,.7,.2,1);
+    padding:28px 28px 40px;font-family:'Public Sans',system-ui,sans-serif}
+  .enh-overlay.open .enh-drawer{transform:none}
+  .enh-drawer h2{font:600 30px/1.1 'Source Serif 4',Georgia,serif;margin:6px 0 4px}
+  .enh-drawer .k{font:600 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--pop)}
+  .enh-drawer .sub{color:var(--accent-ink);font-weight:700;margin:0 0 14px}
+  .enh-drawer p{color:var(--ink-2);line-height:1.55;margin:0 0 14px}
+  .enh-drawer h3{font:600 11px/1 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:22px 0 10px}
+  .enh-facts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .enh-facts div{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+  .enh-facts b{display:block;font:600 20px/1.1 'Source Serif 4',Georgia,serif}
+  .enh-facts span{font-size:12.5px;color:var(--muted)}
+  .enh-tk{font:600 12px/1.2 'Public Sans',system-ui,sans-serif !important;color:var(--pop) !important;margin:12px 0 6px !important}
+  .enh-drawer h3 + .enh-tk{margin-top:0 !important}
+  .enh-chips{display:flex;flex-wrap:wrap;gap:6px}
+  .enh-chips span{font-size:12.5px;padding:5px 10px;border-radius:999px;background:var(--chip);border:1px solid var(--line);color:var(--ink-2)}
+  .enh-cases{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+  .enh-cases button{width:100%;text-align:left;display:block;background:transparent;
+    border:1px solid var(--line);border-radius:10px;padding:10px 12px;color:var(--ink);font:600 14px/1.3 'Public Sans',system-ui,sans-serif;cursor:pointer}
+  .enh-cases button small{display:block;font-weight:500;color:var(--muted);font-size:12.5px}
+  .enh-cases button:hover{border-color:var(--accent);background:var(--accent-soft)}
+  .enh-actions{display:grid;gap:8px;margin-top:22px}
+  .enh-actions a,.enh-actions button{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 14px;border-radius:10px;
+    font:600 14px/1 'Public Sans',system-ui,sans-serif;text-decoration:none;cursor:pointer;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink)}
+  .enh-actions .pri{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+  :root[data-theme="dark"] .enh-actions .pri{color:var(--on-accent)}
+  .enh-x{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;font-size:18px;line-height:1}
+
+  /* ---------- Command palette ---------- */
+  .enh-cmd{position:absolute;left:50%;top:12vh;transform:translate(-50%,-8px) scale(.98);width:min(620px,calc(100% - 24px));background:var(--surface);
+    border:1px solid var(--line-strong);border-radius:16px;box-shadow:0 30px 80px -20px rgba(0,0,0,.5);overflow:hidden;transition:transform .2s ease;
+    font-family:'Public Sans',system-ui,sans-serif}
+  .enh-overlay.open .enh-cmd{transform:translate(-50%,0) scale(1)}
+  .enh-cmd input{width:100%;border:0;border-bottom:1px solid var(--line);padding:18px 20px;font:500 17px/1.2 'Public Sans',system-ui,sans-serif;background:transparent;color:var(--ink);outline:none}
+  .enh-cmd ul{list-style:none;margin:0;padding:8px;max-height:min(420px,60vh);overflow-y:auto}
+  .enh-cmd li{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 12px;border-radius:10px;cursor:pointer;color:var(--ink)}
+  .enh-cmd li small{color:var(--muted);font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
+  .enh-cmd li[aria-selected="true"]{background:var(--accent-soft)}
+  .enh-cmd .empty{padding:18px;color:var(--muted);text-align:center}
+  .enh-cmd footer{display:flex;gap:14px;padding:10px 16px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+
+  /* ---------- Image viewer ---------- */
+  .enh-viewer{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 70px 70px}
+  .enh-viewer img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5);background:#fff;
+    transition:opacity .2s ease, transform .25s ease}
+  .enh-viewer img.loading{opacity:.2;transform:scale(.98)}
+  .enh-viewer .cap{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#eef2f5;font:500 14px/1.4 'Public Sans',system-ui,sans-serif;padding:0 70px}
+  .enh-viewer .cap a{color:#9fe6c9}
+  .enh-viewer .nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.3);
+    background:rgba(20,26,32,.6);color:#fff;font-size:22px;cursor:pointer}
+  .enh-viewer .nav:hover{background:rgba(20,26,32,.9)}
+  .enh-viewer .prev{left:14px}.enh-viewer .next{right:14px}
+  .enh-viewer .enh-x{background:rgba(20,26,32,.6);color:#fff;border-color:rgba(255,255,255,.3)}
+  @media (max-width:640px){ .enh-viewer{padding:56px 10px 80px} .enh-viewer .nav{top:auto;bottom:60px;transform:none} }
+
+  /* ---------- Toast ---------- */
+  .enh-toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);opacity:0;z-index:400;background:var(--ink);color:var(--bg);
+    padding:11px 16px;border-radius:999px;font:600 14px/1 'Public Sans',system-ui,sans-serif;transition:all .25s ease;pointer-events:none}
+  .enh-toast.show{opacity:1;transform:translate(-50%,0)}
+
+  @media (max-width:640px){
+    .enh-role,.enh-role-sep{display:none}
+    .enh-fab.primary .enh-long{display:none}
+  }
+  @media (min-width:641px){ .enh-fab.primary .enh-short{display:none} }
+
+  /* Tools | Skills rail tabs */
+  .rail-tabs{display:flex;gap:4px;padding:3px;margin:0 0 10px;border-radius:10px;background:var(--chip);border:1px solid var(--line)}
+  .rail-tabs button{flex:1;border:0;background:transparent;color:var(--muted);font:inherit;font-size:.85rem;font-weight:700;padding:7px 10px;border-radius:8px;cursor:pointer}
+  .rail-tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(40,34,20,.12)}
+  .rail-tabs button:focus-visible{outline:2px solid var(--accent-ink);outline-offset:1px}
+  .skill-panel[hidden]{display:none}
+  .skill-group-label{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--pop);margin:12px 0 6px}
+  .skill-group-label:first-child{margin-top:2px}
+  .tool-list[hidden]{display:none}
+  .skill-list{display:flex;flex-direction:column;gap:2px}
+  .skill-list .tool-chipbtn{font-size:.83rem;padding:6px 8px}
+  .lang-list{flex-direction:row;flex-wrap:wrap;gap:5px}
+  @media (max-width:940px){ .skill-list{flex-direction:row;flex-wrap:wrap;gap:5px} .skill-list .tool-chipbtn{border-color:var(--line);border-radius:999px} }
+  .lang-list span{font-size:.8rem;font-weight:600;color:var(--ink-2);padding:5px 10px;border-radius:999px;background:var(--pop-soft);border:1px solid var(--pop-line)}
+  @media (min-width:941px){ .tools-rail{max-height:calc(100vh - 104px);overflow-y:auto} }
+
+  /* Name + pronunciation */
+  .name-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;margin:0 0 18px}
+  .name-row h1{margin:0}
+  .pron{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:.95rem;transform:translateY(-.35em)}
+  .pron-text{font-style:italic}
+  .pron-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--muted);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+  .pron-btn:hover{color:var(--ink);border-color:var(--line-strong);background:var(--chip)}
+  .pron-btn:focus-visible{outline:2px solid var(--accent-ink);outline-offset:2px}
+  .pron-btn svg{width:17px;height:17px}
+  .pron-btn.playing{color:var(--accent-ink);border-color:var(--accent)}
+  .pron-btn.playing .w1{animation:pronW 0.9s ease-in-out infinite}
+  .pron-btn.playing .w2{animation:pronW 0.9s ease-in-out .2s infinite}
+  @keyframes pronW{50%{opacity:.2}}
+  @media (prefers-reduced-motion: reduce){.pron-btn.playing .w1,.pron-btn.playing .w2{animation:none}}
+  /* Hero icon buttons */
+  .hero-icons{display:inline-flex;gap:8px;align-items:center;padding-left:4px}
+  .btn.icon{width:48px;padding:0;justify-content:center}
+  .btn.icon svg{width:19px;height:19px}
+  /* About read more */
+  .about-more{margin-top:-12px}
+  .about-more[hidden]{display:none}
+  .about-toggle{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:8px 14px 8px 0;border:0;background:transparent;color:var(--accent-ink);font:inherit;font-weight:700;font-size:.95rem;cursor:pointer;margin:-14px 0 18px}
+  .about-toggle svg{width:18px;height:18px;transition:transform .2s ease}
+  .about-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+  .about-toggle:hover span{text-decoration:underline;text-underline-offset:3px}
+  .about-toggle:focus-visible{outline:2px solid var(--accent-ink);outline-offset:2px;border-radius:6px}
+
+  /* Skip link */
+  .skip-link{position:absolute;left:12px;top:-120px;z-index:300;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none;transition:top .15s}
+  .skip-link:focus{top:12px}
+  /* Mobile header: one scrollable row instead of three wrapped rows */
+  @media (max-width:760px){
+    .nav-inner{flex-wrap:nowrap !important;gap:8px !important;padding-top:6px !important;padding-bottom:6px !important}
+    nav.links{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;width:auto !important;flex:1;min-width:0;
+      mask-image:linear-gradient(90deg,#000 85%,transparent);-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent)}
+    nav.links::-webkit-scrollbar{display:none}
+    nav.links a{white-space:nowrap;flex:none}
+    .nav-name{flex:none}
+    .theme-toggle .theme-label-light,.theme-toggle .theme-label-dark{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+    .theme-toggle{padding:6px !important;flex:none}
+  }
+  footer.contact{overflow-x:clip}
+  .site-nav{padding-top:env(safe-area-inset-top);padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
+</style>
 </head>
 <body>
 
+<a class="skip-link" href="#top">Skip to content</a>
 <header class="site-nav">
   <div class="wrap nav-inner">
     <a class="nav-name" href="#top">Bijoya Deb<span>.</span></a>
@@ -1225,9 +1422,17 @@
 
     <!-- HERO -->
     <div class="hero">
-      <div class="hero-leaf-bg" aria-hidden="true"><img src="assets/illus-fall-leaves.png" alt="" /></div>
+      <div class="hero-leaf-bg" aria-hidden="true"><img src="assets/illus-fall-leaves.png" alt="" width="1500" height="300" fetchpriority="low" /></div>
       <p class="hero-meta"><span><span class="dot" aria-hidden="true"></span>Toronto</span></p>
-      <h1>Bijoya Deb</h1>
+      <div class="name-row">
+        <h1>Bijoya Deb</h1>
+        <span class="pron">
+          <button class="pron-btn" type="button" id="pronBtn" aria-label="Hear how to say Bijoya (Bee-joy-ah)" title="Hear it">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path class="w1" d="M15.5 8.5a5 5 0 0 1 0 7"/><path class="w2" d="M19 5a10 10 0 0 1 0 14"/></svg>
+          </button>
+          <span class="pron-text">Bee-joy-ah · goes by &ldquo;Bee&rdquo;</span>
+        </span>
+      </div>
       <p class="hero-title">Product Design · UX Strategy · Marketing · Visual Communications</p>
       <p class="hero-lede">Product designer who takes digital experiences from user research to developer handoff. Currently leading the redesign of Chitrok&rsquo;s artist marketplace and co-founding BrewBase, a Toronto café discovery app.</p>
       <p class="hero-byline"><span class="byline-dot" aria-hidden="true"></span>Available for full-time roles</p>
@@ -1235,22 +1440,27 @@
         <a class="btn primary" href="#work">View case studies
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
         </a>
-        <a class="btn primary" href="assets/bijoya-deb-resume.pdf" download="Bijoya-Deb-Resume.pdf">
+        <a class="btn" href="assets/bijoya-deb-resume.pdf" download="Bijoya-Deb-Nath-Resume.pdf">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
           Download résumé
         </a>
-        <a class="btn" href="https://www.linkedin.com/in/bijoya-d" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
-          LinkedIn
+        <a class="btn" href="#contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Contact
         </a>
-        <button class="btn" type="button" id="copyEmailBtn" aria-live="polite">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-          <span id="copyEmailLabel">bijoyadebnath99@gmail.com</span>
-        </button>
+        <span class="hero-icons">
+          <a class="btn icon" href="https://www.linkedin.com/in/bijoya-d" target="_blank" rel="noopener" aria-label="LinkedIn profile (opens in a new tab)" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+          </a>
+          <button class="btn icon" type="button" id="copyEmailBtn" title="Copy email — bijoyadebnath99@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <span class="sr-only" id="copyEmailLabel" aria-live="polite">Copy email address bijoyadebnath99@gmail.com</span>
+          </button>
+        </span>
       </div>
 
       <div class="metrics" role="list" aria-label="Impact highlights">
-        <div class="metric" role="listitem"><b>33</b><span>university sites redesigned and systematized</span></div>
+        <div class="metric" role="listitem"><b>33</b><span>university sites redesigned and systematized as Staff UX Designer</span></div>
         <div class="metric" role="listitem"><b>~2,000</b><span>students served by the Hub Portal</span></div>
         <div class="metric" role="listitem"><b>18+</b><span>student clubs unified on one platform</span></div>
         <div class="metric" role="listitem"><b>$35K</b><span>department investment secured</span></div>
@@ -1262,7 +1472,7 @@
 
     <div class="edu-card edu-before-about">
       <p class="e-date">EDUCATION · 2017 – 2022</p>
-      <h3>University of Toronto</h3>
+      <h2 class="edu-h">University of Toronto</h2>
       <p>Honours Bachelor of Science. Double major in Business Economics and Psychology, minor in English.</p>
     </div>
 
@@ -1275,15 +1485,24 @@
       <div class="sec-rule"></div>
       <div class="about-grid">
         <div>
-          <p><strong>Research to handoff.</strong> Bijoya takes digital experiences from user research to developer handoff. At UTSC she co-led design direction, UX strategy, content planning, and user flows for the Business Management Hub Portal, a centralized home for 18+ student clubs and about 2,000 students.</p>
-          <p><strong>Systems at scale.</strong> At the University of Toronto she built visual systems and information architecture for 33 sites used by 380+ faculty and 60 staff, shaped by stakeholder interviews and three-week sprints.</p>
+          <p><strong>Research to handoff.</strong> Bijoya turns user research into shipped interfaces. At the University of Toronto she designed the hub portal for 18+ student clubs and about 2,000 students, and a design system across 33 department sites.</p>
         </div>
         <div>
-          <p><strong>Building now.</strong> She leads the redesign of Chitrok&rsquo;s artist marketplace, adding mobile support and accessibility improvements, and co-founded BrewBase, a café discovery app, as CEO of a 4-person team.</p>
-          <p><strong>Marketing and media roots.</strong> As VP of Marketing for DECA UTSC she grew social engagement 95% and doubled event sign-ups. Behind the camera, she shoots outdoor sports and commercial photography for brands including MEC, HOKA, New Balance, Salomon, Patagonia Toronto, KEEN Canada, and Pilot Coffee.</p>
-          <p><strong>Call her Bee.</strong> Bijoya is pronounced Bee-jo-ya, and she goes by &ldquo;Bee.&rdquo;</p>
+          <p><strong>Building now.</strong> She leads the redesign of Chitrok&rsquo;s artist marketplace and co-founded BrewBase, a Toronto café discovery app, as CEO of a 4-person team.</p>
         </div>
       </div>
+      <div class="about-grid about-more" id="aboutMore" hidden>
+        <div>
+          <p><strong>Systems at scale.</strong> Her information architecture and visual system for 33 university sites served 380+ faculty and 60 staff, shaped by stakeholder interviews and three-week sprints. The Hub Portal work secured $35,000 in department investment.</p>
+          <p><strong>Call her Bee.</strong> Bijoya is pronounced Bee-joy-ah, and she goes by &ldquo;Bee.&rdquo;</p>
+        </div>
+        <div>
+          <p><strong>Marketing and media roots.</strong> As VP of Marketing for DECA UTSC she grew social engagement 95% and doubled event sign-ups. Behind the camera, she shoots outdoor sports and commercial photography for brands including MEC, HOKA, New Balance, Salomon, Patagonia Toronto, KEEN Canada and Pilot Coffee.</p>
+        </div>
+      </div>
+      <button class="about-toggle" type="button" aria-expanded="false" aria-controls="aboutMore"><span>Read more about Bijoya</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
 
     </section>
 
@@ -1355,7 +1574,7 @@
 
       <article class="case open" data-tags="uxdesign accessibility productdesign ecommerce uxstrategy" data-project="chitrok">
         <button class="drawer-toggle" type="button" id="dt-chitrok" aria-expanded="true" aria-controls="db-chitrok">
-          <span class="d-thumb"><img src="assets/chitrok-home.jpg" alt="" /></span>
+          <span class="d-thumb"><img src="assets/thumb-chitrok.jpg" alt="" width="360" height="240" loading="lazy" decoding="async" /></span>
           <span class="d-main">
             <span class="d-index">CASE STUDY 01</span>
             <span class="d-name">Rebuilding e-commerce marketplace for South Asian creatives</span>
@@ -1367,7 +1586,7 @@
         <div class="drawer-body" id="db-chitrok" aria-labelledby="dt-chitrok">
           <div class="drawer-inner">
         <a class="gallery-visual v-chitrok has-photo" href="assets/chitrok-home.jpg" target="_blank" rel="noopener" data-lightbox-trigger aria-haspopup="dialog" aria-label="Enlarge Chitrok project view — homepage screenshot (opens full size in a new tab)">
-          <img src="assets/chitrok-home.jpg" alt="Chitrok homepage — Original art from Bangladesh, with sentence-builder search and featured watercolours from the collection" />
+          <img src="assets/chitrok-home.jpg" alt="Chitrok homepage — Original art from Bangladesh, with sentence-builder search and featured watercolours from the collection" loading="lazy" decoding="async" />
           <span class="gv-photo-bar"><span class="gv-status">Case study complete</span><span class="gv-expand">View larger &#8599;</span></span>
         </a>
         <div class="case-band" aria-hidden="true">
@@ -1511,7 +1730,7 @@
           <p class="tools-label">Tools</p>
           <div class="chips">
             <span class="chip">Figma</span><span class="chip">Adobe XD</span><span class="chip">Claude AI</span><span class="chip">Claude Code</span><span class="chip">GitHub</span><span class="chip">GitHub Issues</span><span class="chip">CSS</span>
-          </div>
+          <span class="chip skill-tag" hidden>Cross-Functional Collaboration</span><span class="chip skill-tag" hidden>Problem Solving</span><span class="chip skill-tag" hidden>Working to Deadlines</span></div>
         </div>
           </div>
         </div><!-- /drawer-body: Chitrok -->
@@ -1519,7 +1738,7 @@
 
       <article class="case" data-tags="uxdesign productdesign appdesign usabilitytesting designsystems" data-project="brewbase">
         <button class="drawer-toggle" type="button" id="dt-brewbase" aria-expanded="false" aria-controls="db-brewbase">
-          <span class="d-thumb"><img src="assets/brewbase-postcard.jpg" alt="" /></span>
+          <span class="d-thumb"><img src="assets/thumb-brewbase.jpg" alt="" width="360" height="256" loading="lazy" decoding="async" /></span>
           <span class="d-main">
             <span class="d-index">CASE STUDY 02</span>
             <span class="d-name">BrewBase — Café Discovery Platform</span>
@@ -1532,7 +1751,7 @@
           <div class="drawer-inner">
         <!-- Case study PDF: add the link inside .case-body when a real PDF is provided. No link is shown until then. -->
         <a class="gallery-visual v-brew has-photo" href="assets/brewbase-postcard.jpg" target="_blank" rel="noopener" data-lightbox-trigger aria-haspopup="dialog" aria-label="Enlarge BrewBase project view — hand-drawn postcard with iced coffee and a croissant (opens full size in a new tab)">
-          <img src="assets/brewbase-postcard.jpg" alt="BrewBase postcard, hand-drawn by Bijoya — kraft postcard with a top-down iced coffee, a croissant, café doodles and the B stamp logo" />
+          <img src="assets/brewbase-postcard.jpg" alt="BrewBase postcard, hand-drawn by Bijoya — kraft postcard with a top-down iced coffee, a croissant, café doodles and the B stamp logo" loading="lazy" decoding="async" />
           <span class="gv-photo-bar"><span class="gv-status">In progress</span><span class="gv-expand">View larger &#8599;</span></span>
         </a>
         <div class="case-band" aria-hidden="true">
@@ -1634,7 +1853,7 @@
           <p class="tools-label">Tools</p>
           <div class="chips">
             <span class="chip">Figma</span><span class="chip">Claude Code</span><span class="chip">Replit</span><span class="chip">Base44</span><span class="chip">Codex</span><span class="chip">Adobe XD</span><span class="chip">GitHub</span><span class="chip">Notion</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span>
-          </div>
+          <span class="chip skill-tag" hidden>Agile/Scrum Sprints</span><span class="chip skill-tag" hidden>Cross-Functional Collaboration</span><span class="chip skill-tag" hidden>Product Roadmapping</span><span class="chip skill-tag" hidden>Prioritization</span><span class="chip skill-tag" hidden>Backlog Management</span><span class="chip skill-tag" hidden>Notion</span><span class="chip skill-tag" hidden>Team Leadership</span></div>
         </div>
           </div>
         </div><!-- /drawer-body: BrewBase -->
@@ -1653,7 +1872,7 @@
 
       <article class="case" data-tags="uxdesign accessibility informationarchitecture designsystems usabilitytesting uxstrategy" data-project="hub-portal">
         <button class="drawer-toggle" type="button" id="dt-hub" aria-expanded="false" aria-controls="db-hub">
-          <span class="d-thumb"><img src="assets/hub-hero-crop.jpg" alt="" /></span>
+          <span class="d-thumb"><img src="assets/thumb-hub.jpg" alt="" width="360" height="217" loading="lazy" decoding="async" /></span>
           <span class="d-main">
             <span class="d-index">CASE STUDY 03</span>
             <span class="d-name">MyManagement Portal – BBA Students Central Hub for Resources, Career and Program Pathways</span>
@@ -1665,7 +1884,7 @@
         <div class="drawer-body" id="db-hub" aria-labelledby="dt-hub">
           <div class="drawer-inner">
         <a class="gallery-visual v-hub has-photo" href="assets/hub-board.jpg" target="_blank" rel="noopener" data-lightbox-trigger aria-haspopup="dialog" aria-label="Enlarge MyManagement project view — MyManagement, a centralized hub for Management students, portal home on a laptop (opens the full case study board in a new tab)">
-          <img src="assets/hub-hero-crop.jpg" alt="MyManagement — a centralized hub for Management students, with the portal home, Your hub for everything Management, shown on a laptop" />
+          <img src="assets/hub-hero-crop.jpg" alt="MyManagement — a centralized hub for Management students, with the portal home, Your hub for everything Management, shown on a laptop" loading="lazy" decoding="async" />
           <span class="gv-photo-bar"><span class="gv-status">Complete</span><span class="gv-expand">View larger &#8599;</span></span>
         </a>
         <div class="case-band" aria-hidden="true">
@@ -1749,7 +1968,7 @@
           <p class="tools-label">Tools</p>
           <div class="chips">
             <span class="chip">Figma</span><span class="chip">Adobe XD</span><span class="chip">Illustrator</span><span class="chip">Photoshop</span><span class="chip">WordPress</span><span class="chip">CodePen</span><span class="chip">Miro</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span>
-          </div>
+          <span class="chip skill-tag" hidden>Stakeholder Management</span><span class="chip skill-tag" hidden>Communication &amp; Presenting</span><span class="chip skill-tag" hidden>Stakeholder Buy-in</span></div>
         </div>
           </div>
         </div><!-- /drawer-body: Hub Portal -->
@@ -1757,24 +1976,22 @@
 
       <article class="case" data-tags="uxdesign accessibility informationarchitecture designsystems" data-project="public-health">
         <button class="drawer-toggle" type="button" id="dt-health" aria-expanded="false" aria-controls="db-health">
-          <span class="d-thumb d-tile v-health"><span>33</span></span>
+          <span class="d-thumb"><img src="assets/thumb-public-health.jpg" alt="" width="360" height="225" style="object-position:center" loading="lazy" decoding="async" /></span>
           <span class="d-main">
             <span class="d-index">CASE STUDY 04</span>
             <span class="d-name">33 Department Sites — Public Health</span>
-            <span class="d-role">UX/UI Designer · 2022 – 2023</span>
+            <span class="d-role">Staff UX Designer (titled UX/UI Designer at the time) · 2022 – 2023</span>
             <span class="d-specs"><span class="d-spec"><b>33</b>department sites on one system</span><span class="d-spec"><b>380+</b>faculty using the platform</span><span class="d-spec"><b>3 weeks</b>Agile sprint cycle</span></span>
           </span>
           <span class="d-chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
         </button>
         <div class="drawer-body" id="db-health" aria-labelledby="dt-health">
           <div class="drawer-inner">
-        <!-- Image slot: replace the placeholder content below with <img src="assets/public-health.png" alt="33 Department Sites — Public Health — …"> when Bijoya provides the PNG. Keep this 16/10 box — layout will not change. -->
         <!-- Case study PDF: add the link inside .case-body when a real PDF is provided. No link is shown until then. -->
-        <button class="gallery-visual v-health" type="button" data-lightbox-trigger aria-haspopup="dialog" aria-label="Enlarge 33 Department Sites project view">
-          <span class="gv-top"><span class="gv-index">Case Study 04 · Image slot 16:10</span><span class="gv-status">Complete</span></span>
-          <span class="gv-center"><span class="gv-monogram">33</span><span class="gv-name">33 Sites — Public Health</span></span>
-          <span class="gv-bottom"><span class="gv-hint">Project PNG drops in here</span><span class="gv-expand">View larger &#8599;</span></span>
-        </button>
+        <a class="gallery-visual v-health has-photo" href="assets/public-health-icons.jpg" target="_blank" rel="noopener" data-lightbox-trigger aria-haspopup="dialog" aria-label="Enlarge Public Health project view — 12 of the 93 icons Bijoya designed for the department sites (opens full size in a new tab)">
+          <img src="assets/public-health-icons.jpg" alt="Twelve flat illustrated icons on coloured tiles from the set of 93 designed for Dalla Lana School of Public Health: documents, forms, a web search, a teacher, a wireframe, a help desk, a presentation, payment, home access and books" style="object-position:center" loading="lazy" decoding="async" />
+          <span class="gv-photo-bar"><span class="gv-status">Complete</span><span class="gv-expand">View larger &#8599;</span></span>
+        </a>
         <div class="case-band" aria-hidden="true">
           <div class="band-stat"><span class="case-index">CASE STUDY 04</span></div>
           <div class="band-stat"><b>33</b><span>department sites on one system</span></div>
@@ -1783,10 +2000,11 @@
         </div>
         <div class="case-body">
           <h3>33 Department Sites — Public Health</h3>
-          <p class="case-org">University of Toronto St. George — Department of Public Health.</p>
+          <p class="case-org">University of Toronto St. George — Dalla Lana School of Public Health.</p>
           <div class="case-meta">
-            <span class="meta-pill">UX/UI Designer</span>
+            <span class="meta-pill">Staff UX Designer</span>
             <span class="meta-pill date">2022 – 2023</span>
+            <span class="meta-pill title-note">Official title at the time: UX/UI Designer. The role is now titled Staff UX Designer.</span>
           </div>
           <div class="case-tags" aria-label="Tags for 33 Department Sites — Public Health">
             <button class="tag-pill" type="button" data-tag="uxdesign">#uxdesign</button>
@@ -1800,11 +2018,13 @@
             <li>Customized navigation across <strong>33 university departments</strong> used by 380+ faculty and 60 staff.</li>
             <li>Ran user interviews with faculty and staff, built demonstration sites, and delivered in <strong>3-week Agile sprints</strong>.</li>
             <li>Onboarded and trained faculty and staff with instructional guides and videos.</li>
+            <li>Designed a library of <strong>93 custom icons</strong> for navigation and wayfinding across the department sites.</li>
           </ul>
+          <p class="pdf-note">The sites are internal to the University, so screens can&rsquo;t be shared for compliance reasons. The image above shows 12 of the 93 icons.</p>
           <p class="tools-label">Tools</p>
           <div class="chips">
             <span class="chip">Figma</span><span class="chip">Adobe XD</span><span class="chip">Miro</span><span class="chip">Adobe Creative Suite</span><span class="chip">SharePoint</span>
-          </div>
+          <span class="chip skill-tag" hidden>Agile/Scrum Sprints</span><span class="chip skill-tag" hidden>Stakeholder Management</span><span class="chip skill-tag" hidden>SharePoint</span><span class="chip skill-tag" hidden>Mentorship &amp; Training</span></div>
         </div>
           </div>
         </div><!-- /drawer-body: Public Health -->
@@ -1818,7 +2038,7 @@
       <div class="sec-head">
         <h2 id="exp-h">Experience</h2>
         <p>Beyond the featured case studies.</p>
-        <a class="btn small exp-resume" href="assets/bijoya-deb-resume.pdf" download="Bijoya-Deb-Resume.pdf">
+        <a class="btn small exp-resume" href="assets/bijoya-deb-resume.pdf" download="Bijoya-Deb-Nath-Resume.pdf">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
           Download résumé
         </a>
@@ -1828,9 +2048,13 @@
       <div class="exp-layout">
       <!-- Tools I use — compact left rail; each tool jumps to the entries tagged with it -->
       <aside class="tools-rail" aria-labelledby="toolsLabel">
-        <p class="tools-label" id="toolsLabel">Tools I use</p>
-        <p class="tools-rail-note">Tap a tool to jump to the roles where she used it.</p>
-        <div class="tool-list">
+        <p class="tools-label" id="toolsLabel">Filter by</p>
+        <div class="rail-tabs" role="tablist" aria-label="Filter experience by">
+          <button type="button" role="tab" id="railTabTools" aria-selected="true" aria-controls="railPanelTools">Tools</button>
+          <button type="button" role="tab" id="railTabSkills" aria-selected="false" aria-controls="railPanelSkills" tabindex="-1">Skills</button>
+        </div>
+        <p class="tools-rail-note" id="railNote">Tap a tool to jump to the roles where she used it.</p>
+        <div class="tool-list" role="tabpanel" id="railPanelTools" aria-labelledby="railTabTools">
           <button class="tool-chipbtn" type="button" data-tool-jump="figma" data-tool-name="Figma" aria-pressed="false"><span class="tool-mark tm-lav" aria-hidden="true">Fi</span>Figma<span class="tcount" data-tool-count>4</span></button>
           <button class="tool-chipbtn" type="button" data-tool-jump="illustrator" data-tool-name="Illustrator" aria-pressed="false"><span class="tool-mark tm-peach" aria-hidden="true">Ai</span>Illustrator<span class="tcount" data-tool-count>4</span></button>
           <button class="tool-chipbtn" type="button" data-tool-jump="photoshop" data-tool-name="Photoshop" aria-pressed="false"><span class="tool-mark tm-blue" aria-hidden="true">Ps</span>Photoshop<span class="tcount" data-tool-count>4</span></button>
@@ -1844,13 +2068,21 @@
           <button class="tool-chipbtn" type="button" data-tool-jump="html,css,javascript" data-tool-name="HTML · CSS · JS" aria-pressed="false"><span class="tool-mark tm-green" aria-hidden="true">&lt;/&gt;</span>HTML · CSS · JS<span class="tcount" data-tool-count>3</span></button>
           <button class="tool-chipbtn" type="button" data-tool-jump="claude code" data-tool-name="Claude Code" aria-pressed="false"><span class="tool-mark tm-teal" aria-hidden="true">Cl</span>Claude Code<span class="tcount" data-tool-count>2</span></button>
         </div>
+        <div class="skill-panel" role="tabpanel" id="railPanelSkills" aria-labelledby="railTabSkills" hidden>
+          <p class="skill-group-label">Operations</p>
+          <div class="skill-list"><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="agile/scrum sprints" data-tool-name="Agile/Scrum Sprints" aria-pressed="false">Agile/Scrum Sprints<span class="tcount" data-tool-count></span></button><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="stakeholder management" data-tool-name="Stakeholder Management" aria-pressed="false">Stakeholder Management<span class="tcount" data-tool-count></span></button><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="cross-functional collaboration" data-tool-name="Cross-Functional Collaboration" aria-pressed="false">Cross-Functional Collaboration<span class="tcount" data-tool-count></span></button><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="product roadmapping" data-tool-name="Product Roadmapping" aria-pressed="false">Product Roadmapping<span class="tcount" data-tool-count></span></button><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="prioritization" data-tool-name="Prioritization" aria-pressed="false">Prioritization<span class="tcount" data-tool-count></span></button><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="backlog management" data-tool-name="Backlog Management" aria-pressed="false">Backlog Management<span class="tcount" data-tool-count></span></button><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="microsoft 365 administration" data-tool-name="Microsoft 365 Administration" aria-pressed="false">Microsoft 365 Administration<span class="tcount" data-tool-count></span></button><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="sharepoint" data-tool-name="SharePoint" aria-pressed="false">SharePoint<span class="tcount" data-tool-count></span></button><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="notion" data-tool-name="Notion" aria-pressed="false">Notion<span class="tcount" data-tool-count></span></button><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="servicenow" data-tool-name="ServiceNow" aria-pressed="false">ServiceNow<span class="tcount" data-tool-count></span></button></div>
+          <p class="skill-group-label">Soft skills</p>
+          <div class="skill-list"><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="team leadership" data-tool-name="Team Leadership" aria-pressed="false">Team Leadership<span class="tcount" data-tool-count></span></button><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="communication &amp; presenting" data-tool-name="Communication &amp; Presenting" aria-pressed="false">Communication &amp; Presenting<span class="tcount" data-tool-count></span></button><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="client management" data-tool-name="Client Management" aria-pressed="false">Client Management<span class="tcount" data-tool-count></span></button><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="stakeholder buy-in" data-tool-name="Stakeholder Buy-in" aria-pressed="false">Stakeholder Buy-in<span class="tcount" data-tool-count></span></button><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="mentorship &amp; training" data-tool-name="Mentorship &amp; Training" aria-pressed="false">Mentorship &amp; Training<span class="tcount" data-tool-count></span></button><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="community building" data-tool-name="Community Building" aria-pressed="false">Community Building<span class="tcount" data-tool-count></span></button><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="creative direction" data-tool-name="Creative Direction" aria-pressed="false">Creative Direction<span class="tcount" data-tool-count></span></button><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="written communication" data-tool-name="Written Communication" aria-pressed="false">Written Communication<span class="tcount" data-tool-count></span></button><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="problem solving" data-tool-name="Problem Solving" aria-pressed="false">Problem Solving<span class="tcount" data-tool-count></span></button><button class="tool-chipbtn skill-btn" type="button" data-tool-jump="working to deadlines" data-tool-name="Working to Deadlines" aria-pressed="false">Working to Deadlines<span class="tcount" data-tool-count></span></button></div>
+          <p class="skill-group-label">Languages</p>
+          <div class="skill-list lang-list"><span>English</span><span>French</span><span>Bengali</span><span>Urdu</span></div>
+        </div>
         <p class="tool-status" id="toolStatus" aria-live="polite"></p>
         <button class="clear-btn" type="button" id="toolClear" hidden>&#10005; Clear highlight</button>
       </aside>
       <div class="exp-main">
       <!-- Résumé sheet — the old site's résumé-page look: strong name / role / date hierarchy on one clean sheet -->
       <div class="resume-sheet">
-        <div class="resume-strip" aria-hidden="true"><img src="assets/brewbase-pattern-2.jpg" alt="" loading="lazy" /></div>
+        <div class="resume-strip" aria-hidden="true"><img src="assets/exp-strip-chalk.jpg" alt="" width="1600" height="230" loading="lazy" /></div>
         <div class="resume-sheet-inner">
           <div>
             <h3>Bijoya Deb</h3>
@@ -1874,7 +2106,7 @@
           <div class="t-main">
             <h3>Product &amp; Graphic Designer — Freelance</h3>
             <p class="t-org">Upwork · Clients in Canada, USA, and Australia</p>
-            <div class="role-tags" aria-label="Tools and skills for this role"><span class="role-tag">HTML</span><span class="role-tag">CSS</span><span class="role-tag">JavaScript</span><span class="role-tag">Data Visualization</span><span class="role-tag">Illustrator</span><span class="role-tag">InDesign</span><span class="role-tag">Book Layout</span><span class="role-tag">Photoshop</span><span class="role-tag">Canva</span><span class="role-tag">Brand Identity</span><span class="role-tag">After Effects</span><span class="role-tag">Procreate</span><span class="role-tag">Pixel Art Animation</span></div>
+            <div class="role-tags" aria-label="Tools and skills for this role"><span class="role-tag">HTML</span><span class="role-tag">CSS</span><span class="role-tag">JavaScript</span><span class="role-tag">Data Visualization</span><span class="role-tag">Illustrator</span><span class="role-tag">InDesign</span><span class="role-tag">Book Layout</span><span class="role-tag">Photoshop</span><span class="role-tag">Canva</span><span class="role-tag">Brand Identity</span><span class="role-tag">After Effects</span><span class="role-tag">Procreate</span><span class="role-tag">Pixel Art Animation</span><span class="role-tag skill-tag" hidden>Agile/Scrum Sprints</span><span class="role-tag skill-tag" hidden>Communication &amp; Presenting</span><span class="role-tag skill-tag" hidden>Client Management</span><span class="role-tag skill-tag" hidden>Working to Deadlines</span></div>
             <ul>
               <li><strong>N. Sacco &amp; Co. (2025)</strong> — Front-end developer and UI designer for a finance application interface showing ROI and optimal stock-holding durations. Responsive UI and front-end CSS for developer handoff.</li>
               <li><strong>GGA Partners (2025)</strong> — Data visualization designer. Executive presentation visuals and branded data visualizations for strategic reports: 24 unique infographics across 12 articles.</li>
@@ -1890,7 +2122,7 @@
           <div class="t-main">
             <h3>Microsoft Administrator &amp; IT Consultant</h3>
             <p class="t-org">University of Toronto St. George — Department of Public Health</p>
-            <div class="role-tags" aria-label="Tools and skills for this role"><span class="role-tag">SharePoint</span><span class="role-tag">Microsoft 365 Administration</span><span class="role-tag">Training</span><span class="role-tag">Documentation</span></div>
+            <div class="role-tags" aria-label="Tools and skills for this role"><span class="role-tag">SharePoint</span><span class="role-tag">Microsoft 365 Administration</span><span class="role-tag">Training</span><span class="role-tag">Documentation</span><span class="role-tag skill-tag" hidden>ServiceNow</span><span class="role-tag skill-tag" hidden>Mentorship &amp; Training</span><span class="role-tag skill-tag" hidden>Written Communication</span><span class="role-tag skill-tag" hidden>Problem Solving</span></div>
             <p>Managed SharePoint security clearances for research collaborations, including SickKids and St. Michael&rsquo;s Hospital. Partnered with SharePoint administrators across 3 campuses. Led the department-wide SharePoint rollout for 380 faculty and 60 staff, plus Microsoft 365 administration, training, and documentation.</p>
           </div>
         </div>
@@ -1900,7 +2132,7 @@
           <div class="t-main">
             <h3>Communications &amp; Engagement Lead</h3>
             <p class="t-org">UTSC — Department of Management</p>
-            <div class="role-tags" aria-label="Tools and skills for this role"><span class="role-tag">Stakeholder Management</span><span class="role-tag">Cross-Functional Collaboration</span></div>
+            <div class="role-tags" aria-label="Tools and skills for this role"><span class="role-tag">Stakeholder Management</span><span class="role-tag">Cross-Functional Collaboration</span><span class="role-tag skill-tag" hidden>Communication &amp; Presenting</span><span class="role-tag skill-tag" hidden>Community Building</span><span class="role-tag skill-tag" hidden>Written Communication</span><span class="role-tag skill-tag" hidden>Problem Solving</span></div>
             <p>Connected student leaders across 18 Management clubs. Built a database of university resources supporting remote learning during the pandemic. Acted as student–department liaison.</p>
           </div>
         </div>
@@ -1910,7 +2142,7 @@
           <div class="t-main">
             <h3>Marketing Coordinator &amp; Graphic Designer</h3>
             <p class="t-org">UTSC — Department of Management</p>
-            <div class="role-tags" aria-label="Tools and skills for this role"><span class="role-tag">Illustrator</span><span class="role-tag">Photoshop</span><span class="role-tag">Canva</span><span class="role-tag">Event Photography</span></div>
+            <div class="role-tags" aria-label="Tools and skills for this role"><span class="role-tag">Illustrator</span><span class="role-tag">Photoshop</span><span class="role-tag">Canva</span><span class="role-tag">Event Photography</span><span class="role-tag skill-tag" hidden>Cross-Functional Collaboration</span><span class="role-tag skill-tag" hidden>Communication &amp; Presenting</span></div>
             <p>Built full marketing packages for flagship events with Big 4 accounting firms, TELUS, Rogers, and Big 5 banks. Photographed 10 departmental events. Pitched and launched a student Resource Hub.</p>
           </div>
         </div>
@@ -1920,7 +2152,7 @@
           <div class="t-main">
             <h3>Marketing Director &rarr; VP of Marketing</h3>
             <p class="t-org">DECA UTSC</p>
-            <div class="role-tags" aria-label="Tools and skills for this role"><span class="role-tag">Social Media Strategy</span><span class="role-tag">Brand Identity</span><span class="role-tag">Illustrator</span><span class="role-tag">Photoshop</span><span class="role-tag">Canva</span></div>
+            <div class="role-tags" aria-label="Tools and skills for this role"><span class="role-tag">Social Media Strategy</span><span class="role-tag">Brand Identity</span><span class="role-tag">Illustrator</span><span class="role-tag">Photoshop</span><span class="role-tag">Canva</span><span class="role-tag skill-tag" hidden>Cross-Functional Collaboration</span><span class="role-tag skill-tag" hidden>Team Leadership</span><span class="role-tag skill-tag" hidden>Stakeholder Buy-in</span><span class="role-tag skill-tag" hidden>Creative Direction</span><span class="role-tag skill-tag" hidden>Working to Deadlines</span></div>
             <p>Led a marketing team of 5 and directed 30+ marketing projects. Managed communities of 2,200+ Facebook and 1,500+ Instagram followers. Increased social media engagement by 95% and doubled event sign-ups. Drove 50+ delegate sign-ups for regional case competitions and designed 2 sponsorship packages.</p>
           </div>
         </div>
@@ -1930,25 +2162,11 @@
           <div class="t-main">
             <h3>Social Media Director</h3>
             <p class="t-org">ArtSideOut Festival</p>
-            <div class="role-tags" aria-label="Tools and skills for this role"><span class="role-tag">Social Media Strategy</span><span class="role-tag">Content Planning</span><span class="role-tag">KPI Tracking</span></div>
+            <div class="role-tags" aria-label="Tools and skills for this role"><span class="role-tag">Social Media Strategy</span><span class="role-tag">Content Planning</span><span class="role-tag">KPI Tracking</span><span class="role-tag skill-tag" hidden>Community Building</span><span class="role-tag skill-tag" hidden>Creative Direction</span><span class="role-tag skill-tag" hidden>Written Communication</span></div>
             <p>Grew the festival following 62.5%, from 800 to 1,300. Ran the Feature Friday series and content across 4 platforms, with monthly KPI tracking.</p>
           </div>
         </div>
 
-      </div>
-      <div class="skills" style="margin-top:26px">
-        <div class="skill-group">
-          <h3>Languages</h3>
-          <div class="chips">
-            <span class="chip">English</span><span class="chip">French</span><span class="chip">Bengali</span><span class="chip">Urdu</span>
-          </div>
-        </div>
-        <div class="skill-group">
-          <h3>Operations</h3>
-          <div class="chips">
-            <span class="chip">Agile/Scrum Sprints</span><span class="chip">Stakeholder Management</span><span class="chip">Cross-Functional Collaboration</span><span class="chip">Microsoft 365 Administration</span><span class="chip">SharePoint</span><span class="chip">Notion</span><span class="chip">ServiceNow</span><span class="chip">Product Roadmapping</span><span class="chip">Prioritization</span><span class="chip">Backlog Management</span>
-          </div>
-        </div>
       </div>
       </div><!-- /exp-main -->
       </div><!-- /exp-layout -->
@@ -2072,7 +2290,7 @@
         </div>
         <div class="win-body">
           <p class="illus-kicker">Illustration · Part of my design practice</p>
-          <h2 id="illus-h" tabindex="-1">Illustrations</h2>
+          <h1 id="illus-h" tabindex="-1">Illustrations</h1>
           <p class="illus-intro" style="margin-bottom:0">Illustration isn&rsquo;t a side hobby tucked away from the product work — <strong>it&rsquo;s part of how Bijoya designs.</strong> She draws the brand systems she ships: the BrewBase café illustrations below began as pencil sketches and became the product&rsquo;s icon pattern, postcard, packaging moments and loading animation. Alongside brand work she makes pixel art, portraits and watercolour-style pieces.</p>
         </div>
       </div>
@@ -2092,7 +2310,7 @@
       <section class="deck-case">
         <img class="deck-leaf" src="assets/illus-fall-leaves.png" alt="" aria-hidden="true" loading="lazy" />
         <p class="deck-kicker">Case study 01 · Illustration set</p>
-        <h3 class="deck-title">Potions &amp; Provisions</h3>
+        <h3 role="heading" aria-level="2" class="deck-title">Potions &amp; Provisions</h3>
         <p class="deck-cap">One hand-drawn apothecary set — frogs, mushrooms, potion bottles, botanicals and crystals in white chalk line — shown big in its two colourways. The pair belongs together: hedgerow green first, midnight plum second.</p>
         <div class="deck-duo">
           <a class="illus-item" href="assets/illus-chalk-green.png" target="_blank" rel="noopener"><span class="illus-frame deck-frame"><img loading="lazy" src="assets/illus-chalk-green.png" alt="Potions and Provisions, hedgerow green colourway — white chalk-style line art on deep green: frogs, mushrooms, crystal balls, a potion bottle, a teapot and crystals" /></span><span class="illus-label">Hedgerow green</span><span class="illus-sub">White chalk line art on deep green · 1 of a matching pair</span></a>
@@ -2114,10 +2332,10 @@
       <section class="deck-case">
         <img class="deck-leaf" src="assets/illus-fall-leaves.png" alt="" aria-hidden="true" loading="lazy" />
         <p class="deck-kicker">Case study 02 · Café branding</p>
-        <h3 class="deck-title">BrewBase — a brand drawn by hand</h3>
+        <h3 role="heading" aria-level="2" class="deck-title">BrewBase — a brand drawn by hand</h3>
         <p class="deck-cap">The complete hand-drawn brand set from the BrewBase case study. Every illustration began as Bijoya&rsquo;s own pencil sketch before becoming the product&rsquo;s icon pattern, postcard and packaging moments.</p>
       <a class="illus-hero" href="assets/brewbase-collage.jpg" target="_blank" rel="noopener" aria-label="Open the BrewBase brand collage full size in a new tab">
-        <img src="assets/brewbase-collage.jpg" alt="BrewBase brand collage — postcard with iced coffee and croissant, B stamp logo, the full hand-drawn icon set and coloured mugs and lattes" />
+        <img src="assets/brewbase-collage.jpg" alt="BrewBase brand collage — postcard with iced coffee and croissant, B stamp logo, the full hand-drawn icon set and coloured mugs and lattes" loading="lazy" decoding="async" />
         <span class="illus-hero-cap"><b>BrewBase brand collage</b><span>Postcard, B stamp logo, full icon set &amp; coloured mugs — click to open full size</span></span>
       </a>
 
@@ -2151,7 +2369,7 @@
       </div>
 
       <section class="deck-case tfm" aria-labelledby="tfm-h">
-        <h3 class="sr-only" id="tfm-h">Toronto Flower Market — Case study 03 · Toronto Flower Mkt</h3>
+        <h3 role="heading" aria-level="2" class="sr-only" id="tfm-h">Toronto Flower Market — Case study 03 · Toronto Flower Mkt</h3>
         <a href="assets/toronto-flower-market-deck.jpg" target="_blank" rel="noopener" aria-label="Open the Toronto Flower Market deck spread full size in a new tab"><img class="tfm-slide" src="assets/toronto-flower-market-deck.jpg" alt="Toronto Flower Market deck spread — Case study 03 · Toronto Flower Mkt: Postcards · Florals, a Spring postcard with tulips and a pink stamp; Skeumorphic social assets, tulips in a lavender folder with an orange lily, on a lavender ground" loading="lazy" /></a>
       </section>
 
@@ -2160,13 +2378,13 @@
       </div>
 
       <section class="deck-case tfm cgl" aria-labelledby="cgl-h">
-        <h3 class="sr-only" id="cgl-h">Cool Girl Literature — Case study 04 · Literary blog</h3>
+        <h3 role="heading" aria-level="2" class="sr-only" id="cgl-h">Cool Girl Literature — Case study 04 · Literary blog</h3>
         <a href="assets/cool-girl-literature-deck.jpg" target="_blank" rel="noopener" aria-label="Open the Cool Girl Literature deck slide full size in a new tab"><img class="tfm-slide" src="assets/cool-girl-literature-deck.jpg" alt="Cool Girl Literature deck slide — a literary blog's logo pairing blackletter type with a painted stack of books, a dagger and climbing vines for a gothic, overgrown look, with spot illustrations of a book stack and a latte and a palette strip, on black with a crescent moon" loading="lazy" /></a>
       </section>
 
       <div class="illus-process">
         <div class="illus-card">
-          <h3>From sketchbook to brand system</h3>
+          <h3 role="heading" aria-level="2">From sketchbook to brand system</h3>
           <p>Every BrewBase illustration started on paper. The sketch sheet became a two-weight pattern — full colour and a single-colour line version — then a postcard, tote-bag branding, and the mug that fills in as the app&rsquo;s loading animation.</p>
           <figure class="brew-anim" style="margin-bottom:0">
             <video src="assets/brewbase-loading.mp4" autoplay muted loop playsinline data-brew-anim aria-label="BrewBase loading animation — a hand-drawn mug whose pattern fills in above a progress bar"></video>
@@ -2174,7 +2392,7 @@
           </figure>
         </div>
         <div class="illus-card">
-          <h3>Drawings, pixel art &amp; portraits</h3>
+          <h3 role="heading" aria-level="2">Drawings, pixel art &amp; portraits</h3>
           <p>Beyond brand work, Bee posts her illustration work — pixel art, portraits, and watercolour-style pieces — on Instagram as she makes them. The full, most current body of work lives there.</p>
           <div class="illus-actions">
             <a class="btn primary" href="https://www.instagram.com/designwith.bee/" target="_blank" rel="noopener">
@@ -2229,10 +2447,16 @@
             <label class="pc-label" for="pcCategory">What is this about?</label>
             <select class="pc-input pc-select" id="pcCategory" name="category" required>
               <option value="">Choose one&hellip;</option>
-              <option>Recruitment opportunity</option>
-              <option>Design opportunity</option>
-              <option>Just saying hello</option>
-              <option>Other</option>
+              <optgroup label="Recruitment opportunity">
+                <option value="Recruitment — Product design">Product design role</option>
+                <option value="Recruitment — UX design">UX design role</option>
+                <option value="Recruitment — Marketing">Marketing role</option>
+                <option value="Recruitment — Contract">Contract / freelance opportunity</option>
+              </optgroup>
+              <optgroup label="Something else">
+                <option>Just saying hello</option>
+                <option>Other</option>
+              </optgroup>
             </select>
           </div>
           <div class="pc-field">
@@ -2797,6 +3021,457 @@
   window.addEventListener('hashchange', syncFromHash);
   window.addEventListener('popstate', syncFromHash);
   if (window.location.hash === '#illustrations') showIllustrations(false);
+})();
+</script>
+<script id="enhancements-js">
+(function(){
+  var doc = document, root = doc.documentElement, body = doc.body;
+  var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var EMAIL = 'bijoyadebnath99@gmail.com';
+  var RESUME = 'assets/bijoya-deb-resume.pdf';
+  var LINKEDIN = 'https://www.linkedin.com/in/bijoya-d';
+  root.classList.add('enh-js');
+
+  // ---------- Tools | Skills tabs in the Experience rail ----------
+  (function(){
+    var tT = doc.getElementById('railTabTools'), tS = doc.getElementById('railTabSkills');
+    var pT = doc.getElementById('railPanelTools'), pS = doc.getElementById('railPanelSkills');
+    var note = doc.getElementById('railNote'), clr = doc.getElementById('toolClear');
+    if (!tT || !tS || !pT || !pS) return;
+    function sel(skills){
+      tT.setAttribute('aria-selected', skills ? 'false' : 'true'); tT.tabIndex = skills ? -1 : 0;
+      tS.setAttribute('aria-selected', skills ? 'true' : 'false'); tS.tabIndex = skills ? 0 : -1;
+      pT.hidden = skills; pS.hidden = !skills;
+      if (note) note.textContent = skills ? 'Tap a skill to jump to the roles where she used it.' : 'Tap a tool to jump to the roles where she used it.';
+      if (clr && !clr.hidden) clr.click();
+    }
+    tT.addEventListener('click', function(){ sel(false); });
+    tS.addEventListener('click', function(){ sel(true); });
+    [tT, tS].forEach(function(b){ b.addEventListener('keydown', function(e){
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); var o = b === tT ? tS : tT; o.click(); o.focus(); }
+    }); });
+  })();
+
+
+  function el(tag, attrs, html){
+    var e = doc.createElement(tag);
+    for (var k in (attrs||{})) e.setAttribute(k, attrs[k]);
+    if (html != null) e.innerHTML = html;
+    return e;
+  }
+  var ICON = {
+    doc:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>',
+    up:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>',
+    search:'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>'
+  };
+  var isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
+  var MOD = isMac ? '⌘' : 'Ctrl';
+
+  // ---------- Toast ----------
+  var toast = el('div', {'class':'enh-toast', role:'status', 'aria-live':'polite'});
+  body.appendChild(toast);
+  var toastT;
+  function say(msg){ toast.textContent = msg; toast.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(function(){ toast.classList.remove('show'); }, 2200); }
+  function copyEmail(){
+    function ok(){ say('Email copied — ' + EMAIL); }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(EMAIL).then(ok, function(){ window.location.href = 'mailto:' + EMAIL; });
+    else window.location.href = 'mailto:' + EMAIL;
+  }
+
+
+  // ---------- About: read more ----------
+  (function(){
+    var t = doc.querySelector('.about-toggle'), more = doc.getElementById('aboutMore');
+    if (!t || !more) return;
+    t.addEventListener('click', function(){
+      var open = t.getAttribute('aria-expanded') !== 'true';
+      t.setAttribute('aria-expanded', open ? 'true' : 'false');
+      more.hidden = !open;
+      more.querySelectorAll('.reveal').forEach(function(n){ n.classList.add('in'); });
+      t.querySelector('span').textContent = open ? 'Show less' : 'Read more about Bijoya';
+    });
+  })();
+
+  // ---------- Name pronunciation ----------
+  // Drop an audio clip at assets/name-pronunciation.mp3 and it plays automatically;
+  // until then the browser's speech voice says it.
+  (function(){
+    var btn = doc.getElementById('pronBtn'); if (!btn) return;
+    var CLIP = 'assets/name-pronunciation.mp3', audio = null, clipOk = true;
+    function done(){ btn.classList.remove('playing'); }
+    function speak(){
+      if (!('speechSynthesis' in window)) { done(); say('Bijoya is pronounced Bee-joy-ah'); return; }
+      try {
+        window.speechSynthesis.cancel();
+        var u = new SpeechSynthesisUtterance('Bee. Joy. Ah.  Bee-joy-ah');
+        u.lang = 'en-CA'; u.rate = 0.85; u.onend = done; u.onerror = done;
+        window.speechSynthesis.speak(u);
+      } catch(e){ done(); }
+    }
+    btn.addEventListener('click', function(){
+      btn.classList.add('playing');
+      if (!clipOk) return speak();
+      if (!audio) {
+        audio = new Audio(CLIP);
+        audio.addEventListener('ended', done);
+        audio.addEventListener('error', function(){ clipOk = false; speak(); });
+      }
+      try { audio.currentTime = 0; } catch(e){}
+      var pr = audio.play();
+      if (pr && pr.catch) pr.catch(function(){ clipOk = false; speak(); });
+    });
+  })();
+
+  var heroCopy = doc.getElementById('copyEmailBtn');
+  if (heroCopy) heroCopy.addEventListener('click', function(){ setTimeout(function(){ say('Email copied — ' + EMAIL); }, 60); });
+
+  // ---------- Theme persistence ----------
+  var themeBtn = doc.getElementById('themeToggle');
+  if (themeBtn) themeBtn.addEventListener('click', function(){
+    try { localStorage.setItem('bd-theme', root.getAttribute('data-theme')); } catch(e){}
+  });
+
+  // ---------- Scroll progress + back-to-top ----------
+  var bar = el('div', {'class':'enh-progress', 'aria-hidden':'true'});
+  body.appendChild(bar);
+  var fabs = el('div', {'class':'enh-fabs'});
+  var topBtn = el('button', {'class':'enh-fab top', type:'button', 'aria-label':'Back to top', title:'Back to top'}, ICON.up);
+  var recBtn = el('button', {'class':'enh-fab primary', type:'button', 'aria-haspopup':'dialog'},
+    '<span class="dot" aria-hidden="true"></span><span class="enh-long">Hiring? 30-sec summary</span><span class="enh-short">Hiring? Summary</span> <span class="enh-kbd" aria-hidden="true">R</span>');
+  fabs.appendChild(topBtn); fabs.appendChild(recBtn); body.appendChild(fabs);
+  topBtn.addEventListener('click', function(){ window.scrollTo({top:0, behavior: RM ? 'auto' : 'smooth'}); });
+  var ticking = false;
+  function onScroll(){
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(function(){
+      var h = doc.documentElement.scrollHeight - window.innerHeight;
+      var p = h > 0 ? Math.min(1, window.scrollY / h) : 0;
+      bar.style.transform = 'scaleX(' + p + ')';
+      topBtn.classList.toggle('show', window.scrollY > 900);
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // ---------- Hero: rotating role ----------
+  var byline = doc.querySelector('.hero-byline');
+  if (byline) {
+    var roles = ['Product Designer', 'Staff UX Designer', 'UX/UI Designer', 'Digital Marketing Specialist', 'Web Coordinator', 'UX Strategist', 'Marketing Coordinator', 'Content & Social Media Strategist', 'Visual & Brand Designer', 'Photographer'];
+    var span = el('span', {'class':'enh-role', 'aria-hidden':'true'}, roles[0]);
+    var sr = el('span', {'class':'sr-only', style:'position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)'}, ' as a ' + roles.join(', '));
+    byline.appendChild(el('span', {'class':'enh-role-sep', 'aria-hidden':'true'}, ' · '));
+    byline.appendChild(span); byline.appendChild(sr);
+    if (!RM) {
+      var ri = 0, ci = roles[0].length, del = true;
+      function tick(){
+        if (del) {
+          ci--; span.textContent = roles[ri].slice(0, ci) || '​';
+          if (ci <= 0) { del = false; ri = (ri + 1) % roles.length; }
+          return setTimeout(tick, 45);
+        }
+        ci++; span.textContent = roles[ri].slice(0, ci);
+        if (ci >= roles[ri].length) { del = true; return setTimeout(tick, 2400); }
+        setTimeout(tick, 85);
+      }
+      setTimeout(tick, 2400);
+    }
+  }
+
+  // ---------- Hero leaf parallax ----------
+  var leaf = doc.querySelector('.hero-leaf-bg img');
+  if (leaf && !RM && window.matchMedia('(pointer:fine)').matches) {
+    leaf.style.transition = 'transform .4s ease-out';
+    doc.querySelector('.hero').addEventListener('mousemove', function(e){
+      var r = this.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      leaf.style.transform = 'translate(' + (x * 18) + 'px,' + (y * 14) + 'px) rotate(' + (x * 6) + 'deg)';
+    });
+  }
+
+  // ---------- Count-up metrics ----------
+  var metrics = Array.prototype.slice.call(doc.querySelectorAll('.metric b'));
+  function countUp(b){
+    var target = b.querySelector('em') || b;
+    var txt = target.textContent;
+    var m = txt.match(/^([^\d]*)([\d,]+)(.*)$/);
+    if (!m || RM) return;
+    var pre = m[1], num = parseInt(m[2].replace(/,/g,''), 10), post = m[3], comma = m[2].indexOf(',') > -1;
+    var start = null, dur = 1100;
+    function fmt(n){ return comma ? n.toLocaleString('en-US') : String(n); }
+    function step(ts){
+      if (!start) start = ts;
+      var t = Math.min(1, (ts - start) / dur), e = 1 - Math.pow(1 - t, 3);
+      target.textContent = pre + fmt(Math.round(num * e)) + post;
+      if (t < 1) requestAnimationFrame(step); else target.textContent = txt;
+    }
+    target.textContent = pre + '0' + post;
+    requestAnimationFrame(step);
+  }
+
+  // ---------- Reveal on scroll ----------
+  var revealSel = ['.metrics', '.edu-card', '#about .about-grid > *', '.sec-head', '.case', '.t-row', '.comm-card',
+    '#photography .wrap > *', '.contact .wrap > *', '#view-illustrations section', '.deck-case'];
+  var revealEls = [];
+  revealSel.forEach(function(s){ doc.querySelectorAll(s).forEach(function(n){ if (revealEls.indexOf(n) < 0 && !n.closest('.hero')) revealEls.push(n); }); });
+  if ('IntersectionObserver' in window && !RM) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        en.target.classList.add('in');
+        io.unobserve(en.target);
+      });
+    }, { rootMargin: '0px', threshold: 0.04 });
+    revealEls.forEach(function(n, i){
+      // Don't hide anything already on screen at load
+      var r = n.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) return;
+      n.classList.add('reveal'); io.observe(n);
+    });
+    var mio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if (en.isIntersecting) { metrics.forEach(function(b, i){ setTimeout(function(){ countUp(b); }, i * 70); }); mio.disconnect(); } });
+    }, { threshold: 0.4 });
+    var mwrap = doc.querySelector('.metrics'); if (mwrap) mio.observe(mwrap);
+  }
+  // Safety: if a revealed element is hidden then shown (filters, views), make sure it's visible
+  doc.addEventListener('click', function(){ setTimeout(function(){
+    doc.querySelectorAll('.reveal:not(.in)').forEach(function(n){ var r = n.getBoundingClientRect(); if (r.top < window.innerHeight && r.bottom > 0) n.classList.add('in'); });
+  }, 350); });
+
+  // ---------- Cursor spotlight on cards ----------
+  if (window.matchMedia('(pointer:fine)').matches) {
+    doc.querySelectorAll('.metric, .comm-card, .case, .edu-card, .t-row > :last-child').forEach(function(c){
+      c.classList.add('enh-spot');
+      c.addEventListener('mousemove', function(e){
+        var r = c.getBoundingClientRect();
+        c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
+  }
+
+  // ---------- Modal plumbing ----------
+  var openOverlay = null, lastFocus = null;
+  function openModal(ov, focusEl){
+    if (openOverlay) closeModal();
+    lastFocus = doc.activeElement;
+    ov.hidden = false; body.classList.add('enh-modal');
+    if (focusEl) focusEl.focus({preventScroll:true});
+    requestAnimationFrame(function(){ ov.classList.add('open'); });
+    openOverlay = ov;
+  }
+  function closeModal(){
+    if (!openOverlay) return;
+    var ov = openOverlay; openOverlay = null;
+    ov.classList.remove('open'); body.classList.remove('enh-modal');
+    setTimeout(function(){ ov.hidden = true; }, RM ? 0 : 220);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function trapTab(ov, e){
+    var f = ov.querySelectorAll('a[href],button:not([disabled]),input,[tabindex="0"]');
+    f = Array.prototype.filter.call(f, function(x){ return x.offsetParent !== null; });
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && doc.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && doc.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+
+  // ---------- Navigation helper (works from the Illustrations view too) ----------
+  function goTo(id, project){
+    closeModal();
+    var delay = 60;
+    // From the Illustrations view, let the page's own router switch back first.
+    var illus = doc.getElementById('view-illustrations');
+    if (illus && !illus.hidden) {
+      var navA = doc.querySelector('nav.links a[data-nav="' + (project ? 'work' : id) + '"]');
+      if (navA) { navA.click(); if (!project) return; delay = 260; }
+    }
+    setTimeout(function(){
+      if (project) {
+        var tab = doc.querySelector('.work-tab[data-goto="' + project + '"]');
+        if (tab) { tab.click(); return; }
+      }
+      var t = doc.getElementById(id);
+      if (t) t.scrollIntoView({behavior: RM ? 'auto' : 'smooth', block:'start'});
+    }, delay);
+  }
+  function goIllustrations(){
+    closeModal();
+    var a = doc.querySelector('nav.links a[data-nav="illustrations"]'); if (a) a.click();
+  }
+
+  // ---------- Recruiter summary drawer ----------
+  var rec = el('div', {'class':'enh-overlay', hidden:'', role:'dialog', 'aria-modal':'true', 'aria-labelledby':'enhRecTitle'});
+  rec.innerHTML =
+    '<aside class="enh-drawer">' +
+      '<button class="enh-x" type="button" aria-label="Close summary">&times;</button>' +
+      '<span class="k">For recruiters · 30-second read</span>' +
+      '<h2 id="enhRecTitle">Bijoya Deb</h2>' +
+      '<p class="sub">Product Designer · Toronto, ON · Open to full-time roles</p>' +
+      '<p>Takes products from user research to developer handoff. Currently leading the Chitrok marketplace redesign and co-founding BrewBase. Background in Business Economics &amp; Psychology (U of T), with marketing and visual-communication depth.</p>' +
+      '<h3>Impact at a glance</h3>' +
+      '<div class="enh-facts">' +
+        '<div><b>33</b><span>university sites on one design system</span></div>' +
+        '<div><b>~2,000</b><span>students served by the Hub Portal</span></div>' +
+        '<div><b>$35K</b><span>department investment secured</span></div>' +
+        '<div><b>5 → 1</b><span>clicks to track a Chitrok order</span></div>' +
+      '</div>' +
+      '<h3>Looking for</h3>' +
+      '<div class="enh-chips"><span>Staff UX Designer</span><span>Product Designer</span><span>UX/UI Designer</span><span>UX Strategist</span><span>Digital Marketing Specialist</span><span>Web Coordinator</span><span>Marketing Coordinator</span><span>Content &amp; Social Media Strategist</span><span>Visual &amp; Brand Designer</span><span>Photographer</span></div>' +
+      '<h3>Core toolkit</h3>' +
+      '<p class="enh-tk">Design &amp; research</p><div class="enh-chips"><span>Figma</span><span>Adobe XD</span><span>Miro</span><span>Adobe Creative Cloud</span><span>User research</span><span>Information architecture</span><span>Design systems</span><span>Prototyping</span><span>Accessibility (WCAG AA)</span></div>' +
+      '<p class="enh-tk">Build &amp; AI</p><div class="enh-chips"><span>HTML · CSS · JS</span><span>WordPress</span><span>GitHub</span><span>Claude Code</span><span>OpenAI Codex</span><span>Base44</span><span>Replit</span></div>' +
+      '<p class="enh-tk">Microsoft &amp; operations</p><div class="enh-chips"><span>Microsoft 365</span><span>SharePoint (admin)</span><span>Teams</span><span>Excel</span><span>Notion</span><span>ServiceNow</span></div>' +
+      '<p class="enh-tk">Photography</p><div class="enh-chips"><span>Nikon D80 (DSLR)</span><span>Canon PowerShot SX400 IS</span><span>Lightroom</span><span>Photoshop</span></div>' +
+      '<h3>Case studies</h3>' +
+      '<ul class="enh-cases">' +
+        '<li><button type="button" data-p="chitrok">Chitrok — art marketplace<small>Lead AI Engineer &amp; Product Designer · 2026</small></button></li>' +
+        '<li><button type="button" data-p="brewbase">BrewBase — café discovery<small>Co-Founder, CEO &amp; Product Designer · 2025–now</small></button></li>' +
+        '<li><button type="button" data-p="hub-portal">UTSC MyManagement Hub Portal<small>Design Lead · 2021–2022</small></button></li>' +
+        '<li><button type="button" data-p="public-health">U of T Public Health — 33 sites<small>Staff UX Designer (then titled UX/UI Designer) · 2022–2023</small></button></li>' +
+      '</ul>' +
+      '<div class="enh-actions">' +
+        '<a class="pri" href="' + RESUME + '" download="Bijoya-Deb-Nath-Resume.pdf">' + ICON.doc + 'Download résumé (PDF)</a>' +
+        '<button type="button" data-copy>Copy email — ' + EMAIL + '</button>' +
+        '<a href="' + LINKEDIN + '" target="_blank" rel="noopener">LinkedIn profile ↗</a>' +
+      '</div>' +
+    '</aside>';
+  body.appendChild(rec);
+  function openRec(){ openModal(rec, rec.querySelector('.enh-x')); }
+  recBtn.addEventListener('click', openRec);
+  rec.addEventListener('click', function(e){ if (e.target === rec) closeModal(); });
+  rec.querySelector('.enh-x').addEventListener('click', closeModal);
+  rec.querySelector('[data-copy]').addEventListener('click', copyEmail);
+  rec.querySelectorAll('[data-p]').forEach(function(b){ b.addEventListener('click', function(){ goTo('work', b.getAttribute('data-p')); }); });
+
+  // ---------- Command palette ----------
+  var cmdItems = [
+    {t:'Featured case studies', k:'Section', f:function(){ goTo('work'); }},
+    {t:'Chitrok — e-commerce marketplace', k:'Case study', f:function(){ goTo('work','chitrok'); }},
+    {t:'BrewBase — café discovery platform', k:'Case study', f:function(){ goTo('work','brewbase'); }},
+    {t:'MyManagement Hub Portal', k:'Case study', f:function(){ goTo('work','hub-portal'); }},
+    {t:'U of T Public Health — 33 sites', k:'Case study', f:function(){ goTo('work','public-health'); }},
+    {t:'Experience', k:'Section', f:function(){ goTo('experience'); }},
+    {t:'Photography', k:'Section', f:function(){ goTo('photography'); }},
+    {t:'Illustrations', k:'Section', f:goIllustrations},
+    {t:'Community', k:'Section', f:function(){ goTo('community'); }},
+    {t:'About', k:'Section', f:function(){ goTo('about'); }},
+    {t:'Contact — send a postcard', k:'Section', f:function(){ goTo('contact'); }},
+    {t:'Recruiter summary', k:'Action', f:function(){ closeModal(); setTimeout(openRec, 230); }},
+    {t:'Download résumé (PDF)', k:'Action', f:function(){ closeModal(); var a = el('a', {href:RESUME, download:'Bijoya-Deb-Nath-Resume.pdf'}); body.appendChild(a); a.click(); a.remove(); }},
+    {t:'Copy email address', k:'Action', f:function(){ closeModal(); copyEmail(); }},
+    {t:'Open LinkedIn', k:'Action', f:function(){ closeModal(); var a = el('a', {href:LINKEDIN, target:'_blank', rel:'noopener'}); body.appendChild(a); a.click(); a.remove(); }},
+    {t:'Toggle dark / light mode', k:'Action', f:function(){ closeModal(); if (themeBtn) themeBtn.click(); }}
+  ];
+  var cmd = el('div', {'class':'enh-overlay', hidden:'', role:'dialog', 'aria-modal':'true', 'aria-label':'Quick jump'});
+  cmd.innerHTML = '<div class="enh-cmd"><input type="text" placeholder="Jump to a case study, section or action…" aria-label="Search" role="combobox" aria-expanded="true" aria-controls="enhCmdList" autocomplete="off" />' +
+    '<ul id="enhCmdList" role="listbox"></ul><footer><span>↑↓ navigate</span><span>↵ open</span><span>esc close</span></footer></div>';
+  body.appendChild(cmd);
+  var cIn = cmd.querySelector('input'), cList = cmd.querySelector('ul'), cSel = 0, cShown = [];
+  function renderCmd(){
+    var q = cIn.value.trim().toLowerCase();
+    cShown = cmdItems.filter(function(it){ return !q || (it.t + ' ' + it.k).toLowerCase().indexOf(q) > -1; });
+    cSel = Math.min(cSel, Math.max(0, cShown.length - 1));
+    cList.innerHTML = cShown.length ? '' : '<li class="empty">No matches</li>';
+    cShown.forEach(function(it, i){
+      var li = el('li', {role:'option', id:'enhC' + i, 'aria-selected': i === cSel ? 'true' : 'false'}, '<span></span><small></small>');
+      li.firstChild.textContent = it.t; li.lastChild.textContent = it.k;
+      li.addEventListener('mousemove', function(){ if (cSel !== i) { cSel = i; mark(); } });
+      li.addEventListener('click', function(){ it.f(); });
+      cList.appendChild(li);
+    });
+    if (cShown.length) cIn.setAttribute('aria-activedescendant', 'enhC' + cSel);
+  }
+  function mark(){
+    Array.prototype.forEach.call(cList.children, function(li, i){ li.setAttribute('aria-selected', i === cSel ? 'true' : 'false'); });
+    var cur = cList.children[cSel]; if (cur && cur.scrollIntoView) cur.scrollIntoView({block:'nearest'});
+    cIn.setAttribute('aria-activedescendant', 'enhC' + cSel);
+  }
+  function openCmd(){ cIn.value = ''; cSel = 0; renderCmd(); openModal(cmd, cIn); }
+  cIn.addEventListener('input', function(){ cSel = 0; renderCmd(); });
+  cIn.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowDown') { e.preventDefault(); cSel = (cSel + 1) % Math.max(1, cShown.length); mark(); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); cSel = (cSel - 1 + cShown.length) % Math.max(1, cShown.length); mark(); }
+    else if (e.key === 'Enter') { e.preventDefault(); if (cShown[cSel]) cShown[cSel].f(); }
+  });
+  cmd.addEventListener('click', function(e){ if (e.target === cmd) closeModal(); });
+  var navInner = doc.querySelector('.nav-inner');
+  if (navInner && themeBtn) {
+    var nk = el('button', {'class':'enh-navk', type:'button', title:'Quick jump'}, ICON.search + '<span class="sr-only">Quick jump </span><span class="enh-kbd">' + MOD + ' K</span>');
+    nk.addEventListener('click', openCmd);
+    navInner.insertBefore(nk, themeBtn);
+  }
+
+  // ---------- In-page image viewer ----------
+  var viewer = el('div', {'class':'enh-overlay', hidden:'', role:'dialog', 'aria-modal':'true', 'aria-label':'Image viewer'});
+  viewer.innerHTML = '<div class="enh-viewer"><button class="enh-x" type="button" aria-label="Close image">&times;</button>' +
+    '<button class="nav prev" type="button" aria-label="Previous image">‹</button><img alt="" loading="lazy" decoding="async" /><button class="nav next" type="button" aria-label="Next image">›</button>' +
+    '<p class="cap"></p></div>';
+  body.appendChild(viewer);
+  var vImg = viewer.querySelector('img'), vCap = viewer.querySelector('.cap'), vSet = [], vIdx = 0;
+  function isImg(h){ return /\.(jpe?g|png|webp|gif)$/i.test(h || ''); }
+  function groupFor(a){
+    var g = a.closest('.case, .deck-case, section, #view-illustrations') || body;
+    return Array.prototype.filter.call(g.querySelectorAll('a[href]'), function(x){
+      return isImg(x.getAttribute('href')) && !x.hasAttribute('data-lightbox-trigger') && !x.closest('.enh-overlay, #projectLightbox');
+    });
+  }
+  function labelFor(a){
+    var img = a.querySelector('img');
+    var fig = a.closest('figure, .shot, li, div');
+    var cap = fig && fig.querySelector('figcaption, .shot-title, b, strong');
+    var t = (cap && cap.textContent.trim()) || (img && img.alt) || '';
+    return t.replace(/\s*↗\s*$/, '');
+  }
+  function showV(i){
+    vIdx = (i + vSet.length) % vSet.length;
+    var a = vSet[vIdx], href = a.getAttribute('href');
+    vImg.classList.add('loading');
+    vImg.onload = function(){ vImg.classList.remove('loading'); };
+    vImg.src = href; vImg.alt = labelFor(a);
+    vCap.innerHTML = '';
+    var s = el('span'); s.textContent = (vImg.alt ? vImg.alt + ' · ' : '') + (vIdx + 1) + ' / ' + vSet.length + ' · ';
+    var full = el('a', {href: href, target:'_blank', rel:'noopener'}, 'Open full size ↗');
+    vCap.appendChild(s); vCap.appendChild(full);
+    var multi = vSet.length > 1;
+    viewer.querySelector('.prev').hidden = !multi; viewer.querySelector('.next').hidden = !multi;
+    // preload neighbour
+    if (multi) { var p = new Image(); p.src = vSet[(vIdx + 1) % vSet.length].getAttribute('href'); }
+  }
+  doc.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a || !isImg(a.getAttribute('href')) || a.hasAttribute('data-lightbox-trigger') || a.closest('.enh-overlay')) return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+    e.preventDefault();
+    var lb = doc.getElementById('projectLightbox');
+    vSet = a.closest('#projectLightbox') ? [a] : groupFor(a);
+    if (vSet.indexOf(a) < 0) vSet = [a];
+    showV(vSet.indexOf(a));
+    openModal(viewer, viewer.querySelector('.enh-x'));
+  }, true);
+  viewer.querySelector('.enh-x').addEventListener('click', closeModal);
+  viewer.querySelector('.prev').addEventListener('click', function(){ showV(vIdx - 1); });
+  viewer.querySelector('.next').addEventListener('click', function(){ showV(vIdx + 1); });
+  viewer.addEventListener('click', function(e){ if (e.target === viewer || e.target.classList.contains('enh-viewer')) closeModal(); });
+  var tx = null;
+  viewer.addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; }, {passive:true});
+  viewer.addEventListener('touchend', function(e){ if (tx == null) return; var dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) showV(vIdx + (dx < 0 ? 1 : -1)); tx = null; });
+
+  // ---------- Keyboard ----------
+  doc.addEventListener('keydown', function(e){
+    var typing = /input|textarea|select/i.test((e.target && e.target.tagName) || '') || (e.target && e.target.isContentEditable);
+    if ((e.metaKey || e.ctrlKey) && (e.key === 'k' || e.key === 'K')) { e.preventDefault(); openOverlay === cmd ? closeModal() : openCmd(); return; }
+    if (openOverlay) {
+      if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); closeModal(); }
+      else if (e.key === 'Tab') trapTab(openOverlay, e);
+      else if (openOverlay === viewer && e.key === 'ArrowRight') showV(vIdx + 1);
+      else if (openOverlay === viewer && e.key === 'ArrowLeft') showV(vIdx - 1);
+      return;
+    }
+    if (typing || e.metaKey || e.ctrlKey || e.altKey) return;
+    var lb = doc.getElementById('projectLightbox'); if (lb && !lb.hidden) return;
+    if (e.key === 'r' || e.key === 'R') { e.preventDefault(); openRec(); }
+    else if (e.key === '/') { e.preventDefault(); openCmd(); }
+  }, true);
 })();
 </script>
 </body>

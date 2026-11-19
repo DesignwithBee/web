@@ -798,6 +798,7 @@
   }
   .pc-stamp-val{font-size:.74rem;letter-spacing:.02em}
   @media (max-width:560px){.pc-stamp{width:88px}}
+  @media (max-width:560px){.pc-stamp-cap{white-space:normal;flex-wrap:wrap;justify-content:center;row-gap:2px;text-align:center}}
   .pc-postmark{
     width:88px;height:88px;flex:none;border-radius:50%;
     border:2px solid rgba(34,57,28,.5);color:#3d4a31;
@@ -1379,10 +1380,10 @@
   /* Skip link */
   .skip-link{position:absolute;left:12px;top:-120px;z-index:300;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none;transition:top .15s}
   .skip-link:focus{top:12px}
-  /* Mobile header: one scrollable row instead of three wrapped rows */
-  @media (max-width:760px){
+  /* Mobile + tablet header: one scrollable row instead of wrapped rows */
+  @media (max-width:1024px){
     .nav-inner{flex-wrap:nowrap !important;gap:8px !important;padding-top:6px !important;padding-bottom:6px !important}
-    nav.links{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;width:auto !important;flex:1;min-width:0;
+    nav.links{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;justify-content:flex-start !important;-webkit-overflow-scrolling:touch;width:auto !important;flex:1;min-width:0;
       mask-image:linear-gradient(90deg,#000 85%,transparent);-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent)}
     nav.links::-webkit-scrollbar{display:none}
     nav.links a{white-space:nowrap;flex:none}
@@ -1390,6 +1391,78 @@
     .theme-toggle .theme-label-light,.theme-toggle .theme-label-dark{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
     .theme-toggle{padding:6px !important;flex:none}
   }
+
+  /* =================== Mobile & tablet layer =================== */
+  .m-toggle{display:none}
+  .m-bar{display:none}
+  @media (max-width:1024px){
+    /* Long case-study write-ups fold behind a toggle */
+    .m-toggle{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin:4px 0 14px;padding:10px 16px;border-radius:999px;
+      border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);font:inherit;font-weight:700;font-size:.92rem;cursor:pointer}
+    .m-toggle svg{width:16px;height:16px;transition:transform .2s ease}
+    .m-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+    .m-fold{display:none !important}
+  }
+  @media (max-width:760px){
+    section{padding-top:44px}
+    .photo-grid{grid-template-columns:minmax(0,1fr) !important}
+    .photo-grid > *,.photo-preview-wrap,.case-body,.drawer-inner,.t-main,.exp-main{min-width:0}
+    .hero{padding-top:28px}
+    .hero-lede{font-size:1.02rem;line-height:1.6;margin-bottom:16px}
+    .hero-title{margin-bottom:14px}
+    .hero-byline{margin-bottom:22px}
+    /* Stats: one swipeable row instead of a tall grid */
+    .metrics{display:flex !important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+      border:0;box-shadow:none;background:transparent;gap:10px;padding:2px 2px 10px;margin:26px -18px 0;padding-left:18px;padding-right:18px;scroll-padding-left:18px}
+    .metrics::-webkit-scrollbar{display:none}
+    .metric{flex:0 0 46%;scroll-snap-align:start;border:1px solid var(--line) !important;border-radius:12px;background:var(--surface);box-shadow:var(--shadow);padding:14px 14px 16px}
+    .metric:last-child{grid-column:auto}
+    .metric b{font-size:1.5rem}
+    .m-hint{display:block;font-size:.78rem;color:var(--muted);margin:2px 0 0;text-align:right}
+    /* Horizontal swipe galleries */
+    .shot-grid,.brand-list{display:flex !important;flex-wrap:nowrap !important;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+      margin-left:-4px;margin-right:-4px;padding:2px 4px 8px}
+    .shot-grid::-webkit-scrollbar,.brand-list::-webkit-scrollbar{display:none}
+    .shot-grid .shot{flex:0 0 68%;scroll-snap-align:start}
+    .shot-frame{height:180px}
+    .brand-list > *{flex:none;scroll-snap-align:start;white-space:nowrap}
+    .photo-preview{display:flex !important;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;gap:10px;-webkit-overflow-scrolling:touch;
+      grid-template-areas:none !important;padding-bottom:6px}
+    .photo-preview::-webkit-scrollbar{display:none}
+    .photo-preview .photo-tile{flex:0 0 78%;height:240px;scroll-snap-align:start}
+    /* Experience: compact roles */
+    .resume-facts{display:none}
+    .resume-sheet-inner .rs-meta{display:none}
+    .d-specs{gap:4px 14px}
+    .d-spec{white-space:nowrap !important}
+    .d-spec:nth-child(n+3){display:none}
+    .d-role{font-size:.86rem}
+    .enh-fab.top{display:none !important}
+    .t-main.m-clamp{max-height:210px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent)}
+    .t-more{display:inline-flex;align-items:center;gap:6px;min-height:44px;margin-top:2px;padding:6px 0;border:0;background:transparent;color:var(--accent-ink);font:inherit;font-weight:700;font-size:.9rem;cursor:pointer}
+    .t-more svg{width:16px;height:16px;transition:transform .2s}
+    .t-more[aria-expanded="true"] svg{transform:rotate(180deg)}
+    .tools-rail .rail-body.m-fold{display:none !important}
+    .rail-open{display:flex;width:100%;justify-content:space-between;align-items:center;min-height:44px;border:0;background:transparent;color:var(--ink);font:inherit;font-weight:700;font-size:.95rem;padding:0;cursor:pointer}
+    .rail-open svg{width:18px;height:18px;transition:transform .2s}
+    .rail-open[aria-expanded="true"] svg{transform:rotate(180deg)}
+    .tools-rail .tools-label{display:none}
+    /* Bottom action bar replaces the floating button on phones */
+    .enh-fab.primary{display:none !important}
+    .enh-fab.top{bottom:0}
+    .enh-fabs{bottom:calc(76px + env(safe-area-inset-bottom)) !important}
+    .m-bar{display:grid;grid-template-columns:1fr 1fr 1.25fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:140;
+      padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--nav-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+      border-top:1px solid var(--line);transform:translateY(110%);transition:transform .25s ease}
+    .m-bar.show{transform:none}
+    .m-bar a,.m-bar button{display:flex;align-items:center;justify-content:center;gap:7px;min-height:46px;border-radius:12px;font:inherit;font-weight:700;font-size:.9rem;
+      text-decoration:none;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);cursor:pointer}
+    .m-bar .pri{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+    .m-bar svg{width:17px;height:17px;flex:none}
+    body.enh-modal .m-bar, body.lb-open .m-bar{display:none}
+    footer.contact{padding-bottom:110px}
+  }
+  @media (max-width:760px) and (prefers-reduced-motion: reduce){ .m-bar{transition:none} }
   footer.contact{overflow-x:clip}
   .site-nav{padding-top:env(safe-area-inset-top);padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
 </style>
@@ -3484,6 +3557,93 @@
   var tx = null;
   viewer.addEventListener('touchstart', function(e){ tx = e.touches[0].clientX; }, {passive:true});
   viewer.addEventListener('touchend', function(e){ if (tx == null) return; var dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) showV(vIdx + (dx < 0 ? 1 : -1)); tx = null; });
+
+
+  // =================== Mobile & tablet layer ===================
+  (function(){
+    var mqTab = window.matchMedia('(max-width:1024px)'), mqPhone = window.matchMedia('(max-width:760px)');
+    var CHEV = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+    // 1) Start with every case study closed on phones/tablets so the list is scannable
+    if (mqTab.matches) {
+      doc.querySelectorAll('.case.open .drawer-toggle').forEach(function(b){ b.click(); });
+    }
+    // 2) Fold the long "inside the case study" write-ups behind a button
+    var n = 0;
+    doc.querySelectorAll('.chitrok-details, .brew-details, .hub-details').forEach(function(block){
+      var id = block.id || ('mfold' + (++n)); block.id = id;
+      var btn = el('button', {'class':'m-toggle', type:'button', 'aria-expanded':'false', 'aria-controls':id}, '<span>Read the full process</span>' + CHEV);
+      block.parentNode.insertBefore(btn, block);
+      function sync(){ var open = btn.getAttribute('aria-expanded') === 'true'; block.classList.toggle('m-fold', mqTab.matches && !open); }
+      btn.addEventListener('click', function(){
+        var open = btn.getAttribute('aria-expanded') !== 'true';
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.querySelector('span').textContent = open ? 'Hide the full process' : 'Read the full process';
+        sync();
+        if (open) block.querySelectorAll('.reveal').forEach(function(r){ r.classList.add('in'); });
+      });
+      sync(); mqTab.addEventListener && mqTab.addEventListener('change', sync);
+    });
+    // 3) Experience roles: show the first few lines, "Show more" for the rest (phones)
+    doc.querySelectorAll('#experience .t-row .t-main').forEach(function(main, i){
+      if (!main.id) main.id = 'trow' + i;
+      var more = el('button', {'class':'t-more', type:'button', 'aria-expanded':'false', 'aria-controls':main.id, hidden:''}, '<span>Show more</span>' + CHEV);
+      main.parentNode.appendChild(more);
+      function measure(){
+        if (!mqPhone.matches) { main.classList.remove('m-clamp'); more.hidden = true; return; }
+        if (more.getAttribute('aria-expanded') === 'true') return;
+        main.classList.remove('m-clamp');
+        var tall = main.scrollHeight > 260;
+        main.classList.toggle('m-clamp', tall); more.hidden = !tall;
+      }
+      more.addEventListener('click', function(){
+        var open = more.getAttribute('aria-expanded') !== 'true';
+        more.setAttribute('aria-expanded', open ? 'true' : 'false');
+        more.querySelector('span').textContent = open ? 'Show less' : 'Show more';
+        main.classList.toggle('m-clamp', !open);
+      });
+      measure(); mqPhone.addEventListener && mqPhone.addEventListener('change', measure);
+      // when a tool/skill highlight targets this row, open it
+      new MutationObserver(function(){ if (main.parentNode.classList.contains('tool-hit') && more.getAttribute('aria-expanded') !== 'true' && !more.hidden) more.click(); })
+        .observe(main.parentNode, {attributes:true, attributeFilter:['class']});
+    });
+    // 4) Experience filter panel: collapsed on phones
+    var rail = doc.querySelector('.tools-rail');
+    if (rail) {
+      var railBody = el('div', {'class':'rail-body', id:'railBody'});
+      Array.prototype.slice.call(rail.children).forEach(function(c){ if (!c.classList.contains('tools-label')) railBody.appendChild(c); });
+      var opener = el('button', {'class':'rail-open', type:'button', 'aria-expanded':'false', 'aria-controls':'railBody'}, '<span>Filter roles by tools &amp; skills</span>' + CHEV);
+      opener.style.display = 'none';
+      rail.appendChild(opener); rail.appendChild(railBody);
+      function syncRail(){
+        opener.style.display = mqPhone.matches ? '' : 'none';
+        var open = opener.getAttribute('aria-expanded') === 'true';
+        railBody.classList.toggle('m-fold', mqPhone.matches && !open);
+      }
+      opener.addEventListener('click', function(){ opener.setAttribute('aria-expanded', opener.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); syncRail(); });
+      syncRail(); mqPhone.addEventListener && mqPhone.addEventListener('change', syncRail);
+    }
+    // 5) Swipe hint under the stats row
+    var metricsRow = doc.querySelector('.metrics');
+    if (metricsRow) { var hint = el('span', {'class':'m-hint', 'aria-hidden':'true'}, 'Swipe for more →'); metricsRow.parentNode.insertBefore(hint, metricsRow.nextSibling); hint.style.display = 'none';
+      var sh = function(){ hint.style.display = mqPhone.matches ? '' : 'none'; }; sh(); mqPhone.addEventListener && mqPhone.addEventListener('change', sh); }
+    // 5b) Swipe rows: focusable with a label so keyboard users can scroll them
+    [['.metrics','Impact highlights, scroll sideways'],['.brand-list','Brands and clubs photographed, scroll sideways'],['.photo-preview','Selected photographs, scroll sideways']].forEach(function(x){
+      var r = doc.querySelector(x[0]); if (!r) return;
+      function sync(){ if (mqPhone.matches) { r.setAttribute('tabindex','0'); if (!r.getAttribute('aria-label')) r.setAttribute('aria-label', x[1]); r.setAttribute('role', r.getAttribute('role') || 'region'); } else { r.removeAttribute('tabindex'); } }
+      sync(); mqPhone.addEventListener && mqPhone.addEventListener('change', sync);
+    });
+    // 6) Bottom action bar on phones, shown after the hero buttons scroll away
+    var bar = el('nav', {'class':'m-bar', 'aria-label':'Quick actions'},
+      '<a href="' + RESUME + '" download="Bijoya-Deb-Nath-Resume.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>Résumé</a>' +
+      '<a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Contact</a>' +
+      '<button type="button" class="pri" data-m-summary>Hiring? Summary</button>');
+    doc.body.appendChild(bar);
+    bar.querySelector('[data-m-summary]').addEventListener('click', function(){ recBtn.click(); });
+    var heroActions = doc.querySelector('.hero-actions');
+    if ('IntersectionObserver' in window && heroActions) {
+      new IntersectionObserver(function(es){ es.forEach(function(e){ bar.classList.toggle('show', !e.isIntersecting && e.boundingClientRect.top < 0); }); }).observe(heroActions);
+    } else { bar.classList.add('show'); }
+  })();
 
   // ---------- Keyboard ----------
   doc.addEventListener('keydown', function(e){

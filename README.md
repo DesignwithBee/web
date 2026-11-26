@@ -5,7 +5,7 @@ Product Design · UX Strategy · Marketing · Visual Communications.
 
 **Available for full-time roles.**
 
-Live site: add your GitHub Pages link here once deployed (e.g. `https://designwithbee.github.io/portfolio/`).
+Live site: add your GitHub Pages link here once deployed (e.g. `designwithbee.co`).
 
 ## What's on the site
 

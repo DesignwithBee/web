@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>CWI Lighting — Post-Interview Presence Review</title>
+<style>
+  :root{
+    --bg:#ffffff; --surface:#ffffff; --ink:#0a0a0a; --accent:#ffd400; --on-accent:#000;
+    --soft: color-mix(in srgb, var(--ink) 64%, var(--bg));
+    --line: color-mix(in srgb, var(--ink) 20%, var(--bg));
+    --accent-soft: color-mix(in srgb, var(--accent) 16%, var(--bg));
+    --accent-softer: color-mix(in srgb, var(--accent) 8%, var(--bg));
+    --shadow:5px 5px 0 var(--ink); --shadow-sm:3px 3px 0 var(--ink);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#000; --surface:#000; --ink:#fff; --soft: color-mix(in srgb, var(--ink) 68%, var(--bg)); --line: color-mix(in srgb, var(--ink) 30%, var(--bg)); --accent-soft: color-mix(in srgb, var(--accent) 22%, var(--bg)); --accent-softer: color-mix(in srgb, var(--accent) 11%, var(--bg)); --shadow:5px 5px 0 var(--accent); --shadow-sm:3px 3px 0 var(--accent); }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:1.03rem;line-height:1.6}
+  ::selection{background:var(--accent);color:var(--on-accent)}
+  a{color:inherit;font-weight:600;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px;text-decoration-thickness:2px}
+  a:hover{text-decoration-thickness:3px}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  .wrap{max-width:76rem;margin:0 auto;padding:0 1.1rem 4rem}
+  .layout{display:grid;grid-template-columns:15.5rem minmax(0,1fr);gap:2.2rem;align-items:start}
+  .toc{position:sticky;top:1rem;margin-top:3.2rem}
+  .toc-label{font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;font-weight:900;margin:0 0 .5rem;color:var(--soft)}
+  .src{font-size:.79rem;line-height:1.5;color:var(--soft);font-weight:500;border-left:2px solid var(--accent);padding-left:.6rem;margin:.45rem 0 0}
+  .src a{font-weight:600}
+  /* header */
+  header{padding:2.2rem 0 0}
+  header::before{content:"";display:block;height:14px;background:var(--accent);border:2px solid var(--ink);margin-bottom:1.5rem}
+  .kicker{display:inline-block;background:var(--ink);color:var(--bg);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;padding:.35rem .7rem;margin:0 0 1rem}
+  h1{font-size:clamp(2.2rem,7vw,3.5rem);line-height:1.14;letter-spacing:-.025em;margin:0 0 .8rem;font-weight:900}
+  h1 .hl{display:inline-block;background:var(--accent);color:var(--on-accent);padding:.02em .1em .05em;margin-top:.16em;line-height:1.06;vertical-align:top;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+  .lede{font-size:1.12rem;line-height:1.65;color:var(--soft);max-width:none;width:100%;margin:0 0 1.2rem}
+  .meta{display:flex;flex-wrap:wrap;gap:.35rem .6rem;align-items:center;padding:0;font-size:.95rem;font-weight:600;color:var(--soft)}
+  .meta span{display:inline-flex;align-items:center;flex-wrap:nowrap;min-width:0}
+  .meta span:not(:last-child)::after{content:"•";margin-left:.6rem;color:var(--ink);font-weight:900;flex:0 0 auto}
+  .meta strong{color:var(--ink);font-weight:800;margin-right:.25em}
+  nav{display:flex;flex-direction:column;gap:.45rem;padding:.9rem;border:2px solid var(--ink);box-shadow:var(--shadow-sm);background:var(--surface)}
+  nav a{display:flex;align-items:center;gap:.55rem;min-height:2.5rem;padding:.35rem .55rem;border:2px solid var(--line);font-size:.9rem;font-weight:700;text-decoration:none;color:var(--soft);background:var(--surface)}
+  nav a .nav-num{flex:0 0 auto;min-width:1.55rem;height:1.55rem;display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:var(--on-accent);border:2px solid var(--ink);font-size:.82rem;font-weight:900;line-height:1;padding:0 .15rem}
+  nav a:hover{border-color:var(--ink);color:var(--ink);background:var(--accent-soft)}
+  nav a.active{border-color:var(--ink);color:var(--ink);background:var(--accent-soft);box-shadow:var(--shadow-sm)}
+  nav a.nav-core{background:var(--accent);color:var(--on-accent);border-color:var(--ink);font-weight:800}
+  nav a.nav-core:hover{background:var(--accent);color:var(--on-accent);border-color:var(--ink)}
+  nav a.nav-core.active{background:var(--accent);color:var(--on-accent);border-color:var(--ink)}
+  @media(max-width:900px){
+    header{padding-top:1.4rem}
+    header::before{margin-bottom:1rem}
+    .kicker{margin-bottom:.7rem}
+    h1{margin-bottom:.6rem;line-height:1.2}
+    h1 .hl{margin-top:.22em;padding:.02em .08em .05em;line-height:1.08}
+    .lede{font-size:1.02rem;line-height:1.55;margin-bottom:.9rem}
+    .meta{font-size:.88rem;line-height:1.45;gap:.3rem .5rem}
+    .meta span:not(:last-child)::after{margin-left:.5rem}
+    .layout{grid-template-columns:1fr;gap:0}
+    .toc{position:static;margin-top:1.4rem;padding:.55rem 0}
+    .toc-label{margin-bottom:.35rem}
+    nav{flex-direction:row;flex-wrap:wrap;padding:.6rem}
+    nav a{flex:1 1 42%;min-height:2.75rem}
+    nav a.nav-core{flex-basis:100%}
+  }
+  /* mobile contents — sticky top bar + bottom sheet, visible on load and reachable from anywhere without covering content */
+  .mobile-nav{display:none}
+  @media(max-width:900px){
+    .mobile-nav{display:block;position:sticky;top:0;z-index:60;background:var(--bg);padding:.6rem 1rem;border-bottom:2px solid var(--ink)}
+    section{padding-top:2.4rem;scroll-margin-top:4.6rem}
+    .core-idea{scroll-margin-top:4.6rem}
+    .mobile-nav-btn{position:static;display:flex;align-items:center;gap:.6rem;width:100%;min-height:3.1rem;padding:.5rem .85rem;background:var(--ink);color:var(--bg);border:2px solid var(--ink);box-shadow:var(--shadow-sm);font:inherit;font-size:.95rem;font-weight:800;text-align:left;cursor:pointer;opacity:1;visibility:visible;transform:none;pointer-events:auto}
+    .mobile-nav-btn.mnb-show{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+    .mobile-nav-btn .mnb-label{background:var(--accent);color:var(--on-accent);padding:.22rem .5rem;font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;font-weight:900;flex:0 0 auto}
+    .mobile-nav-btn .mnb-current{flex:1 1 auto;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:700}
+    .mobile-nav-btn .mnb-chevron{flex:0 0 auto;font-size:1.15rem;line-height:1;font-weight:900;color:var(--accent)}
+    .mobile-nav-backdrop{position:fixed;inset:0;z-index:61;background:rgba(0,0,0,.55)}
+    .mobile-nav-backdrop[hidden]{display:none}
+    .mobile-sheet{position:fixed;left:0;right:0;bottom:0;z-index:62;background:var(--bg);color:var(--ink);border-top:3px solid var(--ink);padding:1rem 1rem calc(1.1rem + env(safe-area-inset-bottom));max-height:82vh;overflow-y:auto;-webkit-overflow-scrolling:touch}
+    .mobile-sheet[hidden]{display:none}
+    .mobile-sheet-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:.7rem}
+    .mobile-sheet-head p{margin:0;font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;font-weight:900}
+    .mobile-sheet-close{min-height:2.75rem;min-width:2.75rem;padding:.4rem .8rem;background:var(--surface);color:var(--ink);border:2px solid var(--ink);font:inherit;font-size:.9rem;font-weight:800;cursor:pointer}
+    .mobile-sheet nav{box-shadow:none}
+    .mobile-sheet nav a{flex:1 1 100%;min-height:3rem;font-size:1rem}
+  }
+  @media(max-width:520px){
+    .stats{grid-template-columns:1fr}
+    .sol{padding:1rem}
+    .closing,.callout{padding:1.1rem}
+    .inside,.resume-strip{padding:1rem}
+    header{padding-top:1.6rem}
+  }
+  /* sections */
+  section{padding-top:3.2rem;scroll-margin-top:1rem}
+  section::before{content:"";display:block;height:10px;background:var(--accent);border:2px solid var(--ink);margin-bottom:1.3rem}
+  h2{font-size:clamp(1.75rem,5.5vw,2.5rem);line-height:1.08;letter-spacing:-.02em;font-weight:900;margin:0 0 .55rem;display:flex;gap:.65rem;align-items:flex-start}
+  h2 .num{flex:0 0 auto;background:var(--accent);color:var(--on-accent);border:2px solid var(--ink);box-shadow:var(--shadow-sm);font-size:.55em;line-height:1;padding:.32em .42em;margin-top:.18em}
+  .section-lede{color:var(--soft);margin:0 0 1.3rem;max-width:40rem}
+  h3{font-size:1.15rem;font-weight:800;margin:0 0 .4rem;line-height:1.3}
+  p{margin:0 0 .85rem}
+  ul{margin:0 0 1rem;padding-left:1.25rem} li{margin-bottom:.5rem}
+  /* stats */
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:1rem}
+  @media(min-width:640px){.stats{grid-template-columns:repeat(3,1fr)}}
+  .stat{background:var(--accent-softer);border:2px solid var(--ink);border-top:10px solid var(--accent);padding:.95rem 1rem}
+  .stat b{display:block;font-size:clamp(2rem,6vw,2.7rem);line-height:1;letter-spacing:-.02em;font-weight:900}
+  .stat span{display:block;font-size:.86rem;font-weight:700;color:var(--soft);line-height:1.4;margin-top:.4rem}
+  .stat-showrooms b{font-size:clamp(1.35rem,3.5vw,1.7rem);line-height:1.15}
+  .stat .src{border:none;padding:0}
+  .note{background:var(--accent-soft);border:2px solid var(--ink);padding:.9rem 1.05rem;font-size:.96rem}
+  .note p{margin:0}
+  /* Canada silhouette — replaces the Canada-in-detail text block */
+  .canada{display:flex;gap:1.4rem;align-items:center;background:var(--accent-soft);border:2px solid var(--ink);padding:1.1rem 1.2rem}
+  .canada-map{flex:0 0 46%;max-width:21rem;width:100%}
+  .canada-map svg{display:block;width:100%;height:auto;fill:var(--ink)}
+  .canada-counts{flex:1 1 auto;min-width:0}
+  .canada-count{margin:0 0 .85rem}
+  .canada-count b{display:block;font-size:clamp(2rem,6vw,2.7rem);line-height:1;letter-spacing:-.02em;font-weight:900}
+  .canada-count span{display:block;font-size:.95rem;font-weight:700;color:var(--soft);line-height:1.4;margin-top:.3rem}
+  .canada .src{border:none;padding:0;margin:0}
+  @media(max-width:520px){.canada{flex-direction:column;align-items:flex-start;gap:1rem}.canada-map{flex-basis:auto;max-width:17rem}}
+  /* what's in here — post-interview contents box */
+  .inside{border:2px solid var(--ink);box-shadow:var(--shadow-sm);background:var(--surface);padding:1.05rem 1.15rem;margin:0 0 1.2rem;border-top:10px solid var(--accent)}
+  .inside-label{font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;font-weight:900;margin:0 0 .55rem}
+  .inside ul{margin:0;padding-left:1.2rem}
+  .inside li{font-size:.98rem;line-height:1.55;margin-bottom:.45rem}
+  .inside li:last-child{margin-bottom:0}
+  .inside .inside-photo{background:var(--accent-soft);border:2px solid var(--ink);padding:.6rem .7rem;list-style:none;margin-left:-1.2rem;margin-top:.65rem}
+  .inside .inside-photo strong{background:var(--accent);color:var(--on-accent);padding:0 .3em}
+  /* channels */
+  .channels{display:grid;gap:1rem;grid-template-columns:1fr;padding-top:.6rem}
+  @media(min-width:640px){.channels{grid-template-columns:1fr 1fr}}
+  .tier-head{grid-column:1/-1;border:2px solid var(--ink);background:var(--ink);color:var(--bg);padding:.6rem .9rem;font-size:.78rem;letter-spacing:.11em;text-transform:uppercase;font-weight:900;line-height:1.4}
+  .tier-head span{color:var(--accent)}
+  .tier-head.mirror{background:var(--surface);color:var(--soft)}
+  .tier-head.mirror span{color:var(--ink)}
+  .channel{border:2px solid var(--ink);padding:1.05rem 1rem .9rem;background:var(--surface);color:var(--ink);box-shadow:var(--shadow-sm)}
+  .channel>div:first-child{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem;border-bottom:2px solid var(--line);padding-bottom:.45rem;margin-bottom:.6rem}
+  .channel .name{font-weight:900;font-size:1.05rem}
+  .channel .size{font-weight:900;font-size:.88rem;background:var(--ink);color:var(--accent);padding:.08rem .45rem;white-space:nowrap;text-align:right}
+  .channel ul{margin:0 0 .6rem;padding-left:1.15rem}
+  .channel li{font-size:.93rem;line-height:1.55;margin-bottom:.35rem;color:var(--soft)}
+  .channel li strong{color:var(--ink)}
+  .channel p{margin:0;color:var(--soft);font-size:.91rem;line-height:1.5}
+  .channel p strong{color:var(--ink)}
+  .channel .src{font-size:.72rem;margin-top:.45rem}
+  .channel .threat{margin-top:.6rem;background:var(--bg);border:2px solid var(--ink);border-left:8px solid var(--ink);padding:.55rem .65rem;color:var(--ink);font-size:.86rem;line-height:1.45}
+  .channel .threat b{display:block;font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;font-weight:900;margin-bottom:.15rem}
+  .channel .opp{margin-top:.55rem;background:var(--accent-soft);border:2px solid var(--ink);border-left:8px solid var(--accent);padding:.55rem .65rem;color:var(--ink);font-size:.86rem;line-height:1.45}
+  .channel .opp b{display:block;font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;font-weight:900;margin-bottom:.15rem}
+  .threats-row{border:2px solid var(--ink);background:var(--ink);color:var(--bg);padding:.75rem 1rem;margin-top:.7rem;font-size:.93rem;line-height:1.55}
+  .threats-row b{color:var(--accent);text-transform:uppercase;font-size:.7rem;letter-spacing:.11em;display:block;margin-bottom:.2rem}
+  /* journey */
+  .journey{display:grid;gap:.7rem;margin-bottom:1rem}
+  @media(min-width:640px){.journey{grid-template-columns:1fr 1fr}}
+  .step{border:2px solid var(--ink);padding:1rem 1.05rem;background:var(--surface)}
+  .step .n{display:inline-block;background:var(--accent);color:var(--on-accent);border:2px solid var(--ink);font-weight:900;font-size:.8rem;padding:.15rem .5rem;margin-bottom:.5rem}
+  .step.friction{border-left:10px solid var(--accent)}
+  .step p{margin:0;font-size:.97rem;color:var(--soft)} .step p strong{color:var(--ink)}
+  .callout{background:var(--ink);color:var(--bg);padding:1.3rem 1.4rem;border:2px solid var(--ink)}
+  .callout .label{display:block;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:900;color:var(--accent);margin-bottom:.4rem}
+  .callout p{font-size:1.12rem;line-height:1.6;margin:0}
+  /* potential threats */
+  .threats{border:2px solid var(--ink);background:var(--surface);margin-top:1.1rem}
+  .threats .t-head{background:var(--ink);color:var(--bg);padding:.6rem 1.05rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:900}
+  .threats .t-head span{color:var(--accent)}
+  .threats .t-body{padding:.95rem 1.05rem}
+  .threats p.t-intro{margin:0 0 .6rem;font-size:.97rem;color:var(--soft)}
+  .threats p.t-intro strong{color:var(--ink)}
+  .threats ul{margin:0}
+  .threats li{font-size:.96rem}
+  .threats li strong{color:var(--ink)}
+  /* solutions */
+  .solutions{display:grid;gap:1rem}
+  .sol{border:2px solid var(--ink);padding:1.2rem 1.25rem;background:var(--surface);box-shadow:var(--shadow-sm);display:flex;gap:.9rem}
+  .sol .n{flex:0 0 auto;width:2.5rem;height:2.5rem;background:var(--accent);color:var(--on-accent);border:2px solid var(--ink);font-weight:900;display:flex;align-items:center;justify-content:center;font-size:1.15rem}
+  .sol p{margin:0;font-size:.99rem;color:var(--soft)} .sol p strong{color:var(--ink)}
+  .sol .src{grid-column:auto}
+  .fit{margin-top:.75rem;background:var(--accent-softer);border:2px solid var(--ink);padding:.7rem .85rem}
+  .fit .fit-label{display:inline-block;background:var(--ink);color:var(--bg);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:900;padding:.22rem .5rem;margin-bottom:.4rem}
+  .fit p{font-size:.93rem;line-height:1.55}
+  /* resume strip inside opportunities */
+  .resume-strip{border:2px solid var(--ink);box-shadow:var(--shadow-sm);background:var(--surface);padding:1.15rem 1.25rem;margin-bottom:1.1rem}
+  .resume-strip .rs-label{font-size:.75rem;letter-spacing:.13em;text-transform:uppercase;font-weight:900;margin:0 0 .35rem}
+  .resume-strip .rs-title{font-size:1.3rem;font-weight:900;line-height:1.2;letter-spacing:-.015em;margin:0 0 .6rem}
+  .resume-strip ul{margin:0 0 .7rem}
+  .resume-strip li{font-size:.97rem}
+  .resume-strip .rs-skills{font-size:.93rem;color:var(--soft);border-top:2px solid var(--line);padding-top:.65rem;margin:0}
+  .resume-strip .rs-skills strong{color:var(--ink)}
+  /* closing / core idea */
+  .closing{background:var(--accent);color:var(--on-accent);border:2px solid var(--ink);box-shadow:var(--shadow);padding:1.5rem 1.5rem}
+  .closing h2{color:var(--on-accent)} .closing h2::before{display:none}
+  .closing p{font-size:1.08rem;line-height:1.65;max-width:38rem}
+  .closing p:last-child{margin-bottom:0}
+  .core-idea{scroll-margin-top:1rem;margin-top:1.4rem}
+  .core-idea .core-label{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:900;margin:0 0 .5rem}
+  .core-idea .core-title{font-size:clamp(1.8rem,5vw,2.4rem);line-height:1.1;letter-spacing:-.02em;font-weight:900;margin:0 0 .8rem;max-width:none;display:flex;align-items:center;gap:.65rem}
+  .bulb-icon{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center}
+  .bulb-icon svg{display:block;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  nav a .bulb-icon svg{width:.95rem;height:.95rem}
+  .core-title .bulb-icon{width:2.75rem;height:2.75rem;background:var(--on-accent);color:var(--accent);border:2px solid var(--on-accent);border-radius:50%}
+  .core-title .bulb-icon svg{width:1.55rem;height:1.55rem}
+  footer{margin-top:3rem;padding-top:1.2rem;border-top:6px solid var(--accent);color:var(--soft);font-size:.92rem}
+  footer p{margin:0 0 .4rem}
+  @media print{
+    nav,.toc,.mobile-nav{display:none} .layout{display:block} body{font-size:11pt} .wrap{max-width:none;padding:0}
+    section{break-inside:avoid-page;padding-top:1.6rem} .stat,.channel,.step,.sol,.fit,.resume-strip{break-inside:avoid;box-shadow:none}
+    header::before,section::before{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .stat,.callout,.closing,.kicker,h1 .hl,h2 .num,.sol .n,.step .n,.core-title .bulb-icon,.channel,.channel .size,.channel .threat,.channel .opp,.threats-row{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    a{text-decoration:none}
+  }
+</style>
+</head>
+<body>
+<!-- Mobile contents: sticky top bar + bottom sheet, so sections are reachable without scrolling back to the top -->
+<div class="mobile-nav">
+  <button type="button" class="mobile-nav-btn" id="mobileNavBtn" aria-haspopup="dialog" aria-expanded="false" aria-controls="mobileSheet">
+    <span class="mnb-label">Contents</span>
+    <span class="mnb-current" id="mobileNavCurrent">Jump to a section</span>
+    <span class="mnb-chevron" aria-hidden="true">▾</span>
+  </button>
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop" hidden></div>
+  <div class="mobile-sheet" id="mobileSheet" role="dialog" aria-modal="true" aria-label="Contents — jump to a section" hidden>
+    <div class="mobile-sheet-head">
+      <p>Contents — jump to a section</p>
+      <button type="button" class="mobile-sheet-close" id="mobileNavClose">Close</button>
+    </div>
+    <nav aria-label="Contents — mobile">
+      <a href="#core-idea" class="nav-core"><span class="bulb-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></span>Core idea</a>
+      <a href="#glance"><span class="nav-num" aria-hidden="true">1</span>At a glance</a>
+      <a href="#strength"><span class="nav-num" aria-hidden="true">2</span>Dealer strength</a>
+      <a href="#channels"><span class="nav-num" aria-hidden="true">3</span>Channel read</a>
+      <a href="#journey"><span class="nav-num" aria-hidden="true">4</span>Customer journey</a>
+      <a href="#solutions"><span class="nav-num" aria-hidden="true">5</span>Opportunities</a>
+      <a href="#photography"><span class="nav-num" aria-hidden="true">6</span>Photography</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+
+<header>
+  <p class="kicker">CWI Lighting · Post-Interview Review</p>
+  <h1>The network is built.<br><span class="hl">Now make it visible.</span></h1>
+  <p class="lede">Following my interview with <strong>Saleem Makhoul at 2:00 p.m. on November 27, 2026</strong> for the Digital Design Specialist role — this is a review of what we talked about: CWI Lighting's social and digital presence, what's already working, where a customer’s path gets long, and how to strengthen it <strong>inside CWI's luxury positioning and brand manual</strong>, not by changing the brand. <strong>The photography samples I promised are included at the end, as requested.</strong></p>
+  <div class="meta">
+    <span><strong>Prepared by</strong> Bijoya Deb-Nath (Bee)</span>
+    <span><strong>For</strong> Sal Makhoul &amp; the CWI Lighting team</span>
+    <span><strong>Interview</strong> November 27, 2026 — 2:00 p.m., with Sal Makhoul</span>
+    <span><strong>Based on</strong> CWI website &amp; public channels, reviewed Nov 27, 2026</span>
+    <span><strong>Includes</strong> <a href="#photography">Photography samples — as promised</a></span>
+  </div>
+</header>
+
+<div class="layout">
+<aside class="toc">
+  <p class="toc-label">Contents — jump to a section</p>
+  <nav aria-label="Contents">
+    <a href="#core-idea" class="nav-core"><span class="bulb-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></span>Core idea</a>
+    <a href="#glance"><span class="nav-num" aria-hidden="true">1</span>At a glance</a>
+    <a href="#strength"><span class="nav-num" aria-hidden="true">2</span>Dealer strength</a>
+    <a href="#channels"><span class="nav-num" aria-hidden="true">3</span>Channel read</a>
+    <a href="#journey"><span class="nav-num" aria-hidden="true">4</span>Customer journey</a>
+    <a href="#solutions"><span class="nav-num" aria-hidden="true">5</span>Opportunities</a>
+    <a href="#photography"><span class="nav-num" aria-hidden="true">6</span>Photography</a>
+  </nav>
+</aside>
+
+<main>
+
+<!-- 1 AT A GLANCE -->
+<section id="glance">
+  <h2><span class="num">1</span> At a glance</h2>
+  <p class="section-lede">CWI Inc., Markham, designs and distributes handcrafted glass and crystal lighting across North America through dealers and showrooms, since 1999.</p>
+  <p class="src">Sources: <a href="https://www.cwilighting.com/" target="_blank" rel="noopener noreferrer">cwilighting.com homepage</a> · <a href="https://www.cwilighting.com/pages/about-us" target="_blank" rel="noopener noreferrer">About page</a> (25+ years, dealer-led model)</p>
+
+  <div class="inside">
+    <p class="inside-label">What's in here</p>
+    <p style="margin:0 0 .6rem">I interviewed with <strong>Saleem Makhoul at 2:00 p.m. on November 27, 2026</strong> for the Digital Design Specialist role. This page is the review of what we talked about, plus the extra samples I promised to send.</p>
+    <ul>
+      <li><strong>The presence review we discussed</strong> — the dealer network's strength (<a href="#strength">Section 2, Dealer strength</a>), the channel-by-channel read (<a href="#channels">Section 3, Channel read</a>), and the 14-click path from Reel to retailer (<a href="#journey">Section 4, Customer journey</a>).</li>
+      <li><strong>Opportunities, inside the luxury brand</strong> — what I would do next, and where my background fits each one (<a href="#solutions">Section 5, Opportunities</a>).</li>
+      <li class="inside-photo"><strong>Photography samples — as promised</strong> &nbsp;The extra samples, as requested: <a href="#photography">Section 6, Photography samples</a> — Hoka Run101 x CultureAthletics, MEC x UndaMovement x Culture Athletics, and Keen Canada x The Trail Collective.</li>
+    </ul>
+  </div>
+
+  <div class="closing core-idea" id="core-idea">
+    <p class="core-label">The core idea</p>
+    <p class="core-title"><span class="bulb-icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></span><span>People are everything here.</span></p>
+    <p>CWI has thrived for 25+ years on relationships, trade shows, and craftsmanship — reps who know their retailers, retailers who know their clients by name. That human network <em>is</em> the brand’s luxury: not distance, but care, craft, and trust you can feel in a room.</p>
+    <p>The digital job is not to replace that, and not to change the brand. It’s to <strong>show what CWI has already been doing</strong> — the hands that make the glass, the rooms the light transforms, the dealers who install it — so that someone who discovers CWI cold, online, feels the same warmth as someone who was introduced by a person they trust.</p>
+    <p>Keep the luxury. Put the people back in the frame. Make the network visible.</p>
+  </div>
+  <p class="src" style="margin-top:.8rem">Positioning source: <a href="https://www.cwilighting.com/pages/about-us" target="_blank" rel="noopener noreferrer">About page</a> — luxury positioning and dealer-led model, in the company’s own words.</p>
+
+  <div class="stats" style="margin-top:1.2rem">
+    <div class="stat"><b>745</b><span>retailer locations across North America</span><p class="src">Counted from <a href="https://www.cwilighting.com/pages/local-dealers" target="_blank" rel="noopener noreferrer">Local Dealers page</a>, Nov 27, 2026 — not a company-published total.</p></div>
+    <div class="stat"><b>136</b><span>retailer locations in Canada</span><p class="src">Counted from <a href="https://www.cwilighting.com/pages/local-dealers" target="_blank" rel="noopener noreferrer">Local Dealers page</a>, Nov 27, 2026.</p></div>
+    <div class="stat"><b>116</b><span>unique retailer businesses in Canada</span><p class="src">By business name, from the same count. Plus 2 CWI listings (Shop &amp; Warehouse, Markham) = 138 Canadian listings total.</p></div>
+    <div class="stat"><b>9,080</b><span>Instagram followers — about 2 posts / week</span><p class="src">Source: <a href="https://www.instagram.com/cwilighting/" target="_blank" rel="noopener noreferrer">instagram.com/cwilighting</a></p></div>
+    <div class="stat stat-showrooms"><b>Dallas Market Center · High Point, North Carolina</b><span>two permanent showrooms</span><p class="src">Sources: <a href="https://www.cwilighting.com/pages/virtual-showrooms" target="_blank" rel="noopener noreferrer">Virtual Showrooms</a> · <a href="https://dallasmarketcenter.com/exhibitors/cwi-lighting-a4c315c71560c0cb5f8f01f575dd3252/" target="_blank" rel="noopener noreferrer">Dallas Market Center</a></p></div>
+    <div class="stat"><b>2026</b><span>Arcus · Petra · Contour · Curva — handcrafted glass + integrated LED</span><p class="src">Source: <a href="https://www.cwilighting.com/" target="_blank" rel="noopener noreferrer">Homepage — Featured Collections</a></p></div>
+  </div>
+
+  <div class="canada">
+    <div class="canada-map">
+      <svg viewBox="0 0 46.1 41.8" role="img" aria-label="Silhouette map of Canada"><path d="M40.6,33.9L41.5,34.6L40.0,33.8L40.6,33.9ZM43.9,32.3L43.1,32.4L42.3,33.5L39.0,33.4L37.3,35.6L36.6,35.3L37.3,35.6L36.5,37.0L38.9,34.6L39.8,34.5L40.2,34.9L39.6,35.7L38.0,35.8L36.4,38.7L34.7,38.7L34.9,38.1L33.9,38.2L32.7,37.4L32.2,36.3L32.2,32.1L32.6,32.5L32.8,31.5L32.1,29.0L33.8,27.3L33.6,26.0L32.7,25.1L33.7,23.5L33.2,23.6L33.3,22.9L32.9,22.9L33.3,22.2L33.0,21.3L34.8,21.6L35.3,21.2L36.4,22.5L37.4,22.6L37.4,23.6L36.6,23.6L37.4,23.8L37.6,24.5L37.1,24.9L38.0,24.9L37.5,25.9L38.2,25.1L38.4,25.8L39.1,24.9L39.2,25.4L40.0,23.4L39.8,24.8L40.6,25.0L40.1,25.6L40.5,26.0L40.2,27.4L40.8,28.4L40.5,29.1L39.4,29.0L38.9,28.4L38.9,29.0L38.5,28.6L38.7,31.0L39.1,30.7L39.0,31.5L39.7,31.5L40.0,32.1L40.5,30.6L40.4,31.7L43.9,31.7L43.9,32.3ZM40.0,23.4L40.6,24.4L40.3,24.7L40.9,25.0L40.5,25.4L41.1,25.2L40.6,25.7L41.1,25.5L41.4,26.1L41.1,26.2L41.7,26.6L41.5,27.1L41.0,26.9L42.2,27.9L42.0,28.7L42.5,28.4L42.4,29.0L42.8,28.5L43.8,29.1L42.3,30.2L41.9,29.9L42.2,30.4L43.3,29.5L43.9,29.8L43.7,30.3L44.5,30.2L44.6,31.1L44.2,31.1L44.7,31.5L44.0,32.3L43.9,31.7L40.4,31.7L40.5,30.6L40.0,32.1L39.7,31.5L39.0,31.5L39.1,30.7L38.7,31.0L38.5,28.6L38.9,29.0L38.9,28.4L39.4,29.0L40.5,29.1L40.8,28.4L40.2,27.4L40.5,26.0L40.1,25.6L40.6,25.0L39.8,24.8L40.0,23.4ZM44.5,32.8L44.0,34.2L44.4,33.5L44.8,34.7L45.3,34.2L45.8,34.4L45.4,35.3L46.0,35.1L45.5,35.5L45.7,36.2L46.1,35.6L46.0,37.1L45.7,36.5L45.4,36.9L45.4,35.8L44.8,36.8L44.5,36.7L45.1,36.0L44.4,36.2L44.6,35.7L44.1,36.2L42.7,36.1L43.7,33.0L44.5,32.1L44.5,32.8ZM7.5,33.8L6.8,32.9L8.4,33.4L9.4,35.3L7.5,33.8ZM12.7,34.7L9.6,34.7L9.2,33.5L8.7,33.7L8.7,32.8L8.5,33.3L7.9,33.2L8.3,32.6L8.1,33.0L7.3,32.8L7.7,32.6L7.1,32.5L7.7,32.0L7.1,32.0L7.5,31.4L7.7,31.7L7.6,30.9L6.8,31.4L7.0,30.8L6.5,30.1L7.1,30.5L6.7,29.7L6.3,30.3L5.9,29.8L6.3,29.5L5.7,29.3L6.3,28.2L5.9,28.7L5.9,27.6L5.0,27.1L3.1,23.9L2.1,24.8L1.3,23.7L11.2,23.7L11.2,30.2L13.8,33.1L14.3,34.7L12.7,34.7ZM17.2,7.2L17.4,7.9L18.7,7.8L18.5,8.6L16.4,8.9L16.4,8.2L17.0,8.0L16.4,7.8L16.7,7.7L16.4,7.2L17.0,6.8L17.2,7.2ZM16.4,11.3L16.4,10.7L17.5,12.1L17.8,11.8L17.3,10.4L18.6,10.7L19.2,12.6L21.1,13.5L21.1,14.0L19.8,14.0L19.9,14.6L20.5,14.2L20.6,14.7L18.9,14.8L18.1,14.2L16.9,15.0L14.7,15.2L14.5,14.5L12.8,14.1L12.7,13.7L16.4,13.7L16.4,11.3ZM25.4,14.0L26.6,14.3L26.0,14.4L26.7,15.5L27.1,14.5L27.7,14.8L27.6,15.7L28.2,16.6L29.6,14.7L29.1,13.8L30.8,14.1L30.3,14.2L31.3,14.5L30.9,14.8L31.3,15.1L30.6,15.3L31.3,16.3L30.2,17.4L29.4,16.6L30.0,17.5L28.5,17.2L28.9,17.5L28.1,18.4L26.0,17.8L28.4,18.6L27.8,19.6L26.7,19.6L26.7,20.1L24.8,19.5L26.5,20.6L25.5,20.9L25.5,21.6L25.1,21.4L24.3,23.7L20.5,23.7L20.5,19.5L16.7,18.9L10.8,15.7L10.8,14.1L13.5,14.7L14.3,15.3L13.5,15.8L16.3,15.7L17.4,16.4L17.1,16.6L17.8,17.4L17.5,15.6L18.6,15.1L17.2,15.6L17.2,15.1L18.3,14.8L20.4,16.0L22.1,16.0L22.3,15.6L23.0,16.1L22.3,15.6L22.7,15.2L23.4,15.4L23.2,15.7L23.7,15.4L23.4,16.2L24.0,16.7L23.4,16.6L23.8,17.1L23.9,15.6L25.0,15.1L24.8,14.6L24.4,15.0L24.9,14.2L23.4,13.6L23.8,13.2L23.4,12.4L23.9,12.4L23.7,12.1L24.4,11.8L24.1,11.8L24.8,11.9L25.9,13.3L25.4,14.0ZM41.7,17.1L40.9,17.4L41.4,17.7L40.8,17.6L41.0,18.1L40.6,17.8L40.5,18.8L39.5,18.0L40.1,17.4L39.3,17.7L39.5,17.3L39.2,17.6L38.7,17.1L38.6,17.4L38.2,17.2L38.6,17.8L37.8,17.5L38.9,18.9L39.7,19.2L39.4,19.4L40.0,20.0L40.0,20.5L39.6,19.9L39.7,21.1L37.7,19.9L39.3,21.8L37.9,21.5L36.3,20.5L36.1,20.3L36.5,20.1L36.0,20.0L35.5,19.0L35.1,19.4L34.8,18.8L34.7,19.3L34.1,19.1L33.7,19.5L32.9,19.0L33.3,18.2L34.4,19.0L34.1,18.4L35.4,18.2L34.9,17.5L36.0,16.4L35.2,15.0L34.7,14.6L33.7,15.0L34.3,14.5L32.5,13.0L32.2,13.3L32.6,13.8L31.1,13.6L31.5,14.0L30.4,13.4L31.1,13.8L29.0,13.7L28.7,13.2L27.7,13.4L27.0,12.6L28.3,12.7L26.8,12.3L26.8,11.3L27.8,10.1L29.5,10.0L28.5,11.0L29.5,12.4L28.4,12.7L29.4,12.8L29.6,12.1L28.8,11.7L29.8,11.7L29.0,10.8L29.9,11.0L29.1,10.7L30.1,10.7L29.3,10.5L30.5,10.0L31.7,10.6L31.5,11.8L32.1,11.2L33.1,12.0L32.6,11.5L33.5,11.6L32.7,11.3L33.2,10.9L34.5,11.2L33.8,11.8L35.0,11.6L34.4,12.0L34.8,12.1L34.5,12.5L35.1,11.9L35.0,12.5L35.3,12.1L35.4,12.7L35.9,12.0L36.4,12.2L35.7,12.9L36.9,12.6L36.2,13.3L36.6,13.2L36.4,13.7L37.2,12.8L36.9,13.2L38.1,13.2L36.9,13.8L38.2,13.4L38.7,14.0L37.2,14.2L38.9,14.5L37.7,14.3L38.3,14.9L37.5,14.9L38.9,15.3L38.3,15.4L39.1,15.6L39.1,15.9L39.3,15.5L39.3,16.1L39.9,15.7L39.7,16.1L40.3,16.4L39.9,16.7L40.8,16.4L40.4,16.9L41.3,16.7L41.7,17.1ZM38.5,0.7L39.1,0.8L37.9,1.1L39.9,0.8L41.8,1.4L40.1,2.0L37.5,2.0L38.9,2.2L37.2,2.6L40.1,2.2L37.4,3.3L36.8,3.1L37.1,3.5L35.9,3.5L36.9,3.6L36.6,3.9L33.0,4.3L34.8,4.5L32.6,4.6L34.8,5.1L33.7,5.2L34.6,5.4L32.9,5.7L32.9,6.3L31.0,6.0L31.4,6.4L30.8,6.4L33.0,6.7L32.8,7.2L31.4,7.6L31.6,7.3L30.6,6.9L30.8,7.3L26.9,7.1L28.5,6.5L27.7,5.8L29.6,6.4L30.8,5.6L29.5,6.2L29.2,5.9L29.7,5.8L29.0,5.8L29.9,5.5L29.4,5.5L29.6,5.1L29.1,5.6L28.1,5.6L28.4,5.0L30.8,5.1L30.3,4.9L31.2,4.6L29.5,4.7L30.2,4.6L28.6,3.9L29.2,3.8L28.6,3.4L31.7,4.1L32.1,4.0L30.3,3.4L33.8,2.8L32.5,2.8L33.7,2.3L31.5,3.0L28.8,3.2L28.5,3.1L30.8,2.5L28.1,3.1L27.1,2.8L29.5,2.4L26.8,2.7L28.2,2.2L25.9,2.0L29.6,1.8L28.4,1.5L29.4,1.2L32.4,1.9L30.6,1.3L31.7,1.2L31.2,0.9L32.7,1.0L31.8,0.8L32.3,0.7L33.9,1.3L34.4,1.1L33.3,0.7L38.5,0.7ZM23.3,6.7L24.9,6.8L24.9,7.3L26.3,7.1L26.5,7.2L26.0,7.2L27.2,7.5L25.9,7.4L26.7,7.6L26.2,7.9L26.8,7.7L27.3,8.3L31.4,7.9L32.3,8.8L31.0,9.2L30.1,8.8L29.2,9.2L27.5,9.2L27.5,8.8L25.9,9.0L25.2,7.4L24.0,7.5L23.3,6.7ZM28.6,19.1L29.1,17.8L29.4,18.5L30.9,19.0L30.9,19.7L31.9,19.9L31.4,20.2L30.4,19.5L29.1,20.6L29.0,19.9L28.2,20.1L28.6,19.1ZM24.5,2.6L25.7,2.5L27.5,3.6L28.0,3.3L28.1,4.2L29.4,4.4L28.0,5.1L27.7,4.7L27.4,5.5L26.8,5.1L27.1,5.5L25.7,5.5L25.2,5.2L25.9,5.1L24.6,4.7L26.6,4.5L24.1,4.4L23.8,4.2L24.5,3.9L23.2,3.6L24.5,3.7L23.3,3.4L24.8,3.2L23.9,2.9L24.5,2.6ZM21.0,10.4L20.7,10.2L21.4,10.3L21.0,10.0L21.5,9.8L23.0,9.8L23.1,10.3L22.4,10.7L23.4,10.9L23.4,11.9L22.5,11.8L22.5,12.3L22.0,12.4L20.2,11.0L20.6,10.6L21.3,11.0L21.3,10.5L21.7,10.5L21.0,10.4ZM23.9,10.4L24.3,9.6L26.7,9.8L25.7,10.9L24.5,10.9L25.0,11.2L24.7,11.7L24.1,11.7L23.9,10.4ZM21.9,7.7L21.1,7.2L22.8,7.2L22.8,8.6L21.2,8.3L22.1,8.0L20.1,8.1L21.1,7.9L20.6,7.2L21.9,7.7ZM21.8,14.7L22.6,13.8L24.1,14.8L23.4,15.3L21.8,14.7ZM19.5,5.1L19.9,5.0L19.0,4.9L18.7,4.4L21.4,4.9L22.1,5.8L19.0,5.2L19.8,5.1L19.5,5.1ZM31.6,10.0L33.3,10.1L34.0,10.8L32.2,10.9L31.6,10.0ZM34.6,15.6L34.4,16.3L33.5,16.4L33.7,15.4L34.6,15.6ZM23.7,8.8L23.3,8.6L24.0,8.1L25.0,8.4L24.8,9.1L23.7,8.8ZM30.8,20.7L30.1,21.6L30.2,20.8L30.8,20.7ZM22.6,4.9L24.2,5.6L23.1,5.9L22.4,5.2L22.6,4.9ZM18.9,10.8L17.9,10.2L19.2,10.1L18.9,10.8ZM16.4,5.8L15.3,6.4L14.7,5.9L16.4,5.8ZM16.4,8.9L14.6,9.3L14.1,9.0L15.9,8.5L12.4,8.4L13.8,8.0L12.6,8.1L13.9,7.8L12.9,7.7L13.9,7.2L16.4,8.2L16.4,8.9ZM12.5,13.7L15.6,13.4L12.1,12.8L13.8,12.2L11.7,12.1L12.6,10.8L14.0,10.3L14.0,11.1L14.8,10.7L15.7,11.0L15.5,11.5L16.4,11.3L16.4,13.7L12.7,13.7L13.0,14.1L12.5,13.7ZM20.5,23.7L9.1,23.7L8.8,22.7L7.6,22.9L7.5,22.2L6.3,21.5L5.9,19.9L4.6,18.9L4.8,17.7L4.1,17.7L4.0,16.7L2.8,16.7L2.6,14.8L3.8,15.0L3.6,14.6L4.5,14.0L6.3,13.6L4.6,14.4L4.5,15.0L5.0,14.3L5.4,14.1L5.5,14.6L5.8,14.0L7.3,13.5L7.0,13.1L8.4,14.4L8.7,13.6L8.9,14.3L9.6,13.9L10.7,14.1L10.8,15.7L15.1,18.2L20.5,19.5L20.5,23.7ZM11.3,9.7L12.5,9.5L13.6,10.2L11.6,11.1L10.9,12.2L9.7,12.6L8.1,11.7L9.2,9.9L8.7,9.4L10.4,9.2L11.3,9.7ZM13.2,6.7L12.6,7.4L12.0,6.9L11.2,7.8L9.6,7.6L11.6,6.4L13.0,6.1L13.6,6.4L13.2,6.7ZM37.7,36.4L38.2,35.7L39.9,35.9L39.6,36.6L40.4,37.6L38.6,38.6L38.3,36.6L37.7,36.4ZM42.1,37.5L41.8,38.0L42.2,37.4L42.5,37.8L41.7,38.2L42.1,36.7L42.1,37.5ZM40.3,37.7L41.4,37.8L41.9,38.4L40.1,39.1L39.4,40.2L39.2,39.3L40.6,38.3L39.8,38.4L40.3,37.7ZM20.5,23.7L20.9,34.7L16.4,34.7L16.4,23.7L20.5,23.7ZM14.3,34.7L13.8,33.1L11.2,30.2L11.2,23.7L16.4,23.7L16.4,34.7L14.3,34.7ZM9.2,23.7L0.3,23.4L0.3,14.1L2.6,14.8L2.8,16.7L4.0,16.7L4.1,17.7L4.8,17.7L4.6,18.9L5.9,19.9L6.3,21.5L7.5,22.2L7.6,22.9L8.8,22.7L9.2,23.7ZM20.5,23.7L24.3,23.7L24.5,25.5L24.6,24.9L25.1,25.0L25.3,26.8L26.3,26.4L27.2,26.8L24.1,30.9L24.1,34.7L20.9,34.7L20.5,23.7ZM32.2,32.7L32.5,37.2L34.9,38.5L33.3,39.6L33.5,39.8L32.5,39.9L32.1,40.4L32.5,40.8L31.3,41.0L30.7,41.8L30.4,41.6L31.1,40.4L31.1,38.4L31.9,39.2L31.9,38.3L31.6,37.8L29.6,37.2L29.5,35.8L28.9,35.7L28.6,34.9L27.7,34.7L26.8,35.7L24.4,35.0L24.1,30.9L27.4,26.8L29.3,28.4L29.2,28.7L30.8,28.5L31.0,31.5L31.7,32.0L31.5,32.7L31.8,32.4L32.2,32.7Z"/></svg>
+    </div>
+    <div class="canada-counts">
+      <p class="canada-count"><b>136</b><span>retailer locations in Canada</span></p>
+      <p class="canada-count"><b>44</b><span>retailer locations in Toronto / the GTA</span></p>
+      <p class="src">Source: <a href="https://www.cwilighting.com/pages/local-dealers" target="_blank" rel="noopener noreferrer">cwilighting.com/pages/local-dealers</a> — counted Nov 27, 2026.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2 DEALER STRENGTH -->
+<section id="strength">
+  <h2><span class="num">2</span> The dealer network is the strength</h2>
+  <p class="section-lede">Most brands have to build distribution. CWI already has it — and dealers are already creating content.</p>
+  <ul>
+    <li><strong>745 doors is distribution most competitors would envy.</strong> The groundwork — relationships, showrooms, trade presence at Dallas and High Point — is done. Digital doesn't need to create demand from zero; it needs to make this network easy to find and easy to share.</li>
+    <li><strong>Dealers are already posting CWI.</strong> Moko Home (Perth, Ontario) has posted CWI collection reels, and other retailers merchandise large CWI catalogues online. That is proof the product photographs and sells in real rooms.</li>
+    <li><strong>The assets already exist.</strong> Product pages carry 3D View, the Resources page holds the 2025 Catalog and January 2026 Supplement as flip-books, and virtual showroom tours for Dallas and High Point are live on the site.</li>
+  </ul>
+  <p class="src">Sources: <a href="https://www.instagram.com/reel/DfP8e6XpGCa/" target="_blank" rel="noopener noreferrer">Moko Home reel, Nov 2, 2026</a> · <a href="https://www.cwilighting.com/products/1711p50-5-624" target="_blank" rel="noopener noreferrer">Arcus product page</a> (3D View) · <a href="https://www.cwilighting.com/pages/resources" target="_blank" rel="noopener noreferrer">Resources page</a> · <a href="https://www.cwilighting.com/pages/virtual-showrooms" target="_blank" rel="noopener noreferrer">Virtual Showrooms page</a></p>
+</section>
+
+<!-- 3 CHANNELS -->
+<section id="channels">
+  <h2><span class="num">3</span> Channel read</h2>
+  <p class="section-lede">The rundown, channel by channel, in bullet points — ordered by where the funnel actually starts. <strong>Instagram, Pinterest and LinkedIn are the main channels</strong>, with real life — showrooms and trade shows — feeding the same path, and all of it pointing back to the Shopify website. Facebook, TikTok and YouTube sit at a lower tier as mirrors. Nothing here needs a rebrand — it needs consistency, people, and a cadence, all within the existing brand system. Each channel closes with its potential threat and its opportunity, highlighted.</p>
+  <div class="channels">
+    <div class="tier-head">Main channels <span>— Instagram · Pinterest · LinkedIn → Shopify website</span></div>
+    <div class="channel">
+      <div><div class="name">Instagram — flagged for attention</div><div class="size">9,080 followers</div></div>
+      <ul>
+        <li><strong>About 2 posts a week</strong> — Reels and carousels dominate the feed.</li>
+        <li><strong>Content reads as AI-generated</strong> — polished, people-free product visuals, with little of the makers, rooms, and people behind the light.</li>
+        <li><strong>Visible engagement is low</strong> — roughly 0.1–0.3% per post (about 8–53 likes, 0–4 comments on sampled posts).</li>
+        <li><strong>That low engagement sits oddly against the scale behind it</strong> — a network of 745 retailer locations and active trade shows at Dallas Market Center and High Point, North Carolina.</li>
+        <li><strong>Highlights are well organised</strong> — HPMKT ’26, 2026 Collection, Dallas 2026, Meets, Custom Lighting.</li>
+        <li><strong>Bio carries five separate links, and two of them are stale</strong> as of November 27, 2026.</li>
+      </ul>
+      <p class="src">Source: <a href="https://www.instagram.com/cwilighting/" target="_blank" rel="noopener noreferrer">instagram.com/cwilighting</a> — grid &amp; bio reviewed Nov 27, 2026. Engagement counts from sampled posts via search index. Retailer count from <a href="https://www.cwilighting.com/pages/local-dealers" target="_blank" rel="noopener noreferrer">Local Dealers page</a>, counted Nov 27, 2026.</p>
+      <p class="threat"><b>Potential threat</b>Broken links in the bio are a dead end at the moment of highest intent — five links, two of them stale, so a customer who was ready to act hits a broken path and leaves. AI-looking, people-free content plus quiet conversation next to a 745-door network and active trade shows also makes the brand look smaller and less human than it is, and stale links tax the luxury polish.</p>
+      <p class="opp"><b>Opportunity — how to improve it</b>Put people back in the frame: real makers, real rooms, dealer installs, and trade-show moments, cut as Reels and carousels that invite conversation, not just reach. Replace the five bio links with one clean link hub — a single Carrd.co or Beacons.ai–style card holding every current link in one place, kept fresh — and make the grid work harder: when a post showcases a product, its entry in the hub links straight through to that product’s Shopify page, so the path runs post → product → retailer without hunting.</p>
+    </div>
+    <div class="channel">
+      <div><div class="name">Pinterest</div><div class="size">Present, quiet</div></div>
+      <ul>
+        <li><strong>Exists and is linked from the site</strong>, but publicly near-invisible (follower metrics aren’t public).</li>
+        <li><strong>For home décor this is a discovery channel</strong> — pins live for months.</li>
+        <li><strong>Every pin can link straight to a product page</strong> and onward to Where to Buy.</li>
+      </ul>
+      <p class="src">Source: <a href="https://ca.pinterest.com/cwilighting/" target="_blank" rel="noopener noreferrer">ca.pinterest.com/cwilighting</a></p>
+      <p class="threat"><b>Potential threat</b>Décor discovery happens on Pinterest with or without CWI — an unfunnelled presence leaves that traffic, and months of pin lifespan, to whoever is pinning.</p>
+      <p class="opp"><b>Opportunity — how to improve it</b>Build Pinterest as a funnel: boards by room, collection, and fixture type, every pin linked to its product page and onward to Where to Buy.</p>
+    </div>
+    <div class="channel">
+      <div><div class="name">LinkedIn</div><div class="size">Company page exists</div></div>
+      <ul>
+        <li><strong>The company page is there</strong> — an underused home for the trade story.</li>
+        <li><strong>Ready-made material:</strong> dealer spotlights, showroom news, designer relationships, and the people behind the collections.</li>
+      </ul>
+      <p class="src">Source: <a href="https://www.linkedin.com/company/cwilighting/" target="_blank" rel="noopener noreferrer">linkedin.com/company/cwilighting</a></p>
+      <p class="threat"><b>Potential threat</b>The trade proof — dealer spotlights, showroom news — is left to word of mouth alone, where partners can’t easily find or share it.</p>
+      <p class="opp"><b>Opportunity — how to improve it</b>Run a steady trade cadence: dealer spotlights, showroom news from Dallas and High Point, and the people behind each collection.</p>
+    </div>
+    <div class="channel">
+      <div><div class="name">Website — Shopify</div><div class="size">Catalogue model</div></div>
+      <ul>
+        <li><strong>A catalogue, not a direct checkout</strong> — sales flow through the Dealers Portal, Where to Buy, and retailers. That model fits luxury.</li>
+        <li><strong>The gap is the path <em>to</em> the retailer</strong> — navigation, product pages, and the dealer finder (see <a href="#journey">Section 4, Customer journey</a>).</li>
+      </ul>
+      <p class="src">Sources: <a href="https://www.cwilighting.com/pages/where-to-buy" target="_blank" rel="noopener noreferrer">Where to Buy</a> · <a href="https://www.cwilighting.com/pages/local-dealers" target="_blank" rel="noopener noreferrer">Local Dealers</a></p>
+      <p class="threat"><b>Potential threat</b>The reps’ catalogue-app experience isn’t referred back to the website — showroom inspiration has no thread to pick up later, and the two stories can drift apart.</p>
+      <p class="opp"><b>Opportunity — how to improve it</b>Clearer navigation, richer product pages, and a dealer finder that works like a map, not a long list — plus tying the reps’ catalogue-app experience back to the matching product pages.</p>
+    </div>
+    <div class="tier-head mirror">Lower tier <span>— mirrors · Facebook · TikTok · YouTube</span></div>
+    <div class="channel">
+      <div><div class="name">Facebook</div><div class="size">983 followers · Mirror</div></div>
+      <ul>
+        <li><strong>Active mainly by cross-posting Instagram</strong> — the same content, mirrored.</li>
+        <li><strong>No native cadence of its own</strong> for the trade and homeowner audience there.</li>
+      </ul>
+      <p class="src">Source: <a href="https://facebook.com/cwilighting" target="_blank" rel="noopener noreferrer">facebook.com/cwilighting</a></p>
+      <p class="threat"><b>Potential threat</b>Mirrored content gives the trade and homeowner audience no reason of their own to follow — the channel adds reach, not relationship.</p>
+      <p class="opp"><b>Opportunity — how to improve it</b>Give Facebook its own reason to exist: dealer features, showroom moments, and event posts made natively for that audience.</p>
+    </div>
+    <div class="channel">
+      <div><div class="name">TikTok</div><div class="size">631 followers · Lower priority</div></div>
+      <ul>
+        <li><strong>Lower priority for now</strong> — the core audience (sales reps, dealers, designers specifying for real rooms) isn’t coming to TikTok for lighting inspiration.</li>
+        <li><strong>The account is quiet</strong> — no 2026 collection content; the grid still leads with 2023–24 collections.</li>
+        <li><strong>The most-viewed video is a reposted customer transformation</strong> (1,357 views) — the lived-in, in-room format is the only one proven there.</li>
+      </ul>
+      <p class="src">Source: <a href="https://www.tiktok.com/@cwilighting" target="_blank" rel="noopener noreferrer">tiktok.com/@cwilighting</a></p>
+      <p class="threat"><b>Potential threat</b>Polished, product-only clips risk a high skip rate — watched for a second and swiped past. Effort spent here reaches the audience least likely to specify or buy, while the trade audience is on LinkedIn and the website.</p>
+      <p class="opp"><b>Opportunity — how to improve it</b>Use TikTok selectively, and only with lived-in reels: lights in real homes, restaurants, and installs, with people actually living with them — never polished product clips alone.</p>
+    </div>
+    <div class="channel">
+      <div><div class="name">YouTube</div><div class="size">21 subscribers · Mirror</div></div>
+      <ul>
+        <li><strong>Near-dormant</strong> — very little for a searcher to find.</li>
+        <li><strong>Existing Reels and showroom walk-throughs already exist</strong> as raw material.</li>
+      </ul>
+      <p class="src">Source: <a href="https://www.youtube.com/@cwilighting73" target="_blank" rel="noopener noreferrer">youtube.com/@cwilighting73</a></p>
+      <p class="threat"><b>Potential threat</b>A near-empty channel is the one searchers find — and an inactive shelf reads as an inactive brand.</p>
+      <p class="opp"><b>Opportunity — how to improve it</b>Recut the same Reels and showroom walk-throughs as Shorts and collection films — restart the channel with no new shoots.</p>
+    </div>
+  </div>
+
+  <div class="threats-row"><b>Potential threats — the pattern</b>None of these are product problems. The shared risk is <strong>perception and discovery</strong>: a customer who has never met a rep judges the brand’s scale and care from the channels alone — and today the channels undersell a 745-location luxury network. Every fix sits in <a href="#solutions">Section 5, Opportunities</a>, inside the brand manual.</div>
+</section>
+
+<!-- 4 JOURNEY -->
+<section id="journey">
+  <h2><span class="num">4</span> Customer journey: Reel to retailer</h2>
+  <p class="section-lede">Walked live on Nov 27, 2026, from a single entry point: an Instagram Reel reaches the right person — for example, someone opening a café, restaurant, or showroom — and they try to get from a light they love to the retailer who sells it. It took <strong>14 clicks</strong> to reach Get Directions.</p>
+
+  <div class="journey">
+    <div class="step"><span class="n">Clicks 1–2</span><h3>Reel → profile → website</h3><p>The Reel works — it reaches the right person. On landing, <strong>there are many links to parse and two were dead</strong>, so the first decision is harder than it should be.</p></div>
+    <div class="step"><span class="n">Clicks 3–6</span><h3>Home → categories → products</h3><p>Featured Collections land beautifully — <strong>Arcus, Petra, Contour, Curva read as luxury</strong>. From there, categories (flush mounts, mini pendants, outdoor) lead into the product grid.</p></div>
+    <div class="step friction"><span class="n">Clicks 7–8</span><h3>Browsing with no way to narrow down</h3><p><strong>No filters</strong> on the product grid, so discovery means opening products one by one. A liked product had <strong>no second image and no in-room view</strong>, and its <strong>sold-out status only appeared after clicking in</strong> — it should be flagged on the listing itself.</p></div>
+    <div class="step friction"><span class="n">Clicks 9–14</span><h3>Where to Buy → Local Dealers → Directions</h3><p>The dealer list requires <strong>extensive scrolling</strong>, the <strong>map did not work</strong> in the walkthrough, and there was <strong>no link out to the retailer’s own website</strong>. Click 14 finally reaches Get Directions — the right ending, after a long middle.</p></div>
+  </div>
+  <p class="src">Source: live walkthrough, Nov 27, 2026, starting at <a href="https://www.instagram.com/cwilighting/" target="_blank" rel="noopener noreferrer">instagram.com/cwilighting</a> through <a href="https://www.cwilighting.com/pages/local-dealers" target="_blank" rel="noopener noreferrer">Local Dealers page</a>. Dead links, filter, image, sold-out, and map observations are from that walkthrough.</p>
+
+  <div class="callout" style="margin-top:1.1rem">
+    <span class="label">In one line</span>
+    <p>“I could have found out a lot more information in the meanwhile.” The fix is not more content — it’s a seamless path from the Reel to the product, to the retailer, to the right contact.</p>
+  </div>
+
+  <div class="threats">
+    <div class="t-head">Potential threats <span>— what’s at stake if the friction stays</span></div>
+    <div class="t-body">
+      <p class="t-intro">The Reel does its job — it creates desire and sends the right person to the site. <strong>Every threat below sits after that moment</strong>, in the stretch where desire either becomes a showroom visit or quietly cools.</p>
+      <ul>
+        <li><strong>The sale leaks at the moment of highest intent.</strong> A customer who hits dead links, browses with no way to filter, discovers a product is sold out only after clicking in, and then faces a long dealer list with a map that doesn’t work, rarely complains — they simply buy the light they <em>could</em> reach, from whoever made it easiest. The competitor risk is not a better product; it’s a shorter path.</li>
+        <li><strong>The retailer loses a sale the brand already generated.</strong> CWI’s content and collections create the demand; the dealer is meant to close it. Friction in the Where to Buy stretch means the retailer never meets a customer who was already sold — the network’s greatest strength, 745 doors, becomes the hardest part of the journey to use.</li>
+        <li><strong>Small breakages tax luxury perception.</strong> For a premium brand, polish is the promise: two dead links on landing and a broken map don’t read as technical glitches, they read as carelessness — the opposite of the craftsmanship the product itself proves in person.</li>
+        <li><strong>Disappointment lands on the product, not the path.</strong> A sold-out surprise after clicking in, or a liked product with no second image and no in-room view, attaches frustration to the fixture itself — when the fixture was never the problem.</li>
+      </ul>
+      <p class="t-intro" style="margin:.6rem 0 0">The encouraging read: every one of these is a <strong>path fix, not a brand fix</strong> — the fixes are mapped in <a href="#solutions">Section 5, Opportunities</a>, inside the existing luxury positioning and brand manual.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 5 SOLUTIONS -->
+<section id="solutions">
+  <h2><span class="num">5</span> Opportunities — within the luxury brand</h2>
+  <p class="section-lede">Every suggestion below works <strong>inside the brand manual</strong> — same luxury positioning, same visual system. The change is not the brand; it’s how visibly the brand’s people, craft, and network show up. Under each opportunity I’ve added <strong>where I fit in</strong> — my background mapped against the Digital Design Specialist role and what came up in our conversation: a luxury brand that stays luxury, a strict brand manual, a Shopify presence and a reps’ catalogue app both built with Claude, and content — reels, newsletters, photography — that engages and funnels leads toward sales.</p>
+
+  <div class="resume-strip">
+    <p class="rs-label">Where I fit in — my background at a glance</p>
+    <p class="rs-title">Digital communications, design, photography &amp; video — 6+ years, the last 4 in product design &amp; UX.</p>
+    <ul>
+      <li><strong>Commercial Photographer, freelance (Summer 2026)</strong> — my day job in summer 2026: product and event photography for 15 sports brands and clubs, including MEC, HOKA, New Balance, Salomon, Patagonia Toronto, KEEN Canada and Pilot Coffee; 10+ demo days and events shot; post-production end to end in Lightroom and Photoshop, delivered as ready-to-post sets.</li>
+      <li><strong>Lead Product Designer &amp; Design Engineer, Chitrok (2026–present)</strong> — e-commerce marketplace rebuilt into 52 working pages, now in live beta; click navigation cut 66% (sales tracking: 6 clicks to 2); a 57-artwork catalogue structured into 7 filters; front end built with Claude Code, with feature specs and an AI-ready design system authored by me.</li>
+      <li><strong>Founding Product Designer, BrewBase (2025–present)</strong> — café discovery platform with a four-person team; roadmap, features and handoff.</li>
+      <li><strong>Product &amp; Graphic Designer, freelance (2024–2026)</strong> — GGA Partners: 24 infographics for 12 strategic reports under tight deadlines; Mindset4Growth: 10 eBooks plus social-ready content kits; WeAreGoldenHour: designs that became a permanent merchandise line across 6 product categories; frame-by-frame pixel-art animation for a YouTube creator.</li>
+      <li><strong>Staff Product Designer, U of T Dalla Lana School of Public Health (2022–2023)</strong> — design system, templates and information architecture for 33 department sites under University brand standards, serving 440 faculty and staff; $36,000 saved in operational and maintenance costs; trained faculty and staff with instructional guides and videos.</li>
+      <li><strong>UX/UI Designer, U of T Scarborough — Department of Management (2021–2022)</strong> — a self-built WordPress prototype backed by 4 months of solo user research secured $35,000 in department funding; hub portal unifying 18+ student clubs and ~2,000 students.</li>
+      <li><strong>Marketing &amp; communications, U of T Scarborough (2018–2020)</strong> — Communications &amp; Engagement Lead and Marketing Coordinator: marketing packages for 5+ flagship events with partners including TELUS, Rogers and the Big 4; photographed 10 department events and packaged them into social-ready sets. VP of Marketing, DECA UTSC: social engagement up 95%, event sign-ups doubled, communities of 2,200+ on Facebook and 1,500+ on Instagram. Social Media Director, ArtSideOut: following up 62.5% (800 → 1,300) through content calendars, a weekly artist-feature series, and monthly KPI tracking.</li>
+    </ul>
+    <p class="rs-skills"><strong>Tools:</strong> Adobe Illustrator, Photoshop, InDesign, Premiere Pro, After Effects, Lightroom · Procreate, Pixel Studio, Canva · WordPress, SharePoint, HTML/CSS, Figma · <strong>AI tools:</strong> Claude Code, Claude Design, GitHub Copilot, Replit, Lovable. <strong>Foundation:</strong> U of T Honours BSc — double major in Psychology and Management &amp; Business Economics, minor in English: human behaviour behind the design, business goals behind the funnel.</p>
+  </div>
+
+  <div class="solutions">
+    <div class="sol"><span class="n">1</span><div><h3>Put people back in the frame — luxuriously</h3><p>The craft story is CWI’s differentiator: the Nov 9 Petra post (“from the first sketch to the finished piece”) and the torch-on-glass hero film prove it. Make it a system: a recurring <strong><em>Sketch → Glass → Glow</em></strong> series, behind-the-scenes of how glass is made, and B-roll of lights living in real places — homes, restaurants, bars, retailer installs, and hospitality spaces. Real people, real rooms, shot to the manual’s standard. Polished, people-free product video alone can read as generated; people are what make luxury feel human.</p><p class="src">Sources: <a href="https://www.instagram.com/cwilighting/" target="_blank" rel="noopener noreferrer">Instagram — Nov 9 Petra post</a> · <a href="https://www.cwilighting.com/" target="_blank" rel="noopener noreferrer">Homepage hero film</a></p><div class="fit"><span class="fit-label">Where I fit in</span><p><strong>This was my day job in summer 2026.</strong> As a commercial photographer for 15 sports brands and clubs — MEC, HOKA, New Balance, Salomon, Patagonia Toronto, KEEN Canada, Pilot Coffee — I shot product and people in real places, directed non-professional talent on the move, and delivered culled, edited, ready-to-post sets from Lightroom and Photoshop. I cut video in Premiere Pro, and at U of T I photographed 10 department events and packaged each into social-ready sets. Shooting CWI’s makers and real rooms, then cutting it into reels fast, is exactly that workflow — and the samples I promised are in <a href="#photography">Section 6, Photography samples</a>.</p></div></div></div>
+
+    <div class="sol"><span class="n">2</span><div><h3>Shorten the Reel-to-retailer path</h3><p>Fix the journey in <a href="#journey">Section 4, Customer journey</a> without touching the catalogue model: <strong>product filters, sold-out flagged on the listing, a second image / in-room view / 3D cue on each product, a working embedded dealer map, and links out to each retailer’s website</strong>. Fewer clicks, same luxury — just less friction between desire and a showroom visit.</p><p class="src">Sources: <a href="https://www.cwilighting.com/pages/local-dealers" target="_blank" rel="noopener noreferrer">Local Dealers</a> · <a href="https://www.cwilighting.com/pages/where-to-buy" target="_blank" rel="noopener noreferrer">Where to Buy</a></p><div class="fit"><span class="fit-label">Where I fit in</span><p><strong>I’ve already done this exact fix on a live marketplace.</strong> At Chitrok, task-based usability audits cut click navigation 66% — sales tracking went from 6 clicks to 2 — and I structured a 57-artwork catalogue into 7 filters, replacing 15 thin category pages with one filter model, at WCAG AA standard. This review’s 14-click walkthrough is the same method. And because CWI stays luxury, the fix is path clarity — filters, flags, maps, links — never public pricing.</p></div></div></div>
+
+    <div class="sol"><span class="n">3</span><div><h3>Connect the reps’ catalogue app back to the website</h3><p>Sales reps already showcase products in a catalogue app — a curated, in-person experience. <strong>Tie that experience back to the site:</strong> the same product storytelling, imagery, and collection order in both places; deep links / QR from the app experience to the matching product page and Where to Buy; and web analytics that show which app-showcased products people explore afterwards. One luxury story, whether a rep is in the room or the customer is browsing alone at midnight. CWI already builds its Shopify presence with Claude — that same build workflow makes this kind of app-to-site consistency fast to iterate, inside the manual.</p><div class="fit"><span class="fit-label">Where I fit in</span><p><strong>CWI builds with Claude — so do I.</strong> At Chitrok I build the front end with Claude Code, reviewing every build by hand against UX principles before handoff through GitHub, and I authored the feature specs and AI-ready design system behind it; for N. Sacco &amp; Co. I built a finance-app MVP the same way. I also work across CMS platforms — WordPress and SharePoint — and at Dalla Lana I kept one design system consistent across 33 sites. Connecting the reps’ catalogue-app experience back to the Shopify site is my native way of working, not a ramp-up.</p></div></div></div>
+
+    <div class="sol"><span class="n">4</span><div><h3>Systematise dealer content into “Installed By”</h3><p>Dealers are already posting. Give them a named, repeatable feature — a monthly <strong><em>Installed By</em></strong> series — plus a simple on-brand asset kit (catalogue flip-books, spec sheets, 3D links already exist on Resources) so showrooms can post beautifully and consistently, and the main account can reshare it. It turns 745 locations into a content network.</p><p class="src">Sources: <a href="https://www.instagram.com/reel/DfP8e6XpGCa/" target="_blank" rel="noopener noreferrer">Moko Home reel</a> · <a href="https://www.cwilighting.com/pages/resources" target="_blank" rel="noopener noreferrer">Resources page</a></p><div class="fit"><span class="fit-label">Where I fit in</span><p><strong>I’ve run this exact format.</strong> As Social Media Director for the ArtSideOut festival I created Feature Friday — a named, recurring series showcasing resident artists — run on content calendars with monthly KPI tracking, and grew the following 62.5% (800 → 1,300). <em>Installed By</em> is the same pattern pointed at dealers. I’m also client-facing by default — stakeholder interviews, client presentations, partner packages for TELUS, Rogers and the Big 4 at U of T — and I’ve built the on-brand templates and asset systems (Dalla Lana, 33 sites) that let other people post consistently inside a strict brand system.</p></div></div></div>
+
+    <div class="sol"><span class="n">5</span><div><h3>Use the features only CWI can show</h3><p>Fixtures like Arcus shift <strong>2700K–5000K by remote</strong> and carry a 3D View. Short, saveable films — <em>“one fixture, five moods”</em> in a single real room, polls (“Which lighting makes this room feel better?”), day-in-the-life and trade-show behind-the-scenes — sell a spec-sheet feature emotionally, and they invite the comments the feed currently doesn’t get.</p><p class="src">Source: <a href="https://www.cwilighting.com/products/1711p50-5-624" target="_blank" rel="noopener noreferrer">Arcus product page</a> (3D View, 2700K–5000K)</p><div class="fit"><span class="fit-label">Where I fit in</span><p><strong>Specs are my strength — and I can shoot and animate them.</strong> I author feature specs at Chitrok, so a 2700K–5000K shift or a 3D View is a story I know how to tell. I edit video in Premiere Pro and After Effects, animated frame-by-frame pixel art for a YouTube creator in Pixel Studio, and shot testimonial short videos as U of T’s Communications &amp; Engagement Lead. A “one fixture, five moods” reel is something I can execute from brief to post — quickly, which is what this role asks for.</p></div></div></div>
+
+    <div class="sol"><span class="n">6</span><div><h3>Reactivate the quiet channels — no new shoots needed</h3><p><strong>Build Pinterest as a main-channel funnel:</strong> boards by room, collection, and fixture type (“Flush mounts for low ceilings,” “Dining rooms in handcrafted glass”), every pin linked to its product page and onward to Where to Buy. Keep the lower tier as mirrors: <strong>recut existing Reels natively for YouTube Shorts</strong> weekly, and use TikTok selectively — lower priority, lived-in reels only, so polished product clips don’t hit a high skip rate. And <strong>close the loop on every launch:</strong> each supplement drop gets one coordinated asset set across Instagram, email, homepage Featured Collections, and Highlights — plus designed, infographic-style reporting on reach and trade-show results that people actually read.</p><p class="src">Sources: <a href="https://www.tiktok.com/@cwilighting" target="_blank" rel="noopener noreferrer">TikTok</a> · <a href="https://www.youtube.com/@cwilighting73" target="_blank" rel="noopener noreferrer">YouTube</a> · <a href="https://ca.pinterest.com/cwilighting/" target="_blank" rel="noopener noreferrer">Pinterest</a> · <a href="https://www.cwilighting.com/pages/resources" target="_blank" rel="noopener noreferrer">Resources — 2025 Catalog &amp; Jan 2026 Supplement</a></p><div class="fit"><span class="fit-label">Where I fit in</span><p><strong>Channel growth, campaign content, and reporting are my communications years.</strong> At DECA UTSC I led a marketing team of 5 across 30+ projects, managed communities of 2,200+ on Facebook and 1,500+ on Instagram, grew engagement 95% and doubled event sign-ups. At ArtSideOut I ran content calendars, wrote blogs, captions and ad copy, and tracked monthly KPIs to refine the plan — the same production muscle behind a newsletter cadence. And the infographic reporting: at GGA Partners I produced 24 infographics for 12 strategic reports, under tight deadlines and agile client feedback.</p></div></div></div>
+
+    <div class="sol"><span class="n">7</span><div><h3>Keep the basics impeccably fresh</h3><p>For a luxury brand, small staleness reads loudly: keep the <strong>Instagram bio and link-in-bio synced to the current show / campaign</strong>, sweep for dead links, and give LinkedIn a steady trade cadence. It’s the freshness pass that makes everything above feel intentional.</p><p class="src">Sources: <a href="https://www.instagram.com/cwilighting/" target="_blank" rel="noopener noreferrer">Instagram bio</a> · <a href="https://www.linkedin.com/company/cwilighting/" target="_blank" rel="noopener noreferrer">LinkedIn company page</a></p><div class="fit"><span class="fit-label">Where I fit in</span><p><strong>Working inside a rigid brand system is my U of T years.</strong> At Dalla Lana I built and maintained web content under institutional brand standards — a design system and templates across 33 sites for 440 faculty and staff — saved $36,000 in operational and maintenance costs, and trained people on the systems with guides and videos. CWI’s attachment to its brand manual is familiar territory: the craft is making fresh, current work <em>within</em> the system, including the unglamorous sweeps — dead links, stale bios — that keep a luxury brand looking intentional.</p></div></div></div>
+  </div>
+</section>
+
+<!-- PHOTOGRAPHY SAMPLES -->
+<section id="photography">
+  <h2><span class="num">6</span> Photography samples</h2>
+  <p class="section-lede">As promised in our conversation — a short set of my own photography, the side of the work behind the reels and content: shooting real people in real rooms, then packaging it for social.</p>
+  <ul>
+    <li><strong>Published social / event work:</strong> <a href="https://www.instagram.com/p/DbTCD0hj4wO/?img_index=1" target="_blank" rel="noopener noreferrer">Hoka Run101 x CultureAthletics</a></li>
+    <li><strong>Published social / event work:</strong> <a href="https://www.instagram.com/p/DaFvrIlFp3x/?img_index=1" target="_blank" rel="noopener noreferrer">MEC x UndaMovement x Culture Athletics</a></li>
+    <li><strong>The fuller set:</strong> <a href="https://photos.app.goo.gl/GW95cMCmuQFNS7aeA" target="_blank" rel="noopener noreferrer">Keen Canada x The Trail Collective</a></li>
+  </ul>
+</section>
+
+<footer>
+  <p><strong>Prepared by Bijoya Deb-Nath</strong> — Post-Interview Presence Review for CWI Lighting, following my interview with Saleem Makhoul on November 27, 2026 at 2:00 p.m.</p>
+  <p>Counts of retailer locations are my own counts from CWI’s public Local Dealers page on Nov 27, 2026, not company-published totals. All other facts are linked directly under the point they support. Thank you for the conversation — I’m glad to walk through any of this in more detail.</p>
+</footer>
+
+</main>
+</div>
+</div>
+
+
+<script>
+(function(){
+  /* Mobile contents sheet: open / close */
+  var mBtn = document.getElementById('mobileNavBtn');
+  var mSheet = document.getElementById('mobileSheet');
+  var mBackdrop = document.getElementById('mobileNavBackdrop');
+  var mClose = document.getElementById('mobileNavClose');
+  function setSheet(open, returnFocus){
+    if(!mBtn || !mSheet || !mBackdrop) return;
+    mSheet.hidden = !open;
+    mBackdrop.hidden = !open;
+    mBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if(open && mClose){ mClose.focus(); }
+    if(!open && returnFocus && mBtn){ mBtn.focus(); }
+  }
+  if(mBtn){ mBtn.addEventListener('click', function(){ setSheet(mSheet.hidden, false); }); }
+  if(mClose){ mClose.addEventListener('click', function(){ setSheet(false, true); }); }
+  if(mBackdrop){ mBackdrop.addEventListener('click', function(){ setSheet(false, true); }); }
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && mSheet && !mSheet.hidden){ setSheet(false, true); } });
+  if(mSheet){
+    mSheet.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', function(){ setSheet(false, false); });
+    });
+  }
+
+  var links = Array.prototype.slice.call(document.querySelectorAll('.toc nav a[href^="#"], .mobile-sheet nav a[href^="#"]'));
+  if(!links.length || !('scrollY' in window)) return;
+  var targets = links.map(function(link){
+    return document.querySelector(link.getAttribute('href'));
+  }).filter(Boolean);
+  targets.sort(function(a,b){ return a.offsetTop - b.offsetTop; });
+  function update(){
+    var pos = window.scrollY + window.innerHeight * 0.35;
+    var current = targets[0];
+    targets.forEach(function(t){ if(t.offsetTop <= pos) current = t; });
+    links.forEach(function(link){
+      var on = current && link.getAttribute('href') === '#' + current.id;
+      link.classList.toggle('active', !!on);
+      if(on){ link.setAttribute('aria-current','true'); } else { link.removeAttribute('aria-current'); }
+    });
+    if(mBtn){ mBtn.classList.add('mnb-show'); }
+    var mCurrent = document.getElementById('mobileNavCurrent');
+    if(mCurrent && current){
+      var match = links.filter(function(l){ return l.getAttribute('href') === '#' + current.id; })[0];
+      if(match){ mCurrent.textContent = match.textContent.replace(/\s+/g,' ').trim().replace(/^(\d)([A-Za-z])/,'$1 $2'); }
+    }
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+</body>
+</html>
